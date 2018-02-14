@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: d8fced7b8008ae94993b6e031d41303d
+timeCreated: 1510520961
+licenseType: Store
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: KMFont
+  fontNames:
+  - KMFont
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 2
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
