@@ -317,16 +317,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textFields:
     titleText:
-      textContent: Proposal declined
+      textContent: "\uC81C\uC548\uC774 \uAC70\uBD80\uB428"
       textField: {fileID: 114090687538468844}
     questionText:
-      textContent: The princess is not interessted in you, because you are too ugly...
+      textContent: "\uACF5\uC8FC\uB2D8\uC740 \uB108\uC5D0\uAC8C \uAD00\uC2EC\uC774
+        \uC5C6\uB2E4. \uC65C\uB0D0\uD558\uBA74 \uB124\uAC00 \uB108\uBB34 \uBABB \uC0DD\uACA8\uC11C
+        ..."
       textField: {fileID: 114309495523116190}
     answerLeft:
-      textContent: Oh no...
+      textContent: "\uC624 \uC548\uB3FC..."
       textField: {fileID: 114616901005016922}
     answerRight:
-      textContent: Oh no...
+      textContent: "\uC624 \uC548\uB3FC..."
       textField: {fileID: 114947929046483754}
   isHighPriorityCard: 0
   isDrawable: 0
@@ -420,6 +422,7 @@ MonoBehaviour:
         - modifier: 2
           valueAdd: 3
         followUpCard: {fileID: 0}
+  changeValueOnCardDespawn: []
   OnCardSpawn:
     m_PersistentCalls:
       m_Calls: []
@@ -440,6 +443,16 @@ MonoBehaviour:
             was declined, because you were too ugly.
           m_BoolArgument: 0
         m_CallState: 2
+    m_TypeName: EventScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  OnSwipeLeft:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: EventScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  OnSwipeRight:
+    m_PersistentCalls:
+      m_Calls: []
     m_TypeName: EventScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
 --- !u!114 &114786826999304822

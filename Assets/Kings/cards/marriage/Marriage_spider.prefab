@@ -316,14 +316,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textFields:
     titleText:
-      textContent: Marriage
+      textContent: "\uACB0\uD63C"
       textField: {fileID: 114090687538468844}
     questionText:
-      textContent: The Queen found a big spider in the bedroom. She wants now to burn
-        down the whole castle and build a new one.
+      textContent: "\uC5EC\uC655\uC740 \uCE68\uC2E4\uC5D0 \uD070 \uAC70\uBBF8\uB97C
+        \uBC1C\uACAC\uD588\uC2B5\uB2C8\uB2E4. \uADF8\uB140\uB294 \uC774\uC81C \uC131
+        \uC804\uCCB4\uB97C \uD0DC\uC6B0\uACE0 \uC0C8 \uC655\uAD81\uC744 \uB9CC\uB4E4\uACE0
+        \uC2F6\uC2B5\uB2C8\uB2E4."
       textField: {fileID: 114309495523116190}
     answerLeft:
-      textContent: Sounds good
+      textContent: "\uC88B\uC740 \uC18C\uB9AC"
       textField: {fileID: 114616901005016922}
     answerRight:
       textContent: No!

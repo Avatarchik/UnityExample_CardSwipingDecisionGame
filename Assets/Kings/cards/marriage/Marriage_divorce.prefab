@@ -328,10 +328,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textFields:
     titleText:
-      textContent: Divorce
+      textContent: "\uC774\uD63C"
       textField: {fileID: 114090687538468844}
     questionText:
-      textContent: The Queen left you because you dont care enough for her
+      textContent: "\uC5EC\uC655\uC740 \uB124\uAC00 \uADF8\uB140\uB97C \uB3CC\uBCF4\uC9C0
+        \uC54A\uC544\uC11C \uB108\uB97C \uB5A0\uB0AC\uC5B4."
       textField: {fileID: 114309495523116190}
     answerLeft:
       textContent: Oh no...
@@ -444,6 +445,16 @@ MonoBehaviour:
             you divorced and never married again.
           m_BoolArgument: 0
         m_CallState: 2
+    m_TypeName: EventScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  OnSwipeLeft:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: EventScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  OnSwipeRight:
+    m_PersistentCalls:
+      m_Calls: []
     m_TypeName: EventScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
 --- !u!114 &114853187802903376

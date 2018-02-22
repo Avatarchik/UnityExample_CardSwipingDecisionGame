@@ -316,16 +316,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textFields:
     titleText:
-      textContent: Religion
+      textContent: "\uC885\uAD50"
       textField: {fileID: 114090687538468844}
     questionText:
-      textContent: The church wants to build a huge cathedral?
+      textContent: "\uAD50\uD68C\uB294 \uAC70\uB300\uD55C \uB300\uC131\uB2F9\uC744
+        \uC9D3\uACE0 \uC2F6\uC5B4\uD558\uB2C8?"
       textField: {fileID: 114309495523116190}
     answerLeft:
       textContent: Ok
       textField: {fileID: 114616901005016922}
     answerRight:
-      textContent: Sorry, we don`t have the money for this...
+      textContent: "\uC8C4\uC1A1\uD569\uB2C8\uB2E4. \uC6B0\uB9AC\uB294 \uB3C8\uC774
+        \uC5C6\uC2B5\uB2C8\uB2E4...."
       textField: {fileID: 114947929046483754}
   isHighPriorityCard: 0
   isDrawable: 1
@@ -409,6 +411,16 @@ MonoBehaviour:
     m_TypeName: EventScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   OnCardDespawn:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: EventScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  OnSwipeLeft:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: EventScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  OnSwipeRight:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: EventScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,

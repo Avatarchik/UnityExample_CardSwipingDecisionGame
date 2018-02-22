@@ -241,16 +241,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textFields:
     titleText:
-      textContent: You are now King!
+      textContent: "\uB2F9\uC2E0\uC740 \uC774\uC81C \uC655\uC785\uB2C8\uB2E4!"
       textField: {fileID: 114090687538468844}
     questionText:
-      textContent: swipe left or right to start, swipe up to open game menu
+      textContent: "\uC67C\uCABD \uB610\uB294 \uC624\uB978\uCABD\uC73C\uB85C \uC2A4
+        \uC640\uC774\uD504\uD558\uC5EC \uAC8C\uC784 \uBA54\uB274\uB97C \uC5F4\uB824\uBA74
+        \uC704\uB85C \uC2A4\uC640\uC774\uD504\uD569\uB2C8\uB2E4."
       textField: {fileID: 114309495523116190}
     answerLeft:
-      textContent: i have waited a long time for this!
+      textContent: "\uB098\uB294 \uC774\uAC83\uC744 \uC704\uD574 \uC624\uB79C \uC2DC\uAC04\uC744
+        \uAE30\uB2E4\uB838\uB2E4!"
       textField: {fileID: 114616901005016922}
     answerRight:
-      textContent: i will try my best to be a good king
+      textContent: "\uB098\uB294 \uC88B\uC740 \uC655\uC774\uB418\uAE30 \uC704\uD574
+        \uCD5C\uC120\uC744 \uB2E4\uD560 \uAC83\uC774\uB2E4."
       textField: {fileID: 114947929046483754}
   isHighPriorityCard: 1
   isDrawable: 1
@@ -319,6 +323,16 @@ MonoBehaviour:
             rule the kingdom.
           m_BoolArgument: 0
         m_CallState: 2
+    m_TypeName: EventScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  OnSwipeLeft:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: EventScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  OnSwipeRight:
+    m_PersistentCalls:
+      m_Calls: []
     m_TypeName: EventScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
 --- !u!114 &114455580181653028

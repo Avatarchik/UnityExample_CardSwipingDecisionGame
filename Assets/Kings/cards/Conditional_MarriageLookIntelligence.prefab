@@ -316,16 +316,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textFields:
     titleText:
-      textContent: ConditionalCard
+      textContent: "\uC870\uAC74\uBD80 \uCE74\uB4DC"
       textField: {fileID: 114090687538468844}
     questionText:
-      textContent: Which Princess do you want to marry?
+      textContent: "\uC5B4\uB290 \uACF5\uC8FC\uB2D8\uACFC \uACB0\uD63C\uD558\uACE0
+        \uC2F6\uB2C8?"
       textField: {fileID: 114309495523116190}
     answerLeft:
-      textContent: The Beautiful One
+      textContent: "\uC544\uB984\uB2E4\uC6B4 \uACF5\uC8FC"
       textField: {fileID: 114616901005016922}
     answerRight:
-      textContent: The Smart One
+      textContent: "\uC2A4\uB9C8\uD2B8\uD55C \uACF5\uC8FC"
       textField: {fileID: 114947929046483754}
   isHighPriorityCard: 0
   isDrawable: 1
@@ -444,6 +445,16 @@ MonoBehaviour:
     m_TypeName: EventScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   OnCardDespawn:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: EventScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  OnSwipeLeft:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: EventScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  OnSwipeRight:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: EventScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,

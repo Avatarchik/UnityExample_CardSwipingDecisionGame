@@ -319,13 +319,13 @@ MonoBehaviour:
       textContent: Game Over
       textField: {fileID: 114090687538468844}
     questionText:
-      textContent: Your Kingdom is bankrupt!
+      textContent: "\uB2F9\uC2E0\uC758 \uC655\uAD6D\uC740 \uD30C\uC0B0\uD588\uC2B5\uB2C8\uB2E4!"
       textField: {fileID: 114309495523116190}
     answerLeft:
-      textContent: Oh no!
+      textContent: "\uC624 \uC548\uB3FC!"
       textField: {fileID: 114616901005016922}
     answerRight:
-      textContent: Why!?
+      textContent: "\uC65C!?"
       textField: {fileID: 114947929046483754}
   isHighPriorityCard: 1
   isDrawable: 1

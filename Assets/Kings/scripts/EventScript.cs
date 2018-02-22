@@ -19,24 +19,44 @@ public class EventScript : MonoBehaviour {
 		public Text textField;
 	}
 
-	[System.Serializable]
-	public class eventTexts{
+    /// <summary>
+    /// 카드에 들어가는 텍스트를 종류를 규정한 클래스.
+    /// </summary>
+	[System.Serializable] // 클래스 타입의 변수를 인스펙터에 노출시키기 위한 어트리뷰트
+	public class eventTexts
+    {
+        /// <summary>
+        /// 카드의 타이틀 텍스트
+        /// </summary>
 		public eventText titleText;
+
+        /// <summary>
+        /// 카드 하단의 질문 텍스트.
+        /// </summary>
 		public eventText questionText;
+
+        /// <summary>
+        /// 카드 왼쪽 모서리 답변 텍스트.
+        /// </summary>
 		public eventText answerLeft;
+
+        /// <summary>
+        /// 카드 오른쪽 모서리 답변 텍스트.
+        /// </summary>
 		public eventText answerRight;
 	}
-	[Tooltip("Define your card texts and text fields here. The strings can be terms for the 'TranslationManager'.")]
+
+	[Tooltip("카드 텍스트와 텍스트 필드를 여기에 정의하십시오. 문자열은 'TranslationManager'용어 일 수 있습니다.")]
 	public eventTexts textFields;
 
-	[Tooltip("If a card is high priority, it will be draw before all other normal cards, but after follow up cards.")]
+	[Tooltip("카드가 우선 순위가 높으면 다른 모든 일반 카드보다 먼저 나오지만 후속 카드를 사용하면 그려집니다.")]
 	public bool isHighPriorityCard = false;
-	[Tooltip("Only drawable cards can be randomly drawn because of their condition. Non drawable cards are follow up cards which are defined by previous cards or cards like the gameover statistics.")]
+	[Tooltip("drawable cards 카드는 그 상태때문에 무작위로 그려질 수 있습닏. Non drawable cards는 이전 카드 또는 게임 오버 통계와 같은 카드에 의해 정의된 후속 카드입니다.")]
 	public bool isDrawable = true;
 
-	[Tooltip("The propability applies to all cards, which met the conditions. Cards with a higher propability are more likely to be drawn.")]
+	[Tooltip("확률은 조건을 충족시킨 모든 카드에 적용됩니다. 높은 확률의 카드가 그려지기 쉽습니다.")]
 	[Range(0f,1f)] public float cardPropability = 1f;
-	[Tooltip("To limit the maximum draws of a card per game, define the 'maxDraws'.")]
+	[Tooltip("게임 당 최대 카드 뽑기를 제한하려면 'maxDraws'를 정의하십시오.")]
 	public int maxDraws = 100;
 
 	[System.Serializable]
@@ -46,7 +66,7 @@ public class EventScript : MonoBehaviour {
 		public float valueMax = 100f;
 	}
 
-	[Tooltip("Define under wich conditions this card can be drawn. E.g. a marriage card should only be possible if a value type 'age' is in the range of 18 to 100 or the value type 'marriage' is zero (not married yet)")]
+	[Tooltip("이 카드가 그려 질 수있는 조건 하에서 정의하십시오. 예 : 결혼 카드는 'age'값 유형이 18에서 100 사이이거나 '결혼'값 유형이 0 (결혼하지 않은 경우) 인 경우에만 가능해야합니다.")]
 	public condition[] conditions;
 
 	[System.Serializable]
@@ -67,47 +87,48 @@ public class EventScript : MonoBehaviour {
 	public class modifierGroup{
 
 		public resultModifier[] valueChanges;
-		[Tooltip("If this path was taken, will there be a 'follow up' card which takes the story further? Can be left empty.")]
+		[Tooltip("이 길을 택한 경우 스토리를 추가로 취하는 '후속 조치'카드가 있습니까? 비워 둘 수 있습니다.")]
 		public GameObject followUpCard;
 	}
 
 	[System.Serializable]
 	public class result{
 		public resultTypes resultType;
-		[Tooltip("Which values are modified, if this result is selected?")]
+		[Tooltip("이 결과가 선택되면 수정되는 값은 무엇입니까?")]
 		public modifierGroup modifiers;
-		[Tooltip("Depending on further conditions the result can split into two different outcomes. If all conditions are true, the 'Modifiers True' are executed. If one of the conditions fails, the 'Modifiers False'. E.g. the user selected he wants to take a race but his 'agility' value is to low, as outcome he will lose.")]
+		[Tooltip("추가 조건에 따라 결과가 두 가지 결과로 나뉠 수 있습니다. 모든 조건이 참이면 'Modifiers True'가 실행됩니다. 조건 중 하나가 실패하면 'Modifiers False'입니다. 예 : 사용자는 그가 경주를하고 싶다고 선택했지만 그의 민첩성은 낮아 결과는 떨어질 것입니다.")]
 		public condition[] conditions;
-		[Tooltip("Group of value changes, if all conditions are met.")]
+		[Tooltip("모든 조건이 충족되는 경우 값 그룹이 변경됩니다.")]
 		public modifierGroup	modifiersTrue;
-		[Tooltip("Group of value changes, if at least one of the conditions fails.")]
+		[Tooltip("조건 중 하나 이상이 실패하면 값 그룹이 변경됩니다.")]
 		public modifierGroup	modifiersFalse;
-		[Tooltip("A result can be split in multible outcomes. The 'Random Mofifiers' can be predefined, the selection of the outcome is randomly one of these.")]
+		[Tooltip("결과는 여러 결과로 나눌 수 있습니다. 'Random Modifiers'는 미리 정의 할 수 있으며, 결과의 선택은 무작위로 이들 중 하나입니다.")]
 		public modifierGroup[]  randomModifiers;
 	}
 
 	[System.Serializable]
 	public class resultGroup{
-		[Tooltip("Define the result (the changes in values and perhaps a follow up card) if the user swipes the card left.")]
+		[Tooltip("사용자가 카드를 왼쪽으로 스 와이프하면 결과 (값의 변경 및 후속 카드)를 정의하십시오.")]
 		public result resultLeft;
 
-		[Tooltip("Define the result (the changes in values and perhaps a follow up card) if the user swipes the card right.")]
+		[Tooltip("사용자가 카드를 오른쪽으로 스 와이프 한 경우 결과 (값의 변경 및 후속 카드)를 정의하십시오.")]
 		public result resultRight;
 
 		#if ADDITIONAL_CHOICE_0
-		[Tooltip("Define the result (the changes in values and perhaps a follow up card) if the user selects addtional choices.")]
+		[Tooltip("사용자가 추가 선택 사항을 선택하면 결과 (값의 변경 및 후속 조치 카드)를 정의하십시오.")]
 		public result additional_choice_0;
 		#endif
 		#if ADDITIONAL_CHOICE_1
-		[Tooltip("Define the result (the changes in values and perhaps a follow up card) if the user selects addtional choices.")]
+		[Tooltip("사용자가 추가 선택 사항을 선택하면 결과 (값의 변경 및 후속 조치 카드)를 정의하십시오.")]
 		public result additional_choice_1;
 		#endif
 	}
 
 	public resultGroup Results;
 
-	//Try to translate and write the configurated texts to their text-fields. 
-	void writeTextFields(){
+    //구성된 텍스트를 텍스트 필드로 번역하고 작성하십시오.
+    void writeTextFields()
+    {
 		if (textFields.titleText.textField != null) {
 			textFields.titleText.textField.text  =  TranslationManager.translateIfAvail( textFields.titleText.textContent  );
 		}
@@ -151,7 +172,7 @@ public class EventScript : MonoBehaviour {
 			AdditionalChoice_0_Selection();
 			executed = true;
 			#else
-			Debug.LogError("ADDITIONAL_CHOICE_"+choiceNr.ToString()+" is not configured in 'EventScript'.");
+			Debug.LogError("ADDITIONAL_CHOICE_"+choiceNr.ToString()+" 'EventScript'에 구성되지 않았습니다.");
 			#endif
 			break;
 		case 1:
@@ -159,11 +180,11 @@ public class EventScript : MonoBehaviour {
 			AdditionalChoice_1_Selection();
 			executed = true;
 			#else
-			Debug.LogError("ADDITIONAL_CHOICE_"+choiceNr.ToString()+" is not configured in 'EventScript'.");
+			Debug.LogError("ADDITIONAL_CHOICE_"+choiceNr.ToString()+" 'EventScript'에 구성되지 않았습니다.");
 			#endif
 			break;
 		default:
-			Debug.LogError("ADDITIONAL_CHOICE_"+choiceNr.ToString()+" is not configured in 'EventScript'.");
+			Debug.LogError("ADDITIONAL_CHOICE_"+choiceNr.ToString()+" 'EventScript'에 구성되지 않았습니다.");
 			break;	
 		}
 
@@ -306,7 +327,7 @@ public class EventScript : MonoBehaviour {
 		OnCardSpawn.Invoke ();
 	}
 
-	[Tooltip("Changes of values after the computation of the conditional results. Useful if a value is changed independent of the result, like 'Age +1'.")]
+	[Tooltip("조건부 결과 계산 후 값 변경. 'Age +1'과 같이 값이 결과와 독립적으로 변경되는 경우 유용합니다.")]
 	public resultModifier[] changeValueOnCardDespawn;
 
 	public mEvent OnCardSpawn;

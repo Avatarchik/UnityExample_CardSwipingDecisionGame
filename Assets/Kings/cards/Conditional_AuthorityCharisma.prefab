@@ -316,17 +316,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textFields:
     titleText:
-      textContent: ConditionalCard
+      textContent: "\uC870\uAC74\uBD80 \uCE74\uB4DC"
       textField: {fileID: 114090687538468844}
     questionText:
-      textContent: Use your Authority or Charisma to stop them (swipe up to check
-        your stats)
+      textContent: "\uB2F9\uC2E0\uC758 \uAD8C\uC704 \uB610\uB294 \uCE74\uB9AC\uC2A4\uB9C8\uB97C
+        \uC0AC\uC6A9\uD558\uC5EC \uADF8\uB4E4\uC744 \uC911\uC9C0\uD558\uC2ED\uC2DC\uC624
+        (\uB2F9\uC2E0\uC758 \uD1B5\uACC4\uB97C \uD655\uC778\uD558\uAE30 \uC704\uD574
+        \uC2A4\uC640\uC774\uD504)"
       textField: {fileID: 114309495523116190}
     answerLeft:
-      textContent: Try it with your Authority (you need 50+)
+      textContent: "\uB2F9\uC2E0\uC758 \uAD8C\uC704\uB85C \uC2DC\uB3C4\uD558\uC2ED\uC2DC\uC624(50+
+        \uD544\uC694)"
       textField: {fileID: 114616901005016922}
     answerRight:
-      textContent: Charisma, i choose you! (you need 50+)
+      textContent: "\uCE74\uB9AC\uC2A4\uB9C8, \uB098\uB294 \uB108\uB97C \uC120\uD0DD\uD574!(50+
+        \uD544\uC694)"
       textField: {fileID: 114947929046483754}
   isHighPriorityCard: 0
   isDrawable: 1
@@ -402,19 +406,6 @@ MonoBehaviour:
         - modifier: 2
           valueAdd: 3
         followUpCard: {fileID: 0}
-    additional_choice_1:
-      resultType: 1
-      modifiers:
-        valueChanges: []
-        followUpCard: {fileID: 0}
-      conditions: []
-      modifiersTrue:
-        valueChanges: []
-        followUpCard: {fileID: 0}
-      modifiersFalse:
-        valueChanges: []
-        followUpCard: {fileID: 0}
-      randomModifiers: []
   changeValueOnCardDespawn:
   - modifier: 4
     valueAdd: 1
@@ -434,11 +425,6 @@ MonoBehaviour:
     m_TypeName: EventScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   OnSwipeRight:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: EventScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-  OnAdditionalChoice_1:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: EventScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,

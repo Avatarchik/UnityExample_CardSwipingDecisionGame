@@ -321,13 +321,13 @@ MonoBehaviour:
       textContent: Game Over
       textField: {fileID: 114090687538468844}
     questionText:
-      textContent: swipe to see your score
+      textContent: "swipe\uD574\uC11C \uB2F9\uC2E0\uC758 \uC810\uC218 \uBCF4\uAE30"
       textField: {fileID: 114309495523116190}
     answerLeft:
-      textContent: lets see
+      textContent: "\uC810\uC218 \uBCF4\uAE30"
       textField: {fileID: 114616901005016922}
     answerRight:
-      textContent: lets see
+      textContent: "\uC810\uC218 \uBCF4\uAE30"
       textField: {fileID: 114947929046483754}
   isHighPriorityCard: 0
   isDrawable: 0

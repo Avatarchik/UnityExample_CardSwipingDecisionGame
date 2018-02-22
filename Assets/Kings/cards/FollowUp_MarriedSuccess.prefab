@@ -331,16 +331,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textFields:
     titleText:
-      textContent: Married
+      textContent: "\uACB0\uD63C"
       textField: {fileID: 114090687538468844}
     questionText:
-      textContent: Congratulation! You are now married!
+      textContent: "\uCD95\uD558\uD574! \uB108\uB294 \uC774\uC81C \uACB0\uD63C\uD588\uC5B4!"
       textField: {fileID: 114309495523116190}
     answerLeft:
-      textContent: Nice!
+      textContent: "\uB098\uC774\uC2A4!"
       textField: {fileID: 114616901005016922}
     answerRight:
-      textContent: Nice!
+      textContent: "\uB098\uC774\uC2A4!"
       textField: {fileID: 114947929046483754}
   isHighPriorityCard: 0
   isDrawable: 0
@@ -461,6 +461,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+    m_TypeName: EventScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  OnSwipeLeft:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: EventScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  OnSwipeRight:
+    m_PersistentCalls:
+      m_Calls: []
     m_TypeName: EventScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
 --- !u!114 &114851100162137762

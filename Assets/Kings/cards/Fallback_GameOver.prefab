@@ -81,8 +81,9 @@ MonoBehaviour:
       textContent: 
       textField: {fileID: 0}
     questionText:
-      textContent: This should not happen! There is no available card left, you are
-        now dead.
+      textContent: "\uC774\uB7EC\uBA74 \uC548\uB429\uB2C8\uB2E4! \uC0AC\uC6A9\uD560
+        \uC218\uC788\uB294 \uCE74\uB4DC\uAC00 \uC5C6\uC2B5\uB2C8\uB2E4. \uC774\uC81C
+        \uC8FD\uC5C8\uC2B5\uB2C8\uB2E4."
       textField: {fileID: 114960575872136438}
     answerLeft:
       textContent: 

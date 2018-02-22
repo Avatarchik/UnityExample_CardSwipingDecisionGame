@@ -316,17 +316,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textFields:
     titleText:
-      textContent: Random & Luck
+      textContent: "\uB79C\uB364 & \uB7ED\uD0A4"
       textField: {fileID: 114090687538468844}
     questionText:
-      textContent: Swipe left to randomly increase one stat, swipe right to increase
-        or decrease all 4 stats.
+      textContent: "\uC67C\uCABD\uC73C\uB85C \uC2A4\uC640\uC774\uD504\uD558\uC5EC
+        \uC784\uC758\uB85C \uD55C \uAC1C\uC758 \uD1B5\uACC4\uB97C \uB298\uB9AC\uAC70\uB098,
+        \uC624\uB978\uCABD\uC73C\uB85C \uC2A4\uC640\uC774\uD504\uD558\uC5EC 4\uAC1C\uC758
+        \uBAA8\uB4E0 \uD1B5\uACC4\uB97C \uB298\uB9AC\uAC70\uB098 \uC904\uC785\uB2C8\uB2E4."
       textField: {fileID: 114309495523116190}
     answerLeft:
-      textContent: Random
+      textContent: "\uB79C\uB364"
       textField: {fileID: 114616901005016922}
     answerRight:
-      textContent: I am feeling lucky
+      textContent: "\uB098\uB294 \uC6B4\uC774 \uC88B\uC740 \uB290\uB08C\uC774\uB2E4"
       textField: {fileID: 114947929046483754}
   isHighPriorityCard: 0
   isDrawable: 1
@@ -439,6 +441,16 @@ MonoBehaviour:
     m_TypeName: EventScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   OnCardDespawn:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: EventScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  OnSwipeLeft:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: EventScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  OnSwipeRight:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: EventScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,

@@ -316,16 +316,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textFields:
     titleText:
-      textContent: Army
+      textContent: "\uAD70\uB300"
       textField: {fileID: 114090687538468844}
     questionText:
-      textContent: Your General wants to invade the neighbouring country?
+      textContent: "\uC7A5\uAD70\uC774 \uC774\uC6C3 \uB098\uB77C\uB97C \uCE68\uB7B5\uD558\uAE30\uB97C
+        \uC6D0\uD569\uB2C8\uAE4C?"
       textField: {fileID: 114309495523116190}
     answerLeft:
       textContent: Ok
       textField: {fileID: 114616901005016922}
     answerRight:
-      textContent: No, better not.
+      textContent: "No, \uC88B\uC740 \uC0DD\uAC01\uC774 \uC544\uB2C8\uC57C."
       textField: {fileID: 114947929046483754}
   isHighPriorityCard: 0
   isDrawable: 1

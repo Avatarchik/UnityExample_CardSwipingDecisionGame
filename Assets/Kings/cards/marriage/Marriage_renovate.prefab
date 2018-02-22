@@ -316,16 +316,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textFields:
     titleText:
-      textContent: Marriage
+      textContent: "\uACB0\uD63C"
       textField: {fileID: 114090687538468844}
     questionText:
-      textContent: The Queen wants to renovate the castle
+      textContent: "\uC5EC\uC655\uC740 \uC655\uAD81\uC744 \uBCF4\uC218\uD558\uAE38
+        \uC6D0\uD569\uB2C8\uB2E4."
       textField: {fileID: 114309495523116190}
     answerLeft:
       textContent: Sure
       textField: {fileID: 114616901005016922}
     answerRight:
-      textContent: No! Everything stays like it is.
+      textContent: "\uC548\uB3FC! \uBAA8\uB4E0\uAC83\uC744 \uADF8\uB300\uB85C \uC720\uC9C0\uD569\uB2C8\uB2E4."
       textField: {fileID: 114947929046483754}
   isHighPriorityCard: 0
   isDrawable: 1

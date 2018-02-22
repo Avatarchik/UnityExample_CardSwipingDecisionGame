@@ -328,16 +328,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textFields:
     titleText:
-      textContent: Advertisement
+      textContent: "\uAD11\uACE0"
       textField: {fileID: 114090687538468844}
     questionText:
-      textContent: Want to show a quick video to increase all stats?
+      textContent: "\uBAA8\uB4E0 \uD1B5\uACC4\uB97C \uB298\uB9B4 \uC218\uC788\uB294
+        \uBE60\uB978 \uBE44\uB514\uC624\uB97C \uBCF4\uC5EC\uC8FC\uACE0 \uC2F6\uC2B5\uB2C8\uAE4C?"
       textField: {fileID: 114309495523116190}
     answerLeft:
-      textContent: Sure!
+      textContent: "\uBB3C\uB860!"
       textField: {fileID: 114616901005016922}
     answerRight:
-      textContent: No :(
+      textContent: "\uC2EB\uC5B4 :("
       textField: {fileID: 114947929046483754}
   isHighPriorityCard: 0
   isDrawable: 1

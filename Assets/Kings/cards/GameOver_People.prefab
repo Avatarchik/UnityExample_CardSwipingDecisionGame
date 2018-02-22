@@ -319,13 +319,14 @@ MonoBehaviour:
       textContent: Game Over
       textField: {fileID: 114090687538468844}
     questionText:
-      textContent: You lost the trust of your people. They started a revolt.
+      textContent: "\uB2F9\uC2E0\uC740 \uC0AC\uB78C\uB4E4\uC758 \uC2E0\uB8B0\uB97C
+        \uC783\uC5C8\uC2B5\uB2C8\uB2E4. \uADF8\uB4E4\uC740 \uBC18\uB780\uC744 \uC2DC\uC791\uD588\uB2E4."
       textField: {fileID: 114309495523116190}
     answerLeft:
-      textContent: Oh no!
+      textContent: "\uC624 \uC548\uB3FC!"
       textField: {fileID: 114616901005016922}
     answerRight:
-      textContent: Why!?
+      textContent: "\uC65C!?"
       textField: {fileID: 114947929046483754}
   isHighPriorityCard: 1
   isDrawable: 1
@@ -407,6 +408,16 @@ MonoBehaviour:
     m_TypeName: EventScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   OnCardDespawn:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: EventScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  OnSwipeLeft:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: EventScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  OnSwipeRight:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: EventScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,

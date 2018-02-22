@@ -319,13 +319,14 @@ MonoBehaviour:
       textContent: Game Over
       textField: {fileID: 114090687538468844}
     questionText:
-      textContent: Some fanatics crucified you!
+      textContent: "\uC5B4\uB5A4 \uAD11\uC2E0\uC790\uAC00 \uB2F9\uC2E0\uC744 \uC2ED\uC790\uAC00\uC5D0
+        \uBABB \uBC15\uC558\uC2B5\uB2C8\uB2E4!"
       textField: {fileID: 114309495523116190}
     answerLeft:
-      textContent: Oh no!
+      textContent: "\uC624 \uC548\uB3FC!"
       textField: {fileID: 114616901005016922}
     answerRight:
-      textContent: Why!?
+      textContent: "\uC65C!?"
       textField: {fileID: 114947929046483754}
   isHighPriorityCard: 1
   isDrawable: 1
@@ -406,6 +407,16 @@ MonoBehaviour:
     m_TypeName: EventScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   OnCardDespawn:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: EventScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  OnSwipeLeft:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: EventScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  OnSwipeRight:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: EventScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,

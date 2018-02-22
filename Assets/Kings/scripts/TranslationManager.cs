@@ -14,15 +14,14 @@ using I2.Loc;
 
 public class TranslationManager : MonoBehaviour {
 
-	/*
-	 * The function 'translateIfAvail' can be used to implement translations.
-	 * If a new text is displayed in the game, it first is tested for a 
-	 * translation by this function.
-	 * The funktion has a drawback, if the language is changed ingame the 
-	 * texts are not updated until a reload of the scene.
-	 */
-
-	public static string translateIfAvail(string term){
+    /// <summary>
+    /// 'translateIfAvail' 메서드는 번역을 구현하는데 사용할 수 있습니다.
+    /// 겡미에 새 텍스트가 표시되면 먼저 이 기능을 통해 번역이 테스트됩니다.
+    /// 언어가 변경되면 텍스트가 장면을 다시 불러올 때까지 업데이트 되지 않는다는 단점이 있습니다.
+    /// </summary>
+    /// <param name="term"></param>
+    /// <returns></returns>
+    public static string translateIfAvail(string term){
 		string retString;
 
 		//Example of the use of I2 localization.
@@ -96,9 +95,10 @@ public class TranslationManager : MonoBehaviour {
 
 	void saveListToFile(List<string> rowData){
 
-		//build the file content
+		// 파일 내용 만들기
 		StringBuilder sb = new StringBuilder();
-		for (int i = 0; i < rowData.Count; i++) {
+
+        for (int i = 0; i < rowData.Count; i++) {
 			sb.AppendLine (rowData [i] );
 		}
 

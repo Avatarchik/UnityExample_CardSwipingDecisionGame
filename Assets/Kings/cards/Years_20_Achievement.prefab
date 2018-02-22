@@ -356,16 +356,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textFields:
     titleText:
-      textContent: 20 Years
+      textContent: "20\uB144"
       textField: {fileID: 114090687538468844}
     questionText:
-      textContent: Congratulation! You are now ruling since 20 years.
+      textContent: "\uCD95\uD558\uD569\uB2C8\uB2E4! \uB2F9\uC2E0\uC740 \uC9C0\uAE08
+        20\uB144\uAC04 \uC9C0\uBC30\uB97C \uD558\uACE0 \uC788\uC2B5\uB2C8\uB2E4."
       textField: {fileID: 114309495523116190}
     answerLeft:
-      textContent: Great!
+      textContent: "\uC704\uB300\uD55C!"
       textField: {fileID: 114616901005016922}
     answerRight:
-      textContent: Great!
+      textContent: "\uC704\uB300\uD55C!"
       textField: {fileID: 114947929046483754}
   isHighPriorityCard: 1
   isDrawable: 1

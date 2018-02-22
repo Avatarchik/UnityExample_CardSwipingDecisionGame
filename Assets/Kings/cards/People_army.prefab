@@ -316,17 +316,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textFields:
     titleText:
-      textContent: People
+      textContent: "\uC0AC\uB78C\uB4E4"
       textField: {fileID: 114090687538468844}
     questionText:
-      textContent: The people want the soldiers to work on their fields in times of
-        peace
+      textContent: "\uC0AC\uB78C\uB4E4\uC740 \uAD70\uC778\uB4E4\uC774 \uD3C9\uD654\uC758
+        \uC2DC\uAC04\uC5D0 \uADF8\uB4E4\uC758 \uBD84\uC57C\uC5D0\uC11C \uC77C\uD558\uAE30\uB97C
+        \uC6D0\uD569\uB2C8\uB2E4."
       textField: {fileID: 114309495523116190}
     answerLeft:
-      textContent: Great idea!
+      textContent: "\uC88B\uC740 \uC0DD\uAC01\uC774\uC57C!"
       textField: {fileID: 114616901005016922}
     answerRight:
-      textContent: Sorry thats not possible
+      textContent: "\uBBF8\uC548\uD558\uC9C0\uB9CC \uADF8\uAC74 \uBD88\uAC00\uB2A5
+        \uD574."
       textField: {fileID: 114947929046483754}
   isHighPriorityCard: 0
   isDrawable: 1
