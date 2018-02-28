@@ -2,10 +2,20 @@
 using System.Collections;
 using UnityEngine.UI;
 
+/// <summary>
+/// ????
+/// Game -> Music
+/// </summary>
 public class UniToggle : MonoBehaviour {
 
-	public MonoBehaviour targetScript;			//input: Reference the script, which should be enabled/disabled.
-	public bool enabledOnFirstStartup = false;	//input: On first start-up, should the script be enabled or disabled?
+    /// <summary>
+    /// 상황에 따라 활성화되거나 비활성화되어야 하는 스크립트를 연결하기 위한 변수.
+    /// 여기서는 Game -> Music -> MusicPlayer 스크립트를 할당한다.
+    /// 인스펙터에서 집어넣을때 주의할점은 게임씬에서 끌어다 할당하면 안되고, 인스펙터에서 MusicPlayer스크립트를 드래그 해서 할당해야 한다.
+    /// </summary>
+	public MonoBehaviour targetScript;          //input: Reference the script, which should be enabled/disabled.
+
+    public bool enabledOnFirstStartup = false;	//input: On first start-up, should the script be enabled or disabled?
 	public string prefsKey = "onButtonScript";	//input: Key for the save-name for this instance.
 
 	//some optional linkings to this script

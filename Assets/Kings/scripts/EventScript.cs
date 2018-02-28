@@ -70,13 +70,18 @@ public class EventScript : MonoBehaviour {
 	public condition[] conditions;
 
 	[System.Serializable]
-	public class resultModifier{
+	public class resultModifier
+    {
 		public valueDefinitions.values modifier;
 		public float valueAdd = 0f;
 	}
 
-	[System.Serializable]
-	public enum resultTypes{
+    /// <summary>
+    /// 결과 유형.
+    /// </summary>
+	[System.Serializable] // 인스펙터에 노출시키기 위한 어트리뷰트.
+	public enum resultTypes
+    {
 		simple,
 		conditional,
 		randomConditions,
@@ -87,43 +92,58 @@ public class EventScript : MonoBehaviour {
 	public class modifierGroup{
 
 		public resultModifier[] valueChanges;
+
 		[Tooltip("이 길을 택한 경우 스토리를 추가로 취하는 '후속 조치'카드가 있습니까? 비워 둘 수 있습니다.")]
 		public GameObject followUpCard;
 	}
 
 	[System.Serializable]
-	public class result{
+	public class result
+    {
+        /// <summary>
+        /// 결과 유형에 대한 타입을 선택하는 열거형.
+        /// </summary>
 		public resultTypes resultType;
-		[Tooltip("이 결과가 선택되면 수정되는 값은 무엇입니까?")]
+
+        [Tooltip("이 결과가 선택되면 수정되는 값은 무엇입니까?")]
 		public modifierGroup modifiers;
-		[Tooltip("추가 조건에 따라 결과가 두 가지 결과로 나뉠 수 있습니다. 모든 조건이 참이면 'Modifiers True'가 실행됩니다. 조건 중 하나가 실패하면 'Modifiers False'입니다. 예 : 사용자는 그가 경주를하고 싶다고 선택했지만 그의 민첩성은 낮아 결과는 떨어질 것입니다.")]
+
+        [Tooltip("추가 조건에 따라 결과가 두 가지 결과로 나뉠 수 있습니다. 모든 조건이 참이면 'Modifiers True'가 실행됩니다. 조건 중 하나가 실패하면 'Modifiers False'입니다. 예 : 사용자는 그가 경주를하고 싶다고 선택했지만 그의 민첩성은 낮아 결과는 떨어질 것입니다.")]
 		public condition[] conditions;
-		[Tooltip("모든 조건이 충족되는 경우 값 그룹이 변경됩니다.")]
+
+        [Tooltip("모든 조건이 충족되는 경우 값 그룹이 변경됩니다.")]
 		public modifierGroup	modifiersTrue;
-		[Tooltip("조건 중 하나 이상이 실패하면 값 그룹이 변경됩니다.")]
+
+        [Tooltip("조건 중 하나 이상이 실패하면 값 그룹이 변경됩니다.")]
 		public modifierGroup	modifiersFalse;
-		[Tooltip("결과는 여러 결과로 나눌 수 있습니다. 'Random Modifiers'는 미리 정의 할 수 있으며, 결과의 선택은 무작위로 이들 중 하나입니다.")]
+
+        [Tooltip("결과는 여러 결과로 나눌 수 있습니다. 'Random Modifiers'는 미리 정의 할 수 있으며, 결과의 선택은 무작위로 이들 중 하나입니다.")]
 		public modifierGroup[]  randomModifiers;
 	}
 
 	[System.Serializable]
-	public class resultGroup{
-		[Tooltip("사용자가 카드를 왼쪽으로 스 와이프하면 결과 (값의 변경 및 후속 카드)를 정의하십시오.")]
+	public class resultGroup
+    {
+		[Tooltip("사용자가 카드를 왼쪽으로 스와이프하면 결과 (값의 변경 및 후속 카드)를 정의하십시오.")]
 		public result resultLeft;
 
-		[Tooltip("사용자가 카드를 오른쪽으로 스 와이프 한 경우 결과 (값의 변경 및 후속 카드)를 정의하십시오.")]
+		[Tooltip("사용자가 카드를 오른쪽으로 스와이프 한 경우 결과 (값의 변경 및 후속 카드)를 정의하십시오.")]
 		public result resultRight;
 
 		#if ADDITIONAL_CHOICE_0
 		[Tooltip("사용자가 추가 선택 사항을 선택하면 결과 (값의 변경 및 후속 조치 카드)를 정의하십시오.")]
 		public result additional_choice_0;
 		#endif
+
 		#if ADDITIONAL_CHOICE_1
 		[Tooltip("사용자가 추가 선택 사항을 선택하면 결과 (값의 변경 및 후속 조치 카드)를 정의하십시오.")]
 		public result additional_choice_1;
 		#endif
 	}
 
+    /// <summary>
+    /// 인스펙터에 resultGroup 클래스에서 정의된 변수들을 노출하기 위한 변수.
+    /// </summary>
 	public resultGroup Results;
 
     //구성된 텍스트를 텍스트 필드로 번역하고 작성하십시오.
@@ -152,11 +172,13 @@ public class EventScript : MonoBehaviour {
 		computeResult (res);
 		OnSwipeLeft.Invoke ();
 	}
-	/*
-	 * Called by an event from the swipe script. 
-	 * This triggers the computation of the results for swiping RIGHT and afterward the spawning of a new card.
-	 */
-	public void onRightSwipe(){
+
+    /// <summary>
+    /// 스 와이프 스크립트의 이벤트에 의해 호출됩니다.
+    /// 이는 오른쪽으로 스와이프 한 결과와 새로운 카드를 스폰 한 후의 결과 계산을 트리거합니다.
+    /// </summary>
+	public void onRightSwipe()
+    {
 		result res = Results.resultRight;
 		computeResult (res);
 		OnSwipeRight.Invoke ();

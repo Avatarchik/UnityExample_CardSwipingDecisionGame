@@ -7,23 +7,32 @@ using UnityEngine.Events;
 
 
 public class CardStack :  TranslatableContent {
-
-
-
-	[Tooltip("Insert all cards here. The reference to this cards are needed to load/save the cards and to decide, what can be drawn next.")]
-
-	public cardCategory[] allCards;
-
+    
+    /// <summary>
+    /// 카드를 인스펙터에서 등록하기 위한 변수들을 모아놓은 클래스. 
+    /// </summary>
 	[System.Serializable]
 	public class cardCategory
 	{
-		[Tooltip("Group name is just for decoration of the card groups.")]
+		[Tooltip("구분하기 쉽게 배열그룹(요소)이름을 넣어주세요.")]
 		public string groupName;
-		[Tooltip("Pre condition for this group. The conditions of the cards themself are computed with lower priority.")]
+
+		[Tooltip("이 그룹의 사전 조건. 카드 자체의 조건은 낮은 우선 순위로 계산됩니다.")]
 		public EventScript.condition[] subStackCondition;
-		public GameObject[] groupCards;
+
+        /// <summary>
+        /// 미리 만들어둔 카드를 등록하는 배열 변수.
+        /// </summary>
+        public GameObject[] groupCards;
 	}
-	[System.Serializable]
+
+    /// <summary>
+    /// 게임에서 사용할 (미리 만들어둔) 카드를 등록하기 위한 배열. 
+    /// </summary>
+    [Tooltip("여기에 모든 카드를 삽입하십시오. 이 카드에 대한 참조는 카드를 로드 / 저장하고 다음에 그릴 수있는 것을 결정할 때 필요합니다.")]
+    public cardCategory[] allCards;
+
+    [System.Serializable]
 	public class cardIndex
 	{
 		public int groupIndex;
@@ -36,8 +45,11 @@ public class CardStack :  TranslatableContent {
 	{
 		public int[] drawCnt;
 	}
-	[Tooltip("Tracking of number of draws of each card for this game. Categorized like the 'allCards' group")]
-	[ReadOnlyInspector] public drawCnts cardDrawCount;
+
+	[Tooltip("이 게임에 대한 각 카드의 추첨 갯수를 추적합니다. 'allCards'그룹과 같이 분류됩니다.")]
+	[ReadOnlyInspector] // 사용자가 만든 어트리뷰트
+    public drawCnts cardDrawCount;
+
 	//fixing the array-serialization bug with empty arrays for jsonUtility by including it to a serializable class
 	[System.Serializable]
 	public class drawCnts
@@ -45,28 +57,34 @@ public class CardStack :  TranslatableContent {
 		public  cardCount[] cnt;
 	}
 
-	[Tooltip("All cards, which meet the requirements.")]
+	[Tooltip("요구 사항을 충족시키는 모든 카드.")]
 	[ReadOnlyInspector] public List<GameObject> availableCards;
-	[Tooltip("Card, which is defined by previous card and follows next.")]
+	[Tooltip("이전 카드에서 정의한 카드 다음에 오는 카드..")]
 	[ReadOnlyInspector] public GameObject followUpCard;
-	[Tooltip("Cards, which are defined as high priority. They will be drawn before the usual Stack from 'available Cards', but after the 'follow Up' card.")]
+	[Tooltip("높은 우선 순위로 정의 된 카드. 그들은 '사용 가능한 카드'에서 일반적인 스택 전에 그려 지지만 '후속 카드'이후에 그려집니다.")]
 	[ReadOnlyInspector] public List<GameObject> highPriorityCards;
 
-	[Tooltip("The actual spawned card.")]
+	[Tooltip("실제 스폰된 카드.")]
 	[ReadOnlyInspector] public GameObject spawnedCard;
-	[Tooltip("This card prefab will spawn, if nothing else is possible.")]
+	[Tooltip("이 카드 프리팹은 아무것도 가능하지 않으면 스폰합니다.")]
 	public GameObject fallBackCard;
 
 	public static CardStack instance;
 	[System.Serializable] public class mEvent : UnityEvent {}
 
-	[Tooltip("Link the used swipe script here.")]
+    /// <summary>
+    /// Game -> Scripts를 할당
+    /// </summary>
+	[Tooltip("사용한 스와이프 스크립트를 여기에 연결하십시오.")]
 	public Swipe swipe;
 
-	//move enable is used to block or enable the card movement while in menu
-	private bool cardMoveEnabled = true;
-	//the animator for the card (left/right) movement. Each card has its own animator.
-	Animator anim;
+    /// <summary>
+    /// 카드를 움직여도 되는지 여부. true면 카드를 움직여도 되는 상태이다.
+    /// </summary>
+    private bool cardMoveEnabled = true;
+
+    //카드의 애니메이터 (왼쪽 / 오른쪽) 움직임. 각 카드에는 자체 애니메이터가 있습니다.
+    Animator anim;
 
 	//helper script: to determine a random element, where each of them has a propability
 	private RandomElementWithPropability rndCard;
@@ -199,7 +217,7 @@ public class CardStack :  TranslatableContent {
 				}
 			}
 		}
-		Debug.LogError ("Card was not found in stack. Card index couln't be saved.");
+		Debug.LogError ("카드를 스택에서 찾을 수 없습니다. 카드 색인을 저장할 수 없습니다.");
 	}
 
 	//Get the index of an card - gameobject. Returns the group and the sub-index within the group.
@@ -298,9 +316,9 @@ public class CardStack :  TranslatableContent {
 		return cardMoveEnabled;
 	}
 
-	[Tooltip("If the card moves back to the middle: how fast shall it move?")]
+	[Tooltip("만약 카드가 중간으로 돌아가면 : 얼마나 빨리 움직일까?")]
 	public float moveBackSpeed = 0.05f;
-	[Tooltip("If the card moves out of the screen: how fast shall it move?")]
+	[Tooltip("만약 카드가 화면밖으로 나가면 : 얼마나 빨리 움직일까?")]
 	public float moveOutSpeed = 0.05f;
 
 
@@ -365,10 +383,10 @@ public class CardStack :  TranslatableContent {
 		}
 	}
 
-	[Tooltip("Defines the parent of a new spawned card.")]
+	[Tooltip("새로운 스폰된 카드의 부모를 정의합니다.")]
 	public Transform CardParent;
 
-	[Tooltip("Until which distance should the card be moved out of the screen, until a new card is spawned?")]
+	[Tooltip("새로운 카드가 스폰될 때까지 카드를 화면에서 어느 거리까지 이동해야합니까?")]
 	public float moveOutMax = 20f;
 	IEnumerator moveCardOut(){
 
@@ -555,18 +573,27 @@ public class CardStack :  TranslatableContent {
 		}
 	}
 
-	/*
-	 *	Execution of an swipe to the right. This is called by an event in the inspector of the swipe script. 
-	 */
-	public void rightSwipe(){
-		if (cardMoveEnabled == true) {
+    /// <summary>
+    /// 카드를 오른쪽으로 스와이프하는 기능을 실행한다.
+    /// 본 메서드는 'Swipe'클래스에서 usualSwipes.swipeRight에 유니티 이벤트로 인스펙터에서 등록해서 사용하는 메서드이다. 
+    /// </summary>
+    public void rightSwipe()
+    {
+        /// 카드를 움직일 수 있는 상태이면
+		if (cardMoveEnabled == true)
+        {
 			EventScript es = spawnedCard.GetComponent<EventScript> ();
-			if (es != null) {
-				es.onRightSwipe (); //call the eventscript on the card for stat-changes, linking of follow up cards, etc.
-			} else {
-				Debug.LogError ("Event script missing on card");
+
+            if (es != null)
+            {
+				es.onRightSwipe (); //통계 변경, 후속 카드 연결 등을 위해 카드의 이벤트 스크립트를 호출하십시오.
+            }
+            else
+            {
+				Debug.LogError ("카드의 usualSwipes.swipeRight에 이벤트 스크립트가 누락되었습니다. CardStack.rightSwipe()를 유니티 이벤트로 등록해주세요.");
 			}
-			onCardSwipe.Invoke ();
+
+            onCardSwipe.Invoke ();
 			nextCard ();
 		}
 	}
@@ -627,7 +654,7 @@ public class CardStack :  TranslatableContent {
 		}
 
 		if (allDuplicatesCounter == 0) {
-			Debug.Log ("No duplicate cards in 'allCards' found.");
+			Debug.Log ("'allCards'에 중복 카드가 없습니다.");
 		} else {
 			Debug.LogError (allDuplicatesCounter.ToString () + " duplicate cards in 'allCards' found. Counting of cards and load/save of actual card could fail.");
 		}
