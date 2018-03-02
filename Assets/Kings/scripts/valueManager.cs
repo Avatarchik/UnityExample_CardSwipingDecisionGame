@@ -22,8 +22,9 @@ public class valueManager : MonoBehaviour {
 		awaked = true;
 	}
 
-	[Tooltip("All value scripts in the scene.")]
-	[HideInInspector] public List <ValueScript> values;
+	[Tooltip("장면의 모든 값 리스트")]
+	[HideInInspector]
+    public List <ValueScript> values;
 
 	//access for value scripts to register in the manager
 	public void registerValueScript(ValueScript vs){
@@ -148,11 +149,14 @@ public class valueManager : MonoBehaviour {
 		}
 	}
 
-	//setRandomValues randomizes the values of all 'ValueScript' within the Range defined at the script.
-	//This is typically called at the start of the game to enable different experiences 
-	//and to reset the values to a defined state.
-	public void setRandomValues(){
-		foreach (ValueScript vs in values) {
+    /// <summary>
+    /// setRandomValues는 스크립트에서 정의 된 Range 내의 모든 'ValueScript'값을 무작위로 지정합니다.
+    /// 이것은 일반적으로 게임을 시작할 때 다른 경험을 가능하게하고 값을 정의 된 상태로 재설정하기 위해 호출됩니다.
+    /// </summary>
+	public void setRandomValues()
+    {
+		foreach (ValueScript vs in values)
+        {
 			vs.newGameStart ();
 		}
 	}

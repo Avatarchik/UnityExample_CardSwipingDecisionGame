@@ -392,7 +392,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Army
+  m_Text: "Army (\uAD70\uC778)"
 --- !u!114 &114090687538468844
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -458,7 +458,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Achievements
+  m_Text: "Achievements (\uC5C5\uC801)"
 --- !u!114 &114192221884010354
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -574,7 +574,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Money
+  m_Text: "Money (\uB3C8)"
 --- !u!114 &114327037171832416
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -717,7 +717,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: People
+  m_Text: "People (\uC0AC\uB78C)"
 --- !u!114 &114469428000243644
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -837,6 +837,16 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: EventScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  OnSwipeLeft:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: EventScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  OnSwipeRight:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: EventScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!114 &114568557901894672
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -869,7 +879,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: SCORE OVERVIEW
+  m_Text: "SCORE OVERVIEW (\uC810\uC218)"
 --- !u!114 &114691296766683156
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -929,7 +939,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Years reigned
+  m_Text: "Years reigned (\uD1B5\uCE58\uAE30\uAC04)"
 --- !u!114 &114760913674911482
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1052,7 +1062,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: YOUR SCORE
+  m_Text: "YOUR SCORE (\uC2A4\uCF54\uC5B4)"
 --- !u!114 &114962341734003688
 MonoBehaviour:
   m_ObjectHideFlags: 1

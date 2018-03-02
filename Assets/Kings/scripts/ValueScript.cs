@@ -5,22 +5,55 @@ using UnityEngine.UI;
 using UnityEngine.Events;
 
 
+/// <summary>
+/// ??????
+/// Game -> Values -> adreadyValue
+/// Game -> Values -> Army
+/// Game -> Values -> AuthorityValue
+/// Game -> Values -> CharimaValue
+/// Game -> Values -> Country
+/// Game -> Values -> CreativityValue
+/// Game -> Values -> GamesPlayedValue
+/// Game -> Values -> Gender
+/// Game -> Values -> HealthValue 
+/// Game -> Values -> IntelligenceValue
+/// Game -> Values -> LookValue
+/// Game -> Values -> LuckValue
+/// Game -> Values -> MarriageValue
+/// Game -> Values -> MarriedValue
+/// Game -> Values -> Money
+/// Game -> Values -> Name
+/// Game -> Values -> People
+/// Game -> Values -> Religion
+/// Game -> Values -> Surname
+/// Game -> Values -> Years
+/// </summary>
 public class ValueScript : MonoBehaviour {
 
-	[Tooltip("Define your type for the value here. Per value script only one value type is allowed.")]
+    /// <summary>
+    /// 게임에서 사용하는 구분 명칭 값의 유형. 성별, 이름,카리스마, 돈등 값의 유형.
+    /// 인스펙터에서 어떤 값 유형인지 지정한다.
+    /// </summary>
+	[Tooltip("여기에 값의 유형을 정의하십시오. 값 스크립트 당 하나의 값 유형 만 허용됩니다.")]
 	public valueDefinitions.values valueType;
 
 	private string identifier = "valuename";
-	[ReadOnlyInspector]public float value = 0f;
+
+	[ReadOnlyInspector]
+    public float value = 0f;
 
 	public bool debugValueChanges = false;
 
-	void Awake(){
+	void Awake()
+    {
+        /// 인스펙터에서 지정한 밸류타입을 할당하고.
 		identifier = valueType.ToString ();
+
 		loadValue();
 	}
 
-	void Start(){
+	void Start()
+    {
 		valueManager.instance.registerValueScript (this);
 	}
 
@@ -166,7 +199,8 @@ public class ValueScript : MonoBehaviour {
 		return value;
 	}
 
-	void loadValue(){
+	void loadValue()
+    {
 		if (SecurePlayerPrefs.HasKey (identifier)) {
 			value = SecurePlayerPrefs.GetFloat (identifier);
 		} else {

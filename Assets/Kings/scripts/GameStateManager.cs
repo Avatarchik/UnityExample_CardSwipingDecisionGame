@@ -4,15 +4,29 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// ?????
+/// Game -> Scripts
+/// </summary>
 public class GameStateManager : MonoBehaviour {
 
-	[System.Serializable] public class mEvent : UnityEvent {}
+	[System.Serializable]
+    public class mEvent : UnityEvent {}
 
-	//count the swipes to create the event for the first swipe in game for switching the menu
-	[HideInInspector] public int swipeCounter = 0;
+    /// <summary>
+    /// 메뉴를 전환하기 위해 스와이프를 계산하여 게임에서 첫번째 스와이프 이벤트를 만듭니다.
+    /// </summary>
+    [HideInInspector]
+    public int swipeCounter = 0;
 
+    /// <summary>
+    /// 나 자신 인스턴스.
+    /// </summary>
 	public static GameStateManager instance;
 
+    /// <summary>
+    /// 게임 상태 열거형. 평소, 게임중, 게임오버.
+    /// </summary>
 	public enum Gamestate
 	{
 		idle,
@@ -20,47 +34,58 @@ public class GameStateManager : MonoBehaviour {
 		gameOver
 	}
 
-	[Tooltip("Actual state of the game.")]
-	[ReadOnlyInspector] public Gamestate gamestate = Gamestate.idle;
+	[Tooltip("게임의 실제 상태")]
+	[ReadOnlyInspector]
+    public Gamestate gamestate = Gamestate.idle;
 
-	void loadGameState(){
+    /// <summary>
+    /// 현재 게임상태를 플레이어프랩스에서 꺼내오는 메서드.
+    /// </summary>
+	void loadGameState()
+    {
 		gamestate  = (Gamestate)PlayerPrefs.GetInt ("GameState") ;
 	}
 
-	void saveGameState(){
+    /// <summary>
+    /// 현재 게임상태를 플레이어프랩스에 저장하는 메서드.
+    /// </summary>
+	void saveGameState()
+    {
 		PlayerPrefs.SetInt("GameState",(int)gamestate);
 	}
 
-
-	void Awake(){
+	void Awake()
+    {
 		instance = this;
+        /// 현재 게임 상태를 플레이어프랩스에서 꺼내온다.
 		loadGameState ();
 	}
 
-	// Use this for initialization
 	void Start () {
+
 		StartCoroutine (OneFrameDelayStartup ());
 	}
 
-	IEnumerator OneFrameDelayStartup(){
-
-		//because of Awake-instance linking and registering within startup,
-		//we need at least one frame delay to start the game.
-
-		yield return null;
+	IEnumerator OneFrameDelayStartup()
+    {
+        /// 시작할 때 Awake-instance 링크 및 등록 때문에 게임을 시작하려면 최소한 한 프레임 지연이 필요합니다.
+        yield return null;
 		yield return null;
 		GameStartup ();
 	}
 
 
-	void GameStartup(){
-		//if we start with a gameover from the last game the game goes to idle.
-		if (gamestate == Gamestate.gameOver) {
+	void GameStartup()
+    {
+        /// 만약 게임상태가 게임오버 상태라면, 게임상태를 평소상태로 바꿔라.
+		if (gamestate == Gamestate.gameOver)
+        {
 			gamestate = Gamestate.idle;
 		}
 
-		//if we are idle we trigger the start of a new game
-		if (gamestate == Gamestate.idle) {
+		/// 만약 게임상태가 if we are idle we trigger the start of a new game
+		if (gamestate == Gamestate.idle)
+        {
 			StartGame ();
 		}
 	}
@@ -81,7 +106,12 @@ public class GameStateManager : MonoBehaviour {
 		SceneManager.LoadScene (currentSceneName);						//reload the scene for a clean startup of the game
 	}
 
+    /// <summary>
+    /// 새로운 게임을 시작하기 위한 유니티 이벤트.
+    /// 인스펙터에서 Game -> Values에 있는 스크립트 중 valueManager.setRandomValues를 연결한다.
+    /// </summary>
 	public mEvent OnNewGame;
+
 	public mEvent OnFirstSwipe;
 
 	public void swipe(){
@@ -93,11 +123,15 @@ public class GameStateManager : MonoBehaviour {
 	}
 
 
-	void StartGame(){
+	void StartGame()
+    {
 		swipeCounter = 0;
-		if (gamestate == Gamestate.idle) {
 
-			//do game start preparations
+        /// 게임상태가 평소상태이면
+		if (gamestate == Gamestate.idle)
+        {
+
+			/// 게임시작준비를 한다.
 			OnNewGame.Invoke();
 
 			CountryNameGenerator.instance.actualizeTexts (true);

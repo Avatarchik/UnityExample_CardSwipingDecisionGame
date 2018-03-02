@@ -13,7 +13,8 @@ public class scoreCalculator : MonoBehaviour {
 	public static scoreCalculator instance;
 
 	[System.Serializable]
-	public class scoreRelevantPair{
+	public class scoreRelevantPair
+    {
 		public valueDefinitions.values valueType;
 		public float multiplier;
 	}

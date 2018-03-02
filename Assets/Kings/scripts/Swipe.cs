@@ -91,7 +91,12 @@ public class Swipe : MonoBehaviour {
     /// </summary>
 	Vector3 swipeVector = Vector3.zero;
 
-	public Vector2 getSwipeVector(){
+    /// <summary>
+    /// ???
+    /// </summary>
+    /// <returns></returns>
+	public Vector2 getSwipeVector()
+    {
 		return swipeVector;
 	}
 
@@ -117,7 +122,8 @@ public class Swipe : MonoBehaviour {
     [ReadOnlyInspector] // 사용자가 만든 어트리뷰트. 인스펙터에 노출된 변수를 볼수는 있는데, 인스펙터에서 수정할수는 없게 하는 기능
     public float actualSwipeDistance = 0f;
 
-	public Vector2 getScaledSwipeVector(){
+	public Vector2 getScaledSwipeVector()
+    {
 		Vector2 retVal = Vector2.zero;
 		retVal.x = swipeVector.x * swipeScale.x;
 		retVal.y = swipeVector.y * swipeScale.y;
@@ -180,17 +186,23 @@ public class Swipe : MonoBehaviour {
 		lastPosition = startPosition;
 	}
 
-	void onRelease(){
-
+    /// <summary>
+    /// 사용자가 게임을 진행하기 위해 카드를 좌우로 넘기거나, 옵션을 보는 행위를 할때 실행하는 명령들. 
+    /// </summary>
+	void onRelease()
+    {
         /// 현재 마우스 커서 위치를 스톱위치에 할당한다.
 		stopPosition = Input.mousePosition;
 
-        ///
+        /// 사용자가 상하좌우 스와이트를 했을때 실행할 명령들을 실행.
 		processSwipe ();
 	}
 
-
-	void processSwipe(){
+    /// <summary>
+    /// 사용자가 상하좌우 스와이프를 했을때 실행할 명령들 모음
+    /// </summary>
+	void processSwipe()
+    {
         
         /// 사용자가 카드를 좌우로 넘기는 중이라면
 		if (Mathf.Abs (swipeVector.x) > Mathf.Abs (swipeVector.y))
@@ -229,7 +241,7 @@ public class Swipe : MonoBehaviour {
 			}
 		}
 	
-		//after swipe: reset the positions to zeros
+		/// 스와이프 한 다음 : 위치를 0으로 재설정한다.
 		startPosition = stopPosition = Vector3.zero;
 	}
 

@@ -92,7 +92,7 @@ public class MusicPlayer : MonoBehaviour {
         /// 오디오소스 컴포넌트에 재생할 오디오클립을 할당한다.
 		mainAudio.clip = _audioClips [actualIndex];
 
-        /// ??? 코루틴을 실행
+        /// 코루틴을 실행
 		StartCoroutine (multimediaTimer ());
 
         /// 현재 재생중인 오디오클립의 길이(재생시간)를 초로 환산해서 할당
@@ -110,7 +110,7 @@ public class MusicPlayer : MonoBehaviour {
 	}
 
     /// <summary>
-    /// ??????
+    /// 사운드를 반복재생하는 것과 반복재생하지 않을 경우의 실행할 명령들.
     /// </summary>
     /// <returns></returns>
 	IEnumerator multimediaTimer()
@@ -131,31 +131,33 @@ public class MusicPlayer : MonoBehaviour {
 			if(loopSong == false)
             {
                 /// 설정한 시간보다 노래 남은 시간이 짧은 경우 다음노래(또는 반복재생)로 넘어간다.
-                if(songDuration < fadeDuration)
+                if (songDuration < fadeDuration)
                 {
                     nextListedSong();
-                    
+
                     /// 오디오클립 자체가 설정한 시간보다 짧으면 오작동할수 있으니 로그 메시지뜨게 하자.
                     if (songDuration <= fadeDuration)
                     {
                         Debug.LogWarning("오디오 클립이 페이드 시간보다 짧으면 이상한 사운드 동작이 발생할 수 있습니다.");
                     }
+                }
 			}
-			}
-            else
+            else /// 사운드를 반복재생하면
             {
-				//no pre-time for fading out, if the song replays. This can't be controlled with the volume-Slider.
-				if(songDuration<0f){
-					//nextListedSong();
-										
-					//if(songDuration <=fadeDuration){
-					//	Debug.LogWarning("An audioclip  is shorter than the fading time, this can cause strange sound behavior.");
-					//}
-				}
-			}
+                //no pre-time for fading out, if the song replays. This can't be controlled with the volume-Slider.
+                if (songDuration < 0f)
+                {
+                    //nextListedSong();
+
+                    //if(songDuration <=fadeDuration){
+                    //	Debug.LogWarning("오디오 클립이 페이드 시간보다 짧으면 이상한 사운드 동작이 발생할 수 있습니다.");
+                    //}
+                }
+            }
 		
 			last = now;
 
+            ///0.1초 기다린다.
 			yield return new WaitForSeconds(0.1f); //this is not accurate. 
 		}
 

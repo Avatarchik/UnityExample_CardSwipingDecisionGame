@@ -848,7 +848,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Intelligence
+  m_Text: "Intelligence (\uC9C0\uC131)"
 --- !u!222 &69944050
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1299,7 +1299,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Highscore
+  m_Text: "Highscore (\uCD5C\uACE0\uAE30\uB85D)"
 --- !u!222 &157534759
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1469,7 +1469,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Marriage
+  m_Text: "Marriage (\uACB0\uD63C)"
 --- !u!222 &204676799
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5411,7 +5411,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Games Played
+  m_Text: "Games Played (\uACBD\uAE30 \uC218)"
 --- !u!222 &722640551
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5576,7 +5576,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Longest Reign
+  m_Text: "Longest Reign (\uAC00\uC7A5 \uAE34 \uD1B5\uCE58)"
 --- !u!222 &727981365
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5818,7 +5818,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Authority
+  m_Text: "Authority (\uAD8C\uC704)"
 --- !u!222 &733178994
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6743,7 +6743,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Health
+  m_Text: "Health (\uAC74\uAC15)"
 --- !u!222 &828984784
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8603,7 +8603,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -0.00000035494568}
   m_SizeDelta: {x: 0, y: 200}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1138150976
@@ -8863,7 +8863,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Achievements
+  m_Text: "Achievements (\uC5C5\uC801)"
 --- !u!222 &1167172126
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9110,8 +9110,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-      m_TypeName: Swipe+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
+      m_TypeName: "Swipe+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null"
     swipeDown:
       m_PersistentCalls:
         m_Calls:
@@ -9148,8 +9148,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-      m_TypeName: Swipe+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
+      m_TypeName: "Swipe+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null"
     swipeLeft:
       m_PersistentCalls:
         m_Calls:
@@ -9175,8 +9175,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-      m_TypeName: Swipe+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
+      m_TypeName: "Swipe+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null"
     swipeRight:
       m_PersistentCalls:
         m_Calls:
@@ -9202,8 +9202,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-      m_TypeName: Swipe+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
+      m_TypeName: "Swipe+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null"
   swipeScale: {x: 20, y: 0}
   pressed: 0
   actualSwipeDistance: 0
@@ -9904,7 +9904,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Charisma
+  m_Text: "Charisma (\uCE74\uB9AC\uC2A4\uB9C8)"
 --- !u!222 &1280651684
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10085,7 +10085,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Luck
+  m_Text: "Luck (\uD589\uC6B4)"
 --- !u!222 &1322122686
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11290,8 +11290,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 469368409}
   m_HandleRect: {fileID: 469368408}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 1
+  m_Value: 0
+  m_Size: 0.9999999
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -11468,7 +11468,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Creativity
+  m_Text: "Creativity (\uCC3D\uC758\uB825)"
 --- !u!222 &1532715689
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13266,7 +13266,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Shortest Reign
+  m_Text: "Shortest Reign (\uCD5C\uD558\uC704 \uD1B5\uCE58)"
 --- !u!222 &1701479455
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13576,19 +13576,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gender: 0
   Countries:
-  - listEntry: England
+  - listEntry: "England(\uC601\uAD6D)"
     nameComb:
-    - name: George
+    - name: "George(\uC870\uC9C0)"
       gender: 0
-    - name: Harry
+    - name: "Harry(\uD574\uB9AC)"
       gender: 0
-    - name: Charles
+    - name: "Charles(\uCE74\uB97C\uB85C\uC2A4)"
       gender: 0
-    - name: Elizabeth
+    - name: "Elizabeth(\uC568\uB9AC\uC790\uBCA0\uC2A4)"
       gender: 1
-    - name: Kate
+    - name: "Kate(\uCF00\uC774\uD2B8)"
       gender: 1
-    - name: Diana
+    - name: "Diana(\uB2E4\uC774\uC544\uB098)"
       gender: 1
     surname:
     - the Ruler
@@ -13597,19 +13597,19 @@ MonoBehaviour:
     - the Strong
     - I
     - IV
-  - listEntry: France
+  - listEntry: "France(\uD504\uB791\uC2A4)"
     nameComb:
-    - name: Louis
+    - name: "Louis(\uB8E8\uC774)"
       gender: 0
-    - name: Napoleon
+    - name: "Napoleon(\uB098\uD3F4\uB808\uC639)"
       gender: 0
-    - name: Jacques
+    - name: "Jacques(\uC790\uD06C)"
       gender: 0
-    - name: Catherine
+    - name: "Catherine(\uCE90\uC11C\uB9B0)"
       gender: 1
-    - name: Eleanor
+    - name: "Eleanor(\uC5D8\uB808\uB178\uC5B4)"
       gender: 1
-    - name: Maria
+    - name: "Maria(\uB9C8\uB9AC\uC544)"
       gender: 1
     surname:
     - the Great
@@ -13618,19 +13618,19 @@ MonoBehaviour:
     - the Skinny
     - II
     - VI
-  - listEntry: Fantasialand
+  - listEntry: "Fantasialand(\uAC00\uC0C1\uB098\uB77C)"
     nameComb:
-    - name: Jimmy
+    - name: "Jimmy(\uC9C0\uBBF8)"
       gender: 0
-    - name: Micky
+    - name: "Micky(\uBBF8\uD0A4)"
       gender: 0
-    - name: Timmy
+    - name: "Timmy(\uD2F0\uBBF8)"
       gender: 0
-    - name: Nicky
+    - name: "Nicky(\uB2C9\uD0A4)"
       gender: 1
-    - name: Pinky
+    - name: "Pinky(\uD551\uD0A4)"
       gender: 1
-    - name: Kitty
+    - name: "Kitty(\uD0A4\uD53C)"
       gender: 1
     surname:
     - the Funny
@@ -14307,7 +14307,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Look
+  m_Text: "Look (\uBCF4\uB2E4)"
 --- !u!222 &1839274611
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15788,7 +15788,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Best Score
+  m_Text: "Best Score (\uCD5C\uACE0 \uC810\uC218)"
 --- !u!222 &2122963046
 CanvasRenderer:
   m_ObjectHideFlags: 0

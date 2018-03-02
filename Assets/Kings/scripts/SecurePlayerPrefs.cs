@@ -1,10 +1,13 @@
-﻿
-#define SECURED
+﻿#define SECURED // 사용자가 정의한 기호.
 
 using UnityEngine;
 using System.Security.Cryptography;
 using System.Text;
 
+/// <summary>
+/// ??????
+/// 
+/// </summary>
 public static class SecurePlayerPrefs
 {
 	public static void SetString(string key, string value)
@@ -136,15 +139,17 @@ public static class SecurePlayerPrefs
 		return outSB.ToString ();
 	}
 
-	/// <summary>
-	/// Generates an MD5 hash of the given text.
-	/// WARNING. Not safe for storing passwords
-	/// </summary>
-	/// <returns>MD5 Hashed string</returns>
-	/// <param name="text">The text to hash</param>
-	static string GenerateMD5(string text)
+    /// <summary>
+    /// 지정된 텍스트의 MD5 해시를 생성합니다.
+    /// 경고: 비밀번호 저장방식으로는 안전하지 않습니다.
+    /// </summary>
+    /// <returns>MD5 해시 문자열</returns>
+    /// <param name="text">The text to hash</param>
+    static string GenerateMD5(string text)
 	{
+        /// 씨샵에서 제공하는 MD5 해시 알고리즘 타입의 해시 객체를 할당한다.
 		var md5 = MD5.Create();
+
 		byte[] inputBytes = Encoding.UTF8.GetBytes(text);
 		byte[] hash = md5.ComputeHash(inputBytes);
 
