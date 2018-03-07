@@ -4,29 +4,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-/*
- * Country Name Generator generates a random given name - sur name combination,
- * depending on a random country. This script was mainly written for the game
- * 'Swipe my life' to give the player an identity. The given names are in combination
- * with a gender (only two genders, no apache helicopters :( )
- * To show the gender pictogram the script 'Gender Generator' is used in addition.
- * The randomization of the values are depending on value scripts to save the 
- * combinations.
- */
-
+/// <summary>
+/// 국가 이름 생성기는 무작위 국가에 따라 임의의 주어진 이름과 성을 조합하여 생성합니다. 이 스크립트는 주로 게임용으로 작성되었습니다.
+/// 플레이어에게 정체성을 부여하기 위해 'Swipe my life'. 주어진 이름은 성별(두개의 성별)과 결합되어 있습니다.성별 그림을 보려면 'Gender Generator'스크립트를 추가로 사용하십시오.
+/// 값의 무작위 화는 값 스크립트에 따라 조합을 저장합니다.
+/// GAme -> Values 
+/// </summary>
 public class CountryNameGenerator : TranslatableContent {
 
 	public static CountryNameGenerator instance;
 
-	//Definition of the genders. If you want an apache helicopter, add it here.
-	[System.Serializable]
-	public enum genderTypes{
+	/// <summary>
+    /// 성별을 정의한 열거형. 남자, 여자 성별이 있음.
+    /// </summary>
+	[System.Serializable] // 인스펙터에 노출하기 위한 직렬화
+	public enum genderTypes
+    {
 		male,
 		female
 	}
 
-	[Tooltip("The actual gender of the player identity.")]
-	[ReadOnlyInspector]public genderTypes gender; 
+	[Tooltip("플레이의 실제 성별입니다.")]
+	[ReadOnlyInspector]
+    public genderTypes gender; 
 
 	void Start(){
 		clearUI ();
@@ -62,43 +62,83 @@ public class CountryNameGenerator : TranslatableContent {
 		instance = this;
 	}
 
-	[Tooltip("List of possible countries and country dependant names.")]
+    /// <summary>
+    /// todo. 게임에 사용할 국가 숫자와 왕의 이름,성별 그리고 성씨에 대한 정보를 담을 변수를 정의한 클래스. 
+    /// </summary>
+    [System.Serializable] // 인스펙터에 노출하기 위한 직렬화 어트리뷰트
+    public class subStringList
+    {
+        /// <summary>
+        /// 게임에서 랜덤으로 정해지는 국가명.
+        /// </summary>
+        [Tooltip("랜덤으로 정해지는 국가입니다.")]
+        public string listEntry;
+
+        [Tooltip("주어진 이름과 성별의 가능한 조합 목록. 목록의 길이는 모든 국가에서 동일해야합니다.")]
+        public nameGenderLink[] nameComb;
+
+        [Tooltip("성씨의 가능한 조합 목록. 목록의 길이는 모든 국가에서 동일해야 합니다.")]
+        public string[] surname;
+    }
+
+    /// <summary>
+    /// 게임에서 사용할 국가와 왕의 이름, 성별 그리고 성씨를 인스펙터에서 입력하기 위한 변수.
+    /// 본 게임에서는 인스펙터에서 3개 국가를 만들고, 왕의 이름과 
+    /// </summary>
+    [Tooltip("가능한 국가 및 국가별 이름 목록")]
 	public subStringList[] Countries;
 
-	[Tooltip("Text field to display the country.")]
+    /// <summary>
+    /// 게임 상단에 국가를 표시하는 UGUI 텍스트 영역.
+    /// Game -> StatsCanvas -> PlayerPanel -> CountryText
+    /// </summary>
+	[Tooltip("국가를 표시하는 텍스트 필드할당하세요.")]
 	public Text countryText;
-	[Tooltip("Text field to display the name.")]
+
+    /// <summary>
+    /// 게임 상단에 이름을 표시하는 UGUI 텍스트 영역.
+    /// Game -> StatsCanvas -> PlayerPanel -> PlayerNameText
+    /// </summary>
+	[Tooltip("이름을 표시하는 텍스트 필드를 할당하세요.")]
 	public Text nameText;
 
-	[Tooltip("Value type to define the country.")]
+    /// <summary>
+    /// ???? 인스펙터에서 드롭다운 목록에서 열거형으로 정의한 목록 중 Country를 선택.
+    /// </summary>
+	[Tooltip("국가를 정의하는 값 유형입니다.")]
 	public valueDefinitions.values vs_type_country;
+
 	ValueScript vs_country;
-	[Tooltip("Value type to define the given name.")]
+
+    /// <summary>
+    /// ???? 인스펙터에서 드롭다운 목록에서 열거형으로 정의한 목록 중 Name를 선택.
+    /// </summary>
+	[Tooltip("지정된 이름을 정의하는 값 유형입니다.")]
 	public valueDefinitions.values vs_type_givenName;
+
 	ValueScript vs_name;
-	[Tooltip("Value type to define the surname.")]
+
+    /// <summary>
+    /// ????? 인스펙터에서 드롭다운 목록에서 열거형으로 정의한 목록 중 Surname를 선택.
+    /// </summary>
+    [Tooltip("성씨를 정의하는 값 유형입니다.")]
 	public valueDefinitions.values vs_type_surname;
-	ValueScript vs_surname;
-	[Tooltip("Values type, which holds the gender. This value of the script is defined by 'Country Name Generator', not otherwise.")]
+
+    ValueScript vs_surname;
+
+    /// <summary>
+    /// ??? 인스펙터에서 드롭다운 목록에서 열거형으로 정의한 목록 중 Gender를 선택.
+    /// </summary>
+    [Tooltip("성별을 포함하는 값 유형입니다. 이 스크립트의 값은 'Country Name Generator'에 의해 정의되며, 그렇지 않은 경우는 정의되지 않습니다.")]
 	public valueDefinitions.values vs_type_gender;
-	ValueScript vs_gender;
+
+    ValueScript vs_gender;
 
 	[System.Serializable]
 	public class nameGenderLink{
 		public string name;
 		public genderTypes gender;
 	}
-
-	[System.Serializable]
-	public class subStringList{
-		[Tooltip("Country of the random player identity.")]
-		public string listEntry;
-		[Tooltip("List of possible combinations of given name and gender. The lenght of the list should be the same for every country.")]
-		public nameGenderLink[] nameComb;
-		[Tooltip("List of possible combinations of surnames. The lenght of the list should be the same for every country.")]
-		public string[] surname;
-	}
-
 
 	/*
 	 * Actualize the text fields with the name and country.

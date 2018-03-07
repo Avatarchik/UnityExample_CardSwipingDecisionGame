@@ -11,11 +11,15 @@ using System;
 /// </summary>
 public class GlobalMessageEventManager : MonoBehaviour {
 
+    /// <summary>
+    /// GlobalMessageEventManager 클래스의 인스턴스.
+    /// </summary>
 	public static GlobalMessageEventManager instance;
 
 	public List<GlobalMessageEventReceiver> receivers;
 
-	void Awake(){
+	void Awake()
+    {
 		buildAwake ();
 	}
 

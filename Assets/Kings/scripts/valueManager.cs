@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-/*
- * The valueManager collects all the values of the game. 
- * 
- * Value Scripts are accessing the manager at their startup and register here, 
- * no manual linking is neccessary.
- */
+/// <summary>
+/// valueManager 클래스는 게임의 모든 값을 수집합니다.
+/// valueManager 클래스는 시작 시 관리자에 액세스하고 여기에 등록하며, 수종 연결은 필요하지 않습니다.
+/// Game - Values
+/// </summary>
 public class valueManager : MonoBehaviour {
 
 	//create a static accessable instance.
