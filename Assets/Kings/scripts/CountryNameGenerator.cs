@@ -17,18 +17,261 @@ public class CountryNameGenerator : TranslatableContent {
 	/// <summary>
     /// 성별을 정의한 열거형. 남자, 여자 성별이 있음.
     /// </summary>
-	[System.Serializable] // 인스펙터에 노출하기 위한 직렬화
+	[System.Serializable] /// 인스펙터에 노출하기 위한 직렬화
 	public enum genderTypes
     {
 		male,
 		female
 	}
 
+    /// <summary>
+    /// ??????
+    /// </summary>
 	[Tooltip("플레이의 실제 성별입니다.")]
-	[ReadOnlyInspector]
-    public genderTypes gender; 
+	[ReadOnlyInspector] /// 인스펙터에서 읽기 전용으로 프로그래머가 만든 애트리뷰트
+    public genderTypes gender;
 
-	void Start(){
+    /// <summary>
+    /// 게임에 사용할 국가 숫자와 왕의 이름,성별 그리고 별칭에 대한 정보를 담을 변수를 정의한 클래스. 
+    /// </summary>
+    [System.Serializable] /// 인스펙터에 노출하기 위한 직렬화 애트리뷰트
+    public class subStringList
+    {
+        /// <summary>
+        /// 게임이 시작하면 랜덤으로 정해지는 국가명.
+        /// 인스펙터에서 미리 국가 이름을 넣어둔다.
+        /// </summary>
+        [Tooltip("게임시작시 랜덤으로 정해지는 국가명을 미리 등록합니다.")]
+        public string listEntry;
+
+        /// <summary>
+        /// 게임이 시작하면 랜덤으로 정해지는 왕의 이름과 성별.
+        /// 인스펙터에서 미리 해당국가에 맞는 왕의 이름과 성별을 넣어둔다.
+        /// </summary>
+        [Tooltip("게임시작시 랜덤으로 정해지는 이름과 성별의 가능한 조합 목록을 미리 등록합니다.")]
+        public nameGenderLink[] nameComb;
+
+        /// <summary>
+        /// 게임이 시작하면 랜덤으로 정해지는 왕의 별칭(수식어).
+        /// 인스펙터에서 미리 해당국가에 맞는 왕의 성씨를 넣어둔다.
+        /// </summary>
+        [Tooltip("게임시작시 랜덤으로 정해지는 왕의 별칭의 가능한 조합 목록을 미리 등록합니다.")]
+        public string[] surname;
+    }
+
+    /// <summary>
+    /// 게임에서 사용할 국가와 해당 국가에 맞는 왕의 이름, 성별 그리고 성씨를 인스펙터에서 입력하기 위한 변수.
+    /// 본 게임에서는 인스펙터에서 게임시작시 랜덤으로 배정되는 3개 국가를 만들고, 왕의 이름과 성별, 그리고 별칭 미리 텍스트로 프로그래머가 입력해놓는다.
+    /// </summary>
+    [Tooltip("가능한 국가 및 국가별 왕의 이름과 성별 목록")]
+    public subStringList[] Countries;
+
+    /// <summary>
+    /// 게임 상단에 국가를 표시하는 UGUI 텍스트 영역.
+    /// Game -> StatsCanvas -> PlayerPanel -> CountryText
+    /// </summary>
+	[Tooltip("게임씬의 UGUI에서 국가를 표시하는 텍스트 필드할당하세요.")]
+    public Text countryText;
+
+    /// <summary>
+    /// 게임 상단에 왕의 이름과 별칭을 표시하는 UGUI 텍스트 영역.
+    /// Game -> StatsCanvas -> PlayerPanel -> PlayerNameText
+    /// </summary>
+	[Tooltip("게임씬의 UGUI에서 왕의 이름과 별칭을 표시하는 텍스트 필드를 할당하세요.")]
+    public Text nameText;
+
+    /// <summary>
+    /// ???? 인스펙터에서 드롭다운 목록에서 열거형으로 정의한 목록 중 Country를 선택.
+    /// </summary>
+	[Tooltip("국가를 정의하는 값 유형입니다.")]
+    public valueDefinitions.values vs_type_country;
+
+    ValueScript vs_country;
+
+    /// <summary>
+    /// ???? 인스펙터에서 드롭다운 목록에서 열거형으로 정의한 목록 중 Name를 선택.
+    /// </summary>
+	[Tooltip("지정된 이름을 정의하는 값 유형입니다.")]
+    public valueDefinitions.values vs_type_givenName;
+
+    ValueScript vs_name;
+
+    /// <summary>
+    /// ????? 인스펙터에서 드롭다운 목록에서 열거형으로 정의한 목록 중 Surname를 선택.
+    /// </summary>
+    [Tooltip("성씨를 정의하는 값 유형입니다.")]
+    public valueDefinitions.values vs_type_surname;
+
+    ValueScript vs_surname;
+
+    /// <summary>
+    /// ??? 인스펙터에서 드롭다운 목록에서 열거형으로 정의한 목록 중 Gender를 선택.
+    /// </summary>
+    [Tooltip("성별을 포함하는 값 유형입니다. 이 스크립트의 값은 'Country Name Generator'에 의해 정의되며, 그렇지 않은 경우는 정의되지 않습니다.")]
+    public valueDefinitions.values vs_type_gender;
+
+    ValueScript vs_gender;
+
+    /// <summary>
+    /// 왕의 이름과 성별을 인스펙터에서 입력할 수 있게 하기 위한 클래스.
+    /// </summary>
+	[System.Serializable] /// 인스펙터에서 클래스를 노출하기 위한 애트리뷰트
+	public class nameGenderLink
+    {
+        /// <summary>
+        /// 왕의 이름. 인스펙터에서 여기에 쓴 내용은 배열 요소명이 된다. 
+        /// </summary>
+		public string name;
+
+        /// <summary>
+        /// 인스펙터에서 왕의 성별을 선택할 수 있게 하기 위한 열거형. 
+        /// </summary>
+		public genderTypes gender;
+    }
+
+    /*
+	 * Actualize the text fields with the name and country.
+	 */
+    public void actualizeTexts(bool force = false)
+    {
+
+        if (GameStateManager.instance.gamestate == GameStateManager.Gamestate.gameActive || force == true)
+        {
+            if (countryText != null)
+            {
+                countryText.text = getCountryTranslatedStringFromValue();
+            }
+            if (nameText != null)
+            {
+                nameGenderLink ngl = getNameAndGenderFromValue();
+                if (ngl != null)
+                {
+                    nameText.text = ngl.name + " " + getSurnameFromValue();
+                }
+                else
+                {
+                    nameText.text = "";
+                }
+            }
+
+            //expand this, if you want an apache helicopter. To show the apache pictogram modify the 'Gender Generator' script.
+            gender = getNameAndGenderFromValue().gender;
+            if (gender != null)
+            {
+                if (gender == genderTypes.male)
+                {
+                    vs_gender.setValue(0f);
+                }
+                else if (gender == genderTypes.female)
+                {
+                    vs_gender.setValue(1f);
+                }
+            }
+        }
+    }
+
+    /*
+	 * Load the given name and gender from their value script 
+	 */
+    public nameGenderLink getNameAndGenderFromValue()
+    {
+        if (vs_name != null)
+        {
+            int index = Mathf.RoundToInt(vs_name.value);
+            if (index >= Countries[getCountryIndexFromValue()].nameComb.Length)
+            {
+                index = Countries[getCountryIndexFromValue()].nameComb.Length - 1;
+            }
+            nameGenderLink nameGender = Countries[getCountryIndexFromValue()].nameComb[index];
+
+            return nameGender;
+        }
+        return null;
+    }
+    /*
+	 * Load the surname from its value script 
+	 */
+    public string getSurnameFromValue()
+    {
+        if (vs_surname != null)
+        {
+            int index = Mathf.RoundToInt(vs_surname.value);
+            if (index >= Countries[getCountryIndexFromValue()].surname.Length)
+            {
+                index = Countries[getCountryIndexFromValue()].surname.Length - 1;
+            }
+            return Countries[getCountryIndexFromValue()].surname[index];
+        }
+        return "";
+    }
+    /*
+	 * Load the country index from its value script 
+	 */
+    public int getCountryIndexFromValue()
+    {
+        if (vs_country != null)
+        {
+            int index = Mathf.RoundToInt(vs_country.value);
+            if (index >= Countries.Length)
+            {
+                index = Countries.Length - 1;
+            }
+            return index;
+        }
+        return -1;
+    }
+
+    /*
+	 * Get the given name, surname and country as one combined string.
+	 */
+    public string getCountryNameText()
+    {
+        string retText = "";
+        nameGenderLink ngl = getNameAndGenderFromValue();
+        if (ngl != null)
+        {
+            retText += ngl.name + " " + getSurnameFromValue() + ", " + getCountryTranslatedStringFromValue();
+        }
+        else
+        {
+            retText = "";
+        }
+        return retText;
+    }
+
+    /*
+	 * Get the country name, translated if available. 
+	 */
+    public string getCountryTranslatedStringFromValue()
+    {
+        return TranslationManager.translateIfAvail(Countries[getCountryIndexFromValue()].listEntry);
+    }
+
+    /*
+	 * Return all possible translatable terms
+	 */
+    public override List<string> getTranslatableTerms()
+    {
+        List<string> terms = new List<string>();
+        terms.Clear();
+        EventScript es;
+
+        foreach (subStringList ssl in Countries)
+        {
+            terms.Add(ssl.listEntry);
+            //don't translate given name and surname?
+        }
+
+        return terms;
+    }
+
+
+    void Awake()
+    {
+        instance = this;
+    }
+
+    void Start(){
 		clearUI ();
 		StartCoroutine (oneFrame ());
 		TranslationManager.instance.registerTranslateableContentScript (this);
@@ -58,199 +301,7 @@ public class CountryNameGenerator : TranslatableContent {
 		vs_country = valueManager.instance.getFirstFittingValue (vs_type_country);
 	}
 
-	void Awake(){
-		instance = this;
-	}
-
-    /// <summary>
-    /// todo. 게임에 사용할 국가 숫자와 왕의 이름,성별 그리고 성씨에 대한 정보를 담을 변수를 정의한 클래스. 
-    /// </summary>
-    [System.Serializable] // 인스펙터에 노출하기 위한 직렬화 어트리뷰트
-    public class subStringList
-    {
-        /// <summary>
-        /// 게임에서 랜덤으로 정해지는 국가명.
-        /// </summary>
-        [Tooltip("랜덤으로 정해지는 국가입니다.")]
-        public string listEntry;
-
-        [Tooltip("주어진 이름과 성별의 가능한 조합 목록. 목록의 길이는 모든 국가에서 동일해야합니다.")]
-        public nameGenderLink[] nameComb;
-
-        [Tooltip("성씨의 가능한 조합 목록. 목록의 길이는 모든 국가에서 동일해야 합니다.")]
-        public string[] surname;
-    }
-
-    /// <summary>
-    /// 게임에서 사용할 국가와 왕의 이름, 성별 그리고 성씨를 인스펙터에서 입력하기 위한 변수.
-    /// 본 게임에서는 인스펙터에서 3개 국가를 만들고, 왕의 이름과 
-    /// </summary>
-    [Tooltip("가능한 국가 및 국가별 이름 목록")]
-	public subStringList[] Countries;
-
-    /// <summary>
-    /// 게임 상단에 국가를 표시하는 UGUI 텍스트 영역.
-    /// Game -> StatsCanvas -> PlayerPanel -> CountryText
-    /// </summary>
-	[Tooltip("국가를 표시하는 텍스트 필드할당하세요.")]
-	public Text countryText;
-
-    /// <summary>
-    /// 게임 상단에 이름을 표시하는 UGUI 텍스트 영역.
-    /// Game -> StatsCanvas -> PlayerPanel -> PlayerNameText
-    /// </summary>
-	[Tooltip("이름을 표시하는 텍스트 필드를 할당하세요.")]
-	public Text nameText;
-
-    /// <summary>
-    /// ???? 인스펙터에서 드롭다운 목록에서 열거형으로 정의한 목록 중 Country를 선택.
-    /// </summary>
-	[Tooltip("국가를 정의하는 값 유형입니다.")]
-	public valueDefinitions.values vs_type_country;
-
-	ValueScript vs_country;
-
-    /// <summary>
-    /// ???? 인스펙터에서 드롭다운 목록에서 열거형으로 정의한 목록 중 Name를 선택.
-    /// </summary>
-	[Tooltip("지정된 이름을 정의하는 값 유형입니다.")]
-	public valueDefinitions.values vs_type_givenName;
-
-	ValueScript vs_name;
-
-    /// <summary>
-    /// ????? 인스펙터에서 드롭다운 목록에서 열거형으로 정의한 목록 중 Surname를 선택.
-    /// </summary>
-    [Tooltip("성씨를 정의하는 값 유형입니다.")]
-	public valueDefinitions.values vs_type_surname;
-
-    ValueScript vs_surname;
-
-    /// <summary>
-    /// ??? 인스펙터에서 드롭다운 목록에서 열거형으로 정의한 목록 중 Gender를 선택.
-    /// </summary>
-    [Tooltip("성별을 포함하는 값 유형입니다. 이 스크립트의 값은 'Country Name Generator'에 의해 정의되며, 그렇지 않은 경우는 정의되지 않습니다.")]
-	public valueDefinitions.values vs_type_gender;
-
-    ValueScript vs_gender;
-
-	[System.Serializable]
-	public class nameGenderLink{
-		public string name;
-		public genderTypes gender;
-	}
-
-	/*
-	 * Actualize the text fields with the name and country.
-	 */
-	public void actualizeTexts(bool force = false){
-
-		if (GameStateManager.instance.gamestate == GameStateManager.Gamestate.gameActive || force == true) {
-			if (countryText != null) {
-				countryText.text = getCountryTranslatedStringFromValue ();
-			}
-			if (nameText != null) {
-				nameGenderLink ngl = getNameAndGenderFromValue ();
-				if (ngl != null) {
-					nameText.text = ngl.name + " " + getSurnameFromValue ();
-				} else {
-					nameText.text = "";
-				}
-			}
-
-			//expand this, if you want an apache helicopter. To show the apache pictogram modify the 'Gender Generator' script.
-			gender = getNameAndGenderFromValue ().gender;
-			if (gender != null) {
-				if (gender == genderTypes.male) {
-					vs_gender.setValue (0f);
-				} else if (gender == genderTypes.female) {
-					vs_gender.setValue (1f);
-				}
-			}
-		}
-	}
-
-	/*
-	 * Load the given name and gender from their value script 
-	 */
-	public nameGenderLink getNameAndGenderFromValue(){
-		if (vs_name != null) {
-			int index = Mathf.RoundToInt (vs_name.value);
-			if (index >= Countries [getCountryIndexFromValue ()].nameComb.Length) {
-				index = Countries [getCountryIndexFromValue ()].nameComb.Length - 1;
-			}
-			nameGenderLink nameGender = Countries [getCountryIndexFromValue ()].nameComb [index];
-
-			return nameGender;
-		}
-		return null;
-	}
-	/*
-	 * Load the surname from its value script 
-	 */
-	public string getSurnameFromValue(){
-		if (vs_surname != null) {
-			int index = Mathf.RoundToInt (vs_surname.value);
-			if (index >= Countries [getCountryIndexFromValue ()].surname.Length) {
-				index = Countries [getCountryIndexFromValue ()].surname.Length - 1;
-			}
-			return Countries [getCountryIndexFromValue ()].surname [index];
-		}
-		return "";
-	}
-	/*
-	 * Load the country index from its value script 
-	 */
-	public int getCountryIndexFromValue()
-	{
-		if (vs_country != null) {
-			int index = Mathf.RoundToInt (vs_country.value);
-			if (index >= Countries.Length) {
-				index = Countries.Length - 1;
-			}
-			return index;
-		}
-		return -1;
-	}
-
-	/*
-	 * Get the given name, surname and country as one combined string.
-	 */
-	public string getCountryNameText(){
-		string retText = "";
-		nameGenderLink ngl = getNameAndGenderFromValue ();
-		if (ngl != null) {
-			retText += ngl.name + " " + getSurnameFromValue () + ", " + getCountryTranslatedStringFromValue ();
-		} else {
-			retText = "";
-		}
-		return retText;
-	}
-
-	/*
-	 * Get the country name, translated if available. 
-	 */
-	public string getCountryTranslatedStringFromValue()
-	{
-		return TranslationManager.translateIfAvail( Countries[ getCountryIndexFromValue() ].listEntry );
-	}
-
-	/*
-	 * Return all possible translatable terms
-	 */
-	public override List<string> getTranslatableTerms ()
-	{
-		List<string> terms = new List<string> ();
-		terms.Clear ();
-		EventScript es;
-
-		foreach (subStringList ssl in Countries) {
-			terms.Add (ssl.listEntry);
-			//don't translate given name and surname?
-		}
-
-		return terms;
-	}
+	
 }
 
 
