@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 
 /// <summary>
-/// ??????
+/// todo. 스크립트를 연결하기 위한 빈 오브젝트들.  
 /// Game -> Values -> adreadyValue
 /// Game -> Values -> Army
 /// Game -> Values -> AuthorityValue
@@ -31,15 +31,15 @@ using UnityEngine.Events;
 public class ValueScript : MonoBehaviour {
 
     /// <summary>
-    /// 게임에서 사용하는 구분 명칭 값의 유형. 성별, 이름,카리스마, 돈등 값의 유형.
-    /// 인스펙터에서 어떤 값 유형인지 지정한다.
+    /// 현재 내가 붙어 있는 게임오브젝트가 게임에서 어떤 값의 유형인지 인스펙터 드롭다운 목록에서 선택해서 지정한다.
+    /// 가령 내가 붙어 있는 게임오브젝트가 Game -> Values -> Name 이면 인스펙터 드롭다운 메뉴에서 Name를 선택한다.
     /// </summary>
-	[Tooltip("여기에 값의 유형을 정의하십시오. 값 스크립트 당 하나의 값 유형 만 허용됩니다.")]
+	[Tooltip("여기에 내가 붙어 있는 게임오브젝트가 어떤 유형인지 옆에 드롭박스 목록에서 선택하세요.")]
 	public valueDefinitions.values valueType;
 
 	private string identifier = "valuename";
 
-	[ReadOnlyInspector]
+	[ReadOnlyInspector] /// 변수를 인스펙터에서 읽기 전용으로 만들기위한 프로그래머가 만든 애트리뷰트.
     public float value = 0f;
 
 	public bool debugValueChanges = false;

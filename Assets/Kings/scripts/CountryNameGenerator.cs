@@ -25,7 +25,7 @@ public class CountryNameGenerator : TranslatableContent {
 	}
 
     /// <summary>
-    /// ??????
+    /// todo. 2번 모르겠다.
     /// </summary>
 	[Tooltip("플레이의 실제 성별입니다.")]
 	[ReadOnlyInspector] /// 인스펙터에서 읽기 전용으로 프로그래머가 만든 애트리뷰트
@@ -81,7 +81,7 @@ public class CountryNameGenerator : TranslatableContent {
     public Text nameText;
 
     /// <summary>
-    /// ???? 인스펙터에서 드롭다운 목록에서 열거형으로 정의한 목록 중 Country를 선택.
+    /// todo. 인스펙터에서 드롭다운 목록에서 열거형으로 정의한 목록 중 Country를 선택.
     /// </summary>
 	[Tooltip("국가를 정의하는 값 유형입니다.")]
     public valueDefinitions.values vs_type_country;
@@ -89,15 +89,18 @@ public class CountryNameGenerator : TranslatableContent {
     ValueScript vs_country;
 
     /// <summary>
-    /// ???? 인스펙터에서 드롭다운 목록에서 열거형으로 정의한 목록 중 Name를 선택.
+    /// todo. 인스펙터에서 드롭다운 목록에서 열거형으로 정의한 목록 중 Name를 선택.
     /// </summary>
 	[Tooltip("지정된 이름을 정의하는 값 유형입니다.")]
     public valueDefinitions.values vs_type_givenName;
 
+    /// <summary>
+    /// todo. 3번 모르겠다.
+    /// </summary>
     ValueScript vs_name;
 
     /// <summary>
-    /// ????? 인스펙터에서 드롭다운 목록에서 열거형으로 정의한 목록 중 Surname를 선택.
+    /// todo. 인스펙터에서 드롭다운 목록에서 열거형으로 정의한 목록 중 Surname를 선택.
     /// </summary>
     [Tooltip("성씨를 정의하는 값 유형입니다.")]
     public valueDefinitions.values vs_type_surname;
@@ -105,7 +108,7 @@ public class CountryNameGenerator : TranslatableContent {
     ValueScript vs_surname;
 
     /// <summary>
-    /// ??? 인스펙터에서 드롭다운 목록에서 열거형으로 정의한 목록 중 Gender를 선택.
+    /// todo. 인스펙터에서 드롭다운 목록에서 열거형으로 정의한 목록 중 Gender를 선택.
     /// </summary>
     [Tooltip("성별을 포함하는 값 유형입니다. 이 스크립트의 값은 'Country Name Generator'에 의해 정의되며, 그렇지 않은 경우는 정의되지 않습니다.")]
     public valueDefinitions.values vs_type_gender;
@@ -129,9 +132,10 @@ public class CountryNameGenerator : TranslatableContent {
 		public genderTypes gender;
     }
 
-    /*
-	 * Actualize the text fields with the name and country.
-	 */
+    /// <summary>
+    /// todo. 이름과 국가로 텍스트 필드를 구현하는 메서드
+    /// </summary>
+    /// <param name="force"></param>
     public void actualizeTexts(bool force = false)
     {
 
@@ -154,7 +158,7 @@ public class CountryNameGenerator : TranslatableContent {
                 }
             }
 
-            //expand this, if you want an apache helicopter. To show the apache pictogram modify the 'Gender Generator' script.
+            /// 아파치 헬리콥터를 원하면 이것을 확장하십시오. 아파치 그림을 보려면 'Gender Generator'스크립트를 수정하십시오.
             gender = getNameAndGenderFromValue().gender;
             if (gender != null)
             {
@@ -170,9 +174,10 @@ public class CountryNameGenerator : TranslatableContent {
         }
     }
 
-    /*
-	 * Load the given name and gender from their value script 
-	 */
+    /// <summary>
+    /// todo. 왕의 이름과 성별을 반환하는 메서드. value 스크립트에서 주어진 이름과 성별을 로드하십시오.
+    /// </summary>
+    /// <returns></returns>
     public nameGenderLink getNameAndGenderFromValue()
     {
         if (vs_name != null)
@@ -286,14 +291,20 @@ public class CountryNameGenerator : TranslatableContent {
 		}
 	}
 
-	//Because the value scripts are registering and loading at Start(), we 
-	//need one frame delay to get the registered scrips from the value script manager.
-	IEnumerator oneFrame(){
-		yield return null;
-		createValueScriptLinks ();
-		actualizeTexts();
-	}
+    /// <summary>
+    /// todo. 'Value' 스크립트는 Start()에서 등록되고, 로드되기 때문에 스크립트 관리자 값에서 등록된 스크립트를 가져오려면 하나의 프레임 지연이 필요하다.
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator oneFrame()
+    {
+        yield return null; /// 다음프레임까지 대기.
+        createValueScriptLinks();
+        actualizeTexts();
+    }
 
+    /// <summary>
+    /// todo. 값 스크립트 링크 만들기.
+    /// </summary>
 	void createValueScriptLinks(){
 		vs_gender = valueManager.instance.getFirstFittingValue (vs_type_gender);
 		vs_name = valueManager.instance.getFirstFittingValue (vs_type_givenName);

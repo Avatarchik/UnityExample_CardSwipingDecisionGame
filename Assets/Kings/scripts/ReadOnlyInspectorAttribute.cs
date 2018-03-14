@@ -8,7 +8,7 @@ using UnityEditor;
 
 /// <summary>
 /// 인스펙터에서 변수를 읽기전용으로 사용자 커스터마이즈한것을 어트리뷰트로 사용하기 위해 단순히 PropertyAttribute를 상속받은 클래스.
-/// 이 클래스이름이 사용자 커스터마이즈 어트리뷰트의 이름이 된다.
+/// 이 클래스이름이 사용자 커스터마이즈 애트리뷰트의 이름이 된다.
 /// </summary>
 public class ReadOnlyInspector : PropertyAttribute
 {
@@ -22,15 +22,24 @@ public class ReadOnlyInspector : PropertyAttribute
 [CustomPropertyDrawer(typeof(ReadOnlyInspector))] /// 커스터마이징할 클래스를 지정한다.
 public class ReadOnlyDrawer : PropertyDrawer
 {
-	public override float GetPropertyHeight(SerializedProperty property,
-		GUIContent label)
+    /// <summary>
+    /// todo. 상속받은 GetPropertyHeight()를 재정의.
+    /// </summary>
+    /// <param name="property"></param>
+    /// <param name="label"></param>
+    /// <returns></returns>
+	public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
 	{
 		return EditorGUI.GetPropertyHeight(property, label, true);
 	}
 
-	public override void OnGUI(Rect position,
-		SerializedProperty property,
-		GUIContent label)
+    /// <summary>
+    /// todo. 상속받은 OnGUI()를 재정의.
+    /// </summary>
+    /// <param name="position"></param>
+    /// <param name="property"></param>
+    /// <param name="label"></param>
+	public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
 	{
 		GUI.enabled = false;
 		EditorGUI.PropertyField(position, property, label,true);

@@ -1,4 +1,4 @@
-﻿#define SECURED // 사용자가 정의한 기호.
+﻿#define SECURED // 사용자가 정의한 기호. 만약 보안이 필요한 상황일대 코드 처리를 위한 기호이다.
 
 using UnityEngine;
 using System.Security.Cryptography;
@@ -10,17 +10,26 @@ using System.Text;
 /// </summary>
 public static class SecurePlayerPrefs
 {
+
+    /// <summary>
+    /// 플레이어 프랩스에 문자형 데이터를 저장하는 메서드. 보안이 필요한경우 플레이어프랩스 구분하는 키를 MD5 해시값으로 바꿔서 키로 만들고, 데이터를 저장한다. 
+    /// </summary>
+    /// <param name="key">플레이어프랩스에 구분할 키값으로 사용할 텍스트</param>
+    /// <param name="value">저장할 데이터. 문자열</param>
 	public static void SetString(string key, string value)
 	{
-		#if (SECURED)
+		#if (SECURED) /// 보안이 필요한 경우라면 
+
+        /// 플레이어프랩스에 저장할때 구분할 키이름을 MD5 해시형태의 문자열을 바꾼다.
 		string hashedKey = GenerateMD5 (key);
 		string checkKey = GenerateMD5 (key + "asdf");
+        /// todo. 1번 모르겠다.
 		string encryptedValue = xorEncryptDecrypt (value);
 		string checkVal = GenerateMD5 (encryptedValue);
 		checkVal = xorEncryptDecrypt (checkVal);
 		PlayerPrefs.SetString (hashedKey, encryptedValue);
 		PlayerPrefs.SetString (checkKey, checkVal);
-		#else
+		#else /// 보안이 필요하지 않을 상황이라면, 플레이어 프랩스에 
 		PlayerPrefs.SetString (key, value);
 		#endif
 	}
@@ -124,11 +133,15 @@ public static class SecurePlayerPrefs
 		#endif
 	}
 
-	#if (SECURED)
-	// some fast xor encryptor
-	public static int key = 129;
-	public static string xorEncryptDecrypt(string text){
+    #if (SECURED) /// 보안이 필요한 경우라면.
+    // 일부 빠른 xor 암호화기
+    public static int key = 129;
+
+	public static string xorEncryptDecrypt(string text)
+    {
+        /// 문자열을 수정할 수 있는 StringBuilder 객체를 만들고, 파라미터로 받은 텍스트를 할당한다.
 		StringBuilder inSb = new StringBuilder (text);
+        /// todo. 지금 살펴보는 곳
 		StringBuilder outSB = new StringBuilder (text.Length);
 		char c;
 		for(int i = 0; i<text.Length; i++){
@@ -140,25 +153,27 @@ public static class SecurePlayerPrefs
 	}
 
     /// <summary>
-    /// 지정된 텍스트의 MD5 해시를 생성합니다.
+    /// 파라미터로 입력한 텍스트를 MD5 해시값으로 바꿔서 리턴합니다.
     /// 경고: 비밀번호 저장방식으로는 안전하지 않습니다.
     /// </summary>
     /// <returns>MD5 해시 문자열</returns>
-    /// <param name="text">The text to hash</param>
+    /// <param name="text">해시값으로 바꿀 텍스트</param>
     static string GenerateMD5(string text)
 	{
-        /// 씨샵에서 제공하는 MD5 해시 알고리즘 타입의 해시 객체를 할당한다.
+        /// 첫단계. 씨샵에서 제공하는 MD5 해시 알고리즘 타입의 해시 객체를 할당한다.
 		var md5 = MD5.Create();
 
 		byte[] inputBytes = Encoding.UTF8.GetBytes(text);
 		byte[] hash = md5.ComputeHash(inputBytes);
 
-		// step 2, convert byte array to hex string
+		// step 2, byte array을 16진수 문자열로 변경
 		var sb = new StringBuilder();
 		for (int i = 0; i < hash.Length; i++)
 		{
 			sb.Append(hash[i].ToString("X2"));
 		}
+
+        /// 생성된 해시 문자열을 반환.
 		return sb.ToString();
 	}
 

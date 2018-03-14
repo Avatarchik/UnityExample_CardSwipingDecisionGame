@@ -1,21 +1,19 @@
-﻿
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-/*
- * The script 'GenderGenerator' shows a pictogram and a text, depending on a
- * value from a value script. It can also be used to show a value dependant pictogram and
- * is not limited to genders. The value is casted to an index and selects the property 
- * to show from the defined list.
- */
-
+/// <summary>
+/// 'GenderGenerator'스크립트는 값 스크립트의 값에 따라 그림과 텍스트를 표시합니다. 
+/// 또한 값에 의존하는 그림을 보여주는 데 사용할 수 있으며 성별에 국한되지 않습니다. 
+/// 값은 인덱스에 캐스트되고 정의 된 목록에서 표시 할 특성을 선택합니다.
+/// Game -> Gender
+/// </summary>
 public class GenderGenerator : TranslatableContent {
 
 	public static GenderGenerator instance;
 
-	[Tooltip("Define the value type which holds the gender value. This value type should also be linked to the 'Country Name Generator'.")]
+	[Tooltip("성별 값을 보유하는 값 유형을 정의하십시오. 이 값 유형은 또한 'Country Name Generator'에 연결되어야 합니다..")]
 	public valueDefinitions.values valueType;
 	ValueScript vs;
 
@@ -29,20 +27,23 @@ public class GenderGenerator : TranslatableContent {
 		TranslationManager.instance.registerTranslateableContentScript (this);
 	}
 
-	//because of the dependency to the value script, which loads at Start(), we need one frame delay to actualize the UI.
+	/// <summary>
+    /// Start()에서 로드되는 'value' 스크립트에 대한 의존성 때문에 UI를 구현하기 위해서는 하나의 프레임 지연이 필요합니다.
+    /// </summary>
+    /// <returns></returns>
 	IEnumerator frameDelay(){
-		yield return null;
+		yield return null; /// 다음 프레임까지 대기
 		vs = valueManager.instance.getFirstFittingValue (valueType);
 		actualizeUI ();
 	}
 
 
-	[Tooltip("Define the names and pictograms for the available genders.")]
+	[Tooltip("사용 가능한 성별에 대한 이름과 그림을 정의하십시오.")]
 	public gendStringList[] genders;
 
-	[Tooltip("Define the text field for showing the actual gender name.")]
+	[Tooltip("실제 성별을 나타내는 텍스트 입력란을 정의하십시오.")]
 	public Text outText;
-	[Tooltip("Define the image for showing the actual gender pictogram.")]
+	[Tooltip("실제 성별 그림을 보여주는 이미지를 정의하십시오.")]
 	public Image outImg;
 
 
