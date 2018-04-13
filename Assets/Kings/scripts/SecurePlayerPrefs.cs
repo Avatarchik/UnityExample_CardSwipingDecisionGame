@@ -139,16 +139,24 @@ public static class SecurePlayerPrefs
 
 	public static string xorEncryptDecrypt(string text)
     {
-        /// 문자열을 수정할 수 있는 StringBuilder 객체를 만들고, 파라미터로 받은 텍스트를 할당한다.
+        /// 문자열을 수정할 수 있는 안으로 들어오는 StringBuilder 객체를 만들고, 파라미터로 받은 텍스트를 할당한다.
 		StringBuilder inSb = new StringBuilder (text);
-        /// todo. 지금 살펴보는 곳
+        /// 문자열을 수정할 수 있는 밖으로 나가는 StringBuilder 객체를 만들고, 파라미터로 받은 텍스트 길이를 용량으로 할당한다.
 		StringBuilder outSB = new StringBuilder (text.Length);
+        /// 문자를 넣을 로컬 변수
 		char c;
-		for(int i = 0; i<text.Length; i++){
-			c = inSb [i];
-			c = (char)(c ^ key);
-			outSB.Append (c);
-		}
+        /// 파라미터의 텍스트 길이만큼 루프를 돌면서
+		for (int i = 0; i < text.Length; i++)
+        {
+            /// 한글짜씩 떼어서 할당해서
+            c = inSb[i];
+            /// key값이 십진수 129이니깐 이진수로는 10000001이다. 이것을 2진수 자리수로 대입해서 현재 로컬변수에 들어 있는 값이 같으면 0, 서로 다른값이면 1을 반환해서 그걸 텍스트로 전환해서 넣는다.
+            /// todo. 여기 좀더 살펴보자.
+            c = (char)(c ^ key);
+            /// 밖으로 뽑는 스트링 빌더값에 계속 추가한다.
+            outSB.Append(c);
+        }
+        /// 비교한 값을 반환한다.
 		return outSB.ToString ();
 	}
 
