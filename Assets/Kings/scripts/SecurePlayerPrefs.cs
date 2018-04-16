@@ -1,12 +1,11 @@
-﻿#define SECURED // 사용자가 정의한 기호. 만약 보안이 필요한 상황일대 코드 처리를 위한 기호이다.
+﻿#define SECURED /// 사용자가 정의한 기호. 만약 보안이 필요한 상황일때 전처리에서 프로그래머가 SECURED를 지정하면 컴파일할때 #if SECURED 코드에 작성한 코드가 포함된다..
 
 using UnityEngine;
 using System.Security.Cryptography;
 using System.Text;
 
 /// <summary>
-/// ??????
-/// 
+/// ?????
 /// </summary>
 public static class SecurePlayerPrefs
 {
@@ -22,9 +21,11 @@ public static class SecurePlayerPrefs
 
         /// 플레이어프랩스에 저장할때 구분할 키이름을 MD5 해시형태의 문자열을 바꾼다.
 		string hashedKey = GenerateMD5 (key);
+        /// 의미없는 문자를 체크키로 저장한다.
 		string checkKey = GenerateMD5 (key + "asdf");
-        /// todo. 1번 모르겠다.
+        /// 암호화된 값을 저장한다.
 		string encryptedValue = xorEncryptDecrypt (value);
+
 		string checkVal = GenerateMD5 (encryptedValue);
 		checkVal = xorEncryptDecrypt (checkVal);
 		PlayerPrefs.SetString (hashedKey, encryptedValue);
@@ -121,14 +122,24 @@ public static class SecurePlayerPrefs
 		}
 	}
 
+    /// <summary>
+    /// 파라미터로 받은 값이 플레이어프랩스에 이미 존재하는 키값인지 확인해서 존재하면 true를, 존재하지 않으면 false를 반환한다.
+    /// </summary>
+    /// <param name="key">????</param>
+    /// <returns></returns>
 	public static bool HasKey(string key)
 	{
-		#if(SECURED)
+		#if(SECURED) /// 전처리기 지시문에서 프로그래머가 보안이 필요한 상황이라고 작성했다면 처리되는 코드
+        /// 파라미터로 입력받은 값을 MD5 해시값으로 바꿔서 저장
 		string hashedKey = GenerateMD5 (key);
+        /// MD5로 바꾼값이 플레이어프랩스에 존재하는 지를 확인한다
 		bool hasKey = PlayerPrefs.HasKey (hashedKey);
+        /// 확인한 값을 리턴한다.
 		return hasKey;
-		#else
+		#else /// 전처리기 지시문에서 프로그래머가 보안이 필요하지 않은 상황으로 작성했다면 처리되는 코드
+        /// 파라미터로 입력받은 값이 플레이어프랩스에 존재하는지를 확인한다.
 		bool hasKey = PlayerPrefs.HasKey (key);
+        /// 확인한 값을 리턴한다.
 		return hasKey;
 		#endif
 	}
@@ -137,6 +148,13 @@ public static class SecurePlayerPrefs
     // 일부 빠른 xor 암호화기
     public static int key = 129;
 
+    
+
+    /// <summary>
+    /// 129라는 키값과, 파라미터로 입력받은 값을 비교해서 어떻게 어떻게 암호화 하는 메서드인듯.
+    /// </summary>
+    /// <param name="text"></param>
+    /// <returns></returns>
 	public static string xorEncryptDecrypt(string text)
     {
         /// 문자열을 수정할 수 있는 안으로 들어오는 StringBuilder 객체를 만들고, 파라미터로 받은 텍스트를 할당한다.
@@ -151,7 +169,6 @@ public static class SecurePlayerPrefs
             /// 한글짜씩 떼어서 할당해서
             c = inSb[i];
             /// key값이 십진수 129이니깐 이진수로는 10000001이다. 이것을 2진수 자리수로 대입해서 현재 로컬변수에 들어 있는 값이 같으면 0, 서로 다른값이면 1을 반환해서 그걸 텍스트로 전환해서 넣는다.
-            /// todo. 여기 좀더 살펴보자.
             c = (char)(c ^ key);
             /// 밖으로 뽑는 스트링 빌더값에 계속 추가한다.
             outSB.Append(c);

@@ -10,13 +10,18 @@ using System;
 /// </summary>
 public class valueManager : MonoBehaviour {
 
-	//create a static accessable instance.
+    /// <summary>
+    /// static으로 엑서스 가능한 나 자신의 인스턴스를 만든다.
+    /// </summary>
 	public static valueManager instance;
-	void Awake(){
+
+
+	void Awake()
+    {
 		if (instance == null) {
 			instance = this;
 		} else {
-			Debug.LogError ("Multiple value managers, this is error prone.");
+			Debug.LogError ("Multiple value managers, this is error prone. 다중값 관리자, 오류가 발행하기 쉽습니다.");
 		}
 		awaked = true;
 	}
@@ -159,18 +164,23 @@ public class valueManager : MonoBehaviour {
 			vs.newGameStart ();
 		}
 	}
+    
+    /// <summary>
+    /// 만약 valueScript가 없거나 게임씬내에 특정 값 유형의 스크립트가 둘 이상있는 경우를 체크하기 위한 테스트하기 위한 변수
+    /// </summary>
+    bool awaked = false;
 
-	/*
-	 * Desing helper:
-	 * Test ingame, if a valueScript is missing or more than one script of an specific value type is within the scene.
-	 */
-	bool awaked = false;
-
-	public void testForDuplicatesAndMissingValues(){
+    /// <summary>
+    /// 중복 및 누락값이 있는지 테스트하는 메서드
+    /// </summary>
+	public void testForDuplicatesAndMissingValues()
+    {
 		int nrOfDetections = 0;
 		int i, j;
 
-		if (awaked == true) {
+        /// awaked값이 true면 중복 테스트를 수행한다.
+		if (awaked == true)
+        {
 			//test for duplicates
 			ValueScript testingValueType;
 			int duplicateCnt = 0;

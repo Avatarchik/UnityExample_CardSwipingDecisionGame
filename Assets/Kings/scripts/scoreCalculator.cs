@@ -6,29 +6,56 @@ using UnityEngine;
 using UnityEditor;
 #endif
 
+/// <summary>
+/// 스코어 계산하는 클래스.
+/// </summary>
 public class scoreCalculator : MonoBehaviour {
 
 	public float score;
 
 	public static scoreCalculator instance;
 
-	[System.Serializable]
+    /// <summary>
+    /// 게임이 끝나고 결과화면 나올때 표시할 정보를 담고 있는 클래스. 
+    /// 이 클래스는 게임이 끝나고 결과화면에서 표시할 통계를 사용자가 인스펙터에서 설정하기 위한 변수들을 가지고 있다.
+    /// 게임 스코어(통치기간, 병사, 사람, 종교, 돈)와 승수를
+    /// </summary>
+	[System.Serializable] /// 클래스 타입의 변수를 인스펙터에 노출하는 애트리뷰트
 	public class scoreRelevantPair
     {
+        /// <summary>
+        /// 게임의 모든 가치를 정의한 열거형 변수. 인스펙터에서 목록 선택형태로 고르기 위한 방식으로 사용하기위해????
+        /// </summary>
 		public valueDefinitions.values valueType;
+
+        /// <summary>
+        /// 이긴 수.
+        /// </summary>
 		public float multiplier;
 	}
-
+    /// <summary>
+    /// 
+    /// </summary>
 	public scoreRelevantPair[] scoreValues;
-	public scoreCounter[] extraScores;
+
+
+
+    public scoreCounter[] extraScores;
 
 	public scoreCounter highScore;
 	public scoreCounter maxHighScore;
 
-	public void calculateScore(){
+    /// <summary>
+    /// 점수 계산하는 메서드
+    /// </summary>
+	public void calculateScore()
+    {
+        /// 스코어 값을 일단 0으로 초기화.
 		score = 0f;
+
 		ValueScript vs;
-		foreach (scoreRelevantPair srp in scoreValues) {
+
+        foreach (scoreRelevantPair srp in scoreValues) {
 			vs = valueManager.instance.getFirstFittingValue (srp.valueType);
 			score += vs.value * srp.multiplier;
 		}

@@ -34,19 +34,28 @@ public class ValueScript : MonoBehaviour {
     /// 현재 내가 붙어 있는 게임오브젝트가 게임에서 어떤 값의 유형인지 인스펙터 드롭다운 목록에서 선택해서 지정한다.
     /// 가령 내가 붙어 있는 게임오브젝트가 Game -> Values -> Name 이면 인스펙터 드롭다운 메뉴에서 Name를 선택한다.
     /// </summary>
-	[Tooltip("여기에 내가 붙어 있는 게임오브젝트가 어떤 유형인지 옆에 드롭박스 목록에서 선택하세요.")]
+	[Tooltip("내가 붙어 있는 게임오브젝트가 어떤 유형인지 옆에 드롭박스 목록에서 선택하세요.")]
 	public valueDefinitions.values valueType;
 
+    /// <summary>
+    /// 사용자가 인스펙터에서 내가 붙어 있는 객체가 무엇인지(이름, 성별 등등)지정한 값을 문자열로 저장하고 있는 변수.
+    /// </summary>
 	private string identifier = "valuename";
 
+    /// <summary>
+    /// ????? 무슨값이지????
+    /// </summary>
 	[ReadOnlyInspector] /// 변수를 인스펙터에서 읽기 전용으로 만들기위한 프로그래머가 만든 애트리뷰트.
     public float value = 0f;
 
+    /// <summary>
+    /// 디버그 값 변경 ??????
+    /// </summary>
 	public bool debugValueChanges = false;
 
 	void Awake()
     {
-        /// 인스펙터에서 지정한 밸류타입을 할당하고.
+        /// 오브젝트의 성격. 프로그래머가 인스펙터에서 내가 붙어 있는 객체를 무엇으로 활용할것인지 지정한 값을 문자로 저장한다. (이름, 성별, 나라, 돈 등등)
 		identifier = valueType.ToString ();
 
 		loadValue();
@@ -169,11 +178,15 @@ public class ValueScript : MonoBehaviour {
 	[Tooltip("'keepValue' blocks the randomization of the value on a new game start. On the first startup of the game, the value is randomized between 'Limits.RandomMin' and 'Limits.RandomMax' (Accessable from Inspector).")]
 	public bool keepValue = false;
 
-	/*
-	 * Randomize a value within the defined range. Helpfull for initialization of a new game.
-	 */
 
-	public float setValueRandom(){
+    /// <summary>
+    /// 랜덤으로 값을 지정하는 메서드
+    /// Randomize a value within the defined range. Helpfull for initialization of a new game.
+    /// 정의된 범위 내의 값을 무작위화하십시오. 새로운 게임을 초기화하는데 도움이 됩니다.
+    /// </summary>
+    /// <returns></returns>
+    public float setValueRandom()
+    {
 			value = Random.Range (limits.randomMin, limits.randomMax);
 			limitValue ();
 			saveValue ();
@@ -199,11 +212,18 @@ public class ValueScript : MonoBehaviour {
 		return value;
 	}
 
+    /// <summary>
+    /// todo. 현재
+    /// </summary>
 	void loadValue()
     {
-		if (SecurePlayerPrefs.HasKey (identifier)) {
+        /// 현재 내가 붙어 있는 오브젝트이 성격을 지정한 값이 기존 플레이어프랩스에 이미 저장되어 있는 값인지 검사해서, 이미 저장되 있는 키값일 경우 
+		if (SecurePlayerPrefs.HasKey (identifier))
+        {
 			value = SecurePlayerPrefs.GetFloat (identifier);
-		} else {
+		}
+        else /// 저장되 있는 키값이 아닌 경우에는
+        {
 			setValueRandom ();
 		}
 	}

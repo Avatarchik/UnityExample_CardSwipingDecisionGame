@@ -92,7 +92,7 @@ public class Swipe : MonoBehaviour {
 	Vector3 swipeVector = Vector3.zero;
 
     /// <summary>
-    /// ???
+    /// ??? 아무곳에도 사용되지 않는 메서드인듯.
     /// </summary>
     /// <returns></returns>
 	public Vector2 getSwipeVector()
