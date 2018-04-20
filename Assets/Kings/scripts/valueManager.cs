@@ -30,8 +30,12 @@ public class valueManager : MonoBehaviour {
 	[HideInInspector]
     public List <ValueScript> values;
 
-	//access for value scripts to register in the manager
-	public void registerValueScript(ValueScript vs){
+    /// <summary>
+    /// 'ValueScript' 스크립트가 관리자에게 등록되도록 하는 메서드
+    /// </summary>
+    /// <param name="vs"></param>
+    public void registerValueScript(ValueScript vs)
+    {
 		values.Add (vs);
 	}
 

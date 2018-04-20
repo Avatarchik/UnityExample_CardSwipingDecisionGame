@@ -23,7 +23,7 @@ public class ReadOnlyInspector : PropertyAttribute
 public class ReadOnlyDrawer : PropertyDrawer
 {
     /// <summary>
-    /// todo. 상속받은 GetPropertyHeight()를 재정의.
+    /// 상속받은 GetPropertyHeight()를 재정의.
     /// </summary>
     /// <param name="property"></param>
     /// <param name="label"></param>
@@ -34,7 +34,7 @@ public class ReadOnlyDrawer : PropertyDrawer
 	}
 
     /// <summary>
-    /// todo. 상속받은 OnGUI()를 재정의.
+    /// 상속받은 OnGUI()를 재정의.
     /// </summary>
     /// <param name="position"></param>
     /// <param name="property"></param>

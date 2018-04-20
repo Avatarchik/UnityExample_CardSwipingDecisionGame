@@ -48,7 +48,7 @@ public class ValueScript : MonoBehaviour {
 	private string identifier = "valuename";
 
     /// <summary>
-    /// 플레이어프랩스에 저장되어 있는 내가 붙어 있는 객체가 무엇인지(이름, 성별등등)을 가져와서 저장하는 변수
+    /// 내 정체. 플레이어프랩스에 저장되어 있는 내가 붙어 있는 객체가 무엇인지(이름, 성별등등)을 가져와서 저장하는 변수
     /// </summary>
 	[ReadOnlyInspector] /// 변수를 인스펙터에서 읽기 전용으로 만들기위한 프로그래머가 만든 애트리뷰트.
     public float value = 0f;
@@ -64,11 +64,13 @@ public class ValueScript : MonoBehaviour {
         /// 가령 인스펙터에서 내가 붙어 있는 객체의 역할이 군인수치를 관리하는 객체라면 'Army'로 지정했을 것이고, 이때 식별자로 사용하는 변수에 'Army'텍스트 문자를 따로 저장한다.
 		identifier = valueType.ToString ();
 
+        /// 플레이어프랩스에 값을 불러오거나 저장한다.
 		loadValue();
 	}
 
 	void Start()
     {
+        /// todo. 작업1
 		valueManager.instance.registerValueScript (this);
 	}
 
@@ -87,25 +89,25 @@ public class ValueScript : MonoBehaviour {
 
 	[System.Serializable]
 	public class uiConfig{
-		[Tooltip("If the value shall be displayed as a filling bar it can be a scrollbar or a slider. Define your preference here.")]
+		[Tooltip("값을 채우기 막대로 표시하는 경우에는 스크롤 막대 또는 슬라이더를 사용할 수 있습니다. 여기에서 환경 설정을 정의하십시오.")]
 		public Scrollbar uiScrollbar;
-		[Tooltip("If the value shall be displayed as a filling bar it can be a scrollbar or a slider. Define your preference here.")]
+		[Tooltip("값을 채우기 막대로 표시하는 경우에는 스크롤 막대 또는 슬라이더를 사용할 수 있습니다. 여기에서 환경 설정을 정의하십시오.")]
 		public Slider uiSlider;
-		[Tooltip("The speed of filling the bar, if the value changes.")]
+		[Tooltip("값이 변경되면 바를 채우는 속도입니다.")]
 		[Range(0.1f,100f)]public float lerpSpeed = 10f;
-		[Tooltip("Define the format for displaying the value. \nE.g. 0 or # for only whole numbers.\nE.g. #.00 to show two following digits.")]
+		[Tooltip("값을 표시하기 위한 형식을 정의하십시오. \n예: 0 또는 # 을 입력하십시오. \n예 : #.00을 입력하면 두자리 숫자가 표시됩니다.")]
 		public string formatter = "0.##";
-		[Tooltip("The actual lerped/filling value.")]
+		[Tooltip("실제 lerped/filling 값.")]
 		[ReadOnlyInspector]public float lerpedValue = 0f;
-		[Tooltip("If the value is displayed as text, define the text field here.")]
+		[Tooltip("값이 텍스트로 표시되면 여기에서 텍스트 필드를 정의하십시오.")]
 		public Text textValue;
 
-		[Tooltip("The value manager can show a change of the value to the user depending on 'showActualization'")]
+		[Tooltip("값 관리자는 'showActualization'에 따라 값 변경을 사용자에게 표시할 수 있습니다.")]
 		public bool showActualization = true;
-		[Tooltip("The value manager can show a change of the value with this miniature sprite.")]
+		[Tooltip("값 관리자는 미니터처스프라이트로 값의 변경을 표시할 수 있습니다.")]
 		public Sprite miniatureSprite;
 	}
-	[Tooltip("For each value script there can be different ways to display the value. Define the details here.")]
+	[Tooltip("각 값 스크립트에 대해 값을 표시하는 다른 방법이 있을 수 있습니다. 여기에 세부 정보를 정의하십시오.")]
 	public uiConfig UserInterface;
 
 
@@ -159,11 +161,11 @@ public class ValueScript : MonoBehaviour {
 	public valueLimits limits;
 
     /// <summary>
-    /// 밸류
+    /// 내 정체 밸류값이 내가 설정한 범위를 넘지 못하도록 하고, 설정한 범위를 넘을 경우 최소값 또는 최대값을 할당한다. 그리고 최소값 & 최대값일때 실행할 유니티이벤트를 실행한다.
     /// </summary>
 	public void limitValue()
     {
-        /// 만약 밸류값이 내가 설정한 범위보다 작은 경우
+        /// 밸류값이 내가 설정한 범위보다 작은 경우
 		if (value < limits.min)
         {
             /// 밸류값에 내가 설정한 범위 최소값을 할당한다.
@@ -223,22 +225,27 @@ public class ValueScript : MonoBehaviour {
 
 
     /// <summary>
-    /// 랜덤으로 값을 지정하는 메서드
-    /// Randomize a value within the defined range. Helpfull for initialization of a new game.
-    /// 정의된 범위 내의 값을 무작위화하십시오. 새로운 게임을 초기화하는데 도움이 됩니다.
+    /// 내 정체를 랜덤으로 값을 지정하는 메서드. 값을 지정할때 최소&최대값을 넘지 못하도록 하고 있으며, 최소&최대값일때 실행할 유니티이벤트를 실행한다. 그리고 플레이어프랩스에 데이터를 저장한다.
     /// </summary>
     /// <returns></returns>
     public float setValueRandom()
     {
         /// 랜덤으로 지정한 값을 배정하고
         value = Random.Range (limits.randomMin, limits.randomMax);
+        
+        /// 내 정체 밸류값이 내가 설정한 범위를 넘지 못하도록 하고, 설정한 범위를 넘을 경우 최소값 또는 최대값을 할당한다.
+        /// 그리고 최소값 & 최대값일때 실행할 유니티이벤트를 실행한다
+        limitValue();
 
-        limitValue ();
+        /// 플레이어프랩스에 데이터 저장
 		saveValue ();
-		return value;
+
+        /// 랜덤으로 지정한 값을 반환
+        return value;
 	}
 
-	public void newGameStart(){
+	public void newGameStart()
+    {
 		if (keepValue == false) {
 			setValueRandom ();
 		}
@@ -258,23 +265,29 @@ public class ValueScript : MonoBehaviour {
 	}
 
     /// <summary>
-    /// todo. 현재
+    /// 내가 붙어 있는 오브젝트 성격을 지정한 값이 기존 플레이어프랩스에 저장되어 있는 값인지 검사해서 없으면 저장하고 있으면 불러온다.
     /// </summary>
 	void loadValue()
     {
         /// 현재 내가 붙어 있는 오브젝트이 성격을 지정한 값이 기존 플레이어프랩스에 이미 저장되어 있는 값인지 검사해서, 이미 저장되 있는 키값일 경우 
 		if (SecurePlayerPrefs.HasKey (identifier))
         {
-            /// 플레이어프랩스에 저장되어 있는 키값을 가져온다.
+            /// 플레이어프랩스에 저장되어 있는 키값을 가져와서 
 			value = SecurePlayerPrefs.GetFloat (identifier);
 		}
         else /// 저장되 있는 키값이 아닌 경우에는
         {
-			setValueRandom ();
+            /// 내 정체를 랜덤으로 값을 지정하는 메서드. 값을 지정할때 최소&최대값을 넘지 못하도록 하고 있으며, 최소&최대값일때 실행할 유니티이벤트를 실행한다. 그리고 플레이어프랩스에 데이터를 저장한다.
+			setValueRandom();
 		}
 	}
 
-	void saveValue(){
+    /// <summary>
+    /// 플레이어프랩스에 데이터를 저장.
+    /// </summary>
+	void saveValue()
+    {
+        /// 플레이어프랩스에 데이터를 저장한다.
 		SecurePlayerPrefs.SetFloat (identifier, value);
 	}
 
