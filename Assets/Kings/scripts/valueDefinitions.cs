@@ -29,7 +29,7 @@ public class valueDefinitions : MonoBehaviour {
         health, // 건강
         marriage, // 결혼
         married, // 기혼
-        adready, // ??? 이미있다???
+        adready, // 광고준비
         gamesPlayed // 게임플레이중
     }
 }

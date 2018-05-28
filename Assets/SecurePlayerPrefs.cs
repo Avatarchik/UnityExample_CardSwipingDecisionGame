@@ -5,7 +5,7 @@ using System.Security.Cryptography;
 using System.Text;
 
 /// <summary>
-/// ??? 플레이어프랜스에 입출력할때 보안처리를 하느냐마느냐 관련 클래스.
+/// 플레이어프랩스에 데이터를 입출력할때 보안처리를 하느냐마느냐 관련 클래스.
 /// </summary>
 public static class SecurePlayerPrefs
 {

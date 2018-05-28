@@ -11,6 +11,9 @@ using UnityEditor;
 /// </summary>
 public class scoreCalculator : MonoBehaviour {
 
+    /// <summary>
+    /// 스코어 점수.
+    /// </summary>
 	public float score;
 
 	public static scoreCalculator instance;
@@ -24,7 +27,8 @@ public class scoreCalculator : MonoBehaviour {
 	public class scoreRelevantPair
     {
         /// <summary>
-        /// 게임의 모든 가치를 정의한 열거형 변수. 인스펙터에서 목록 선택형태로 고르기 위한 방식으로 사용하기위해????
+        /// 게임에서 사용되는 모든 값의 유형들 타입의 변수(돈, 성별, 나라 등등)
+        /// 인스펙터에서 목록 선택 형태로 고르기 위한 방식으로 사용하기 위해 변수를 선언한다.
         /// </summary>
 		public valueDefinitions.values valueType;
 
@@ -33,6 +37,7 @@ public class scoreCalculator : MonoBehaviour {
         /// </summary>
 		public float multiplier;
 	}
+
     /// <summary>
     /// 
     /// </summary>
@@ -43,6 +48,7 @@ public class scoreCalculator : MonoBehaviour {
     public scoreCounter[] extraScores;
 
 	public scoreCounter highScore;
+
 	public scoreCounter maxHighScore;
 
     /// <summary>
