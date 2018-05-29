@@ -133,7 +133,7 @@ public class ValueScript_DS : MonoBehaviour {
 
 
     /// <summary>
-    /// 내가 붙어 있는 오브젝트 성격을 지정한 값이 기존 플레이어프랩스에 저장되어 있는 값인지 검사해서 없으면 저장하고 있으면 불러온다.
+    /// 현재 내가 붙어 있는 오브젝트 성격을 지정한 값이 기존 플레이어프랩스에 저장되어 있는 값인지 검사해서,  없으면 저장하고 있으면 불러온다.
     /// </summary>
     private void 플레이어프랩스저장또는불러오기()
     {
@@ -194,6 +194,8 @@ public class ValueScript_DS : MonoBehaviour {
 			//events.OnMax.Invoke();
         }
     }
+
+
 
     /// <summary>
     /// 유니티 이벤트를 상속받은 클래스.
