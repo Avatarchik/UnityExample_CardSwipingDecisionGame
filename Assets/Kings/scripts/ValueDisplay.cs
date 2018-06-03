@@ -11,7 +11,7 @@ public class ValueDisplay : MonoBehaviour {
 	ValueScript vs;
 
 	[Tooltip("Define which kind of value you want to display.")]
-	public valueDefinitions.values valueTyp;
+	public ValueDefinitions.값정의 valueTyp;
 
 	[Tooltip("Define the text display for the current value.")]
 	public Text currentValueText;
@@ -28,7 +28,7 @@ public class ValueDisplay : MonoBehaviour {
 
 	public void showMinMaxValue(){
 
-		vs = valueManager.instance.getFirstFittingValue (valueTyp);
+		vs = ValueManager.나자신.getFirstFittingValue (valueTyp);
 
 		if (vs != null) {
 			if (maxValueText != null) {
@@ -38,7 +38,7 @@ public class ValueDisplay : MonoBehaviour {
 				minValueText.text = (vs.getMinValue ()*displayMultiplier).ToString (formatter);
 			}
 			if (currentValueText != null) {
-				currentValueText.text = (vs.value*displayMultiplier).ToString (formatter);
+				currentValueText.text = (vs.플레이어프랩스데이터*displayMultiplier).ToString (formatter);
 			}
 		}
 	}

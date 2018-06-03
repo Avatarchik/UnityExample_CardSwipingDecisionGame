@@ -20,7 +20,7 @@ public class GlobalMessageEventSender : MonoBehaviour {
 
 	public void GlobalMessage( string trigger) {
 
-		if (GlobalMessageEventManager.instance != null) {
+		if (GlobalMessageEventManager.나자신 != null) {
 																	//If the manager is correctly initialized..
 			GlobalMessageEventManager.sendToReceivers (trigger);	//..let him delegate the message to all the registered receivers.
 

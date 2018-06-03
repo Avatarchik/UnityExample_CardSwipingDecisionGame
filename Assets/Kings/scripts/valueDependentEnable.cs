@@ -13,10 +13,10 @@ public class valueDependentEnable : MonoBehaviour {
 
 	
 	void Update () {
-		if (value.value >= limitToEnable && go.activeSelf == false) {
+		if (value.플레이어프랩스데이터 >= limitToEnable && go.activeSelf == false) {
 			go.SetActive (true);
 		}
-		if (value.value < limitToEnable && go.activeSelf == true) {
+		if (value.플레이어프랩스데이터 < limitToEnable && go.activeSelf == true) {
 			go.SetActive (false);
 		}
 	}

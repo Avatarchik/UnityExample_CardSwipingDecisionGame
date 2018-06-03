@@ -5,46 +5,55 @@ using System;
 
 /// <summary>
 /// valueManager 클래스는 게임의 모든 값을 수집합니다.
-/// valueManager 클래스는 시작 시 관리자에 액세스하고 여기에 등록하며, 수종 연결은 필요하지 않습니다.
+/// valueManager 클래스는 시작 시 관리자에 액세스하고 여기에 등록하며, 수동 연결은 필요하지 않습니다.
 /// Game - Values
 /// </summary>
-public class valueManager : MonoBehaviour {
+public class ValueManager : MonoBehaviour {
 
     /// <summary>
-    /// static으로 엑서스 가능한 나 자신의 인스턴스를 만든다.
+    /// 싱글톤 사용을 위해 static으로 엑서스 가능한 나 자신의 인스턴스를 만든다.
     /// </summary>
-	public static valueManager instance;
+	public static ValueManager 나자신;
 
 
 	void Awake()
     {
-		if (instance == null) {
-			instance = this;
-		} else {
-			Debug.LogError ("Multiple value managers, this is error prone. 다중값 관리자, 오류가 발행하기 쉽습니다.");
-		}
-		awaked = true;
+        #region 나자신의 싱글톤 객체를 만들어서 할당한다.
+        if (나자신 == null)
+        {
+            나자신 = this;
+        }
+        else
+        {
+            Debug.LogError("싱글톤 사용해야합니다. 오류가 발행하기 쉽습니다. ValueManager 클래스의 Awake()를 수정하세요.");
+        }
+        #endregion
+
+        awaked = true;
 	}
 
-	[Tooltip("장면의 모든 값 리스트")]
-	[HideInInspector]
-    public List <ValueScript> values;
+    /// <summary>
+    /// ValueScript 리스트를 하나 만들어서 
+    /// </summary>
+	[Tooltip("게임에서사용되는 모든 값을 리스트에 추가")]
+	[HideInInspector] /// 인스펙터에서 변수를 감추고 싶을때
+    public List <ValueScript> 볼륨스크립트리스트;
 
     /// <summary>
-    /// 'ValueScript' 스크립트가 관리자에게 등록되도록 하는 메서드
+    /// 'ValueScript' 스크립트를 리스트에 등록되도록 하는 메서드
     /// </summary>
-    /// <param name="vs"></param>
-    public void registerValueScript(ValueScript vs)
+    /// <param name="볼륨스크립트">ValueScript 클래스 타입의 객체</param>
+    public void ValueScript리스트에추가(ValueScript 볼륨스크립트)
     {
-		values.Add (vs);
+		볼륨스크립트리스트.Add (볼륨스크립트);
 	}
 
 	//search for fitting the first fitting value script through the list
 	//ATTENTION: because of the script execution order it's possible this function fails if called from 'Start()' or 'Awake()'
 	//Therefore call it with at least one frame delay.
-	public ValueScript getFirstFittingValue(valueDefinitions.values v){
-		foreach (ValueScript vs in values) {
-			if (vs.valueType == v) {
+	public ValueScript getFirstFittingValue(ValueDefinitions.값정의 v){
+		foreach (ValueScript vs in 볼륨스크립트리스트) {
+			if (vs.내역활 == v) {
 
 				return vs;
 			}
@@ -55,7 +64,7 @@ public class valueManager : MonoBehaviour {
 	//Test and save the min and max values of the script.
 	//This is used after a game to save statistics like maximum age, health etc.
 	public void saveAllMinMaxValues(){
-		foreach (ValueScript vs in values) {
+		foreach (ValueScript vs in 볼륨스크립트리스트) {
 			vs.saveMinMax ();
 		}
 	}
@@ -64,18 +73,18 @@ public class valueManager : MonoBehaviour {
 	//the methode returns true, if the condition is met. False if not.
 	public bool getConditionMet(EventScript.condition cond, bool showDebug = false){
 		
-		foreach (ValueScript vs in values) {
-			if (vs.valueType == cond.value) {
+		foreach (ValueScript vs in 볼륨스크립트리스트) {
+			if (vs.내역활 == cond.value) {
 
-				if ((vs.value <= cond.valueMax && vs.value >= cond.valueMin)) {
+				if ((vs.플레이어프랩스데이터 <= cond.valueMax && vs.플레이어프랩스데이터 >= cond.valueMin)) {
 					if(showDebug==true){
-					 	Debug.Log ("True: " +cond.valueMin.ToString() + " " + vs.value.ToString() + " " +cond.valueMax.ToString()   );
+					 	Debug.Log ("True: " +cond.valueMin.ToString() + " " + vs.플레이어프랩스데이터.ToString() + " " +cond.valueMax.ToString()   );
 						Debug.Log (vs.gameObject.name);
 					}
 					return true;
 				} else {
 					if (showDebug == true) {
-						Debug.Log ("False: " + cond.valueMin.ToString () + " " + vs.value.ToString () + " " + cond.valueMax.ToString ());
+						Debug.Log ("False: " + cond.valueMin.ToString () + " " + vs.플레이어프랩스데이터.ToString () + " " + cond.valueMax.ToString ());
 						Debug.Log (vs.gameObject.name);
 					}
 					return false;
@@ -104,10 +113,10 @@ public class valueManager : MonoBehaviour {
 	}
 
 	//Change a value. Example: Reduce the health of the player by adding -5
-	public void changeValue(valueDefinitions.values type, float valueAdd){
+	public void changeValue(ValueDefinitions.값정의 type, float valueAdd){
 	bool found = false;
-		foreach (ValueScript vs in values) {
-			if (vs.valueType == type) {
+		foreach (ValueScript vs in 볼륨스크립트리스트) {
+			if (vs.내역활 == type) {
 
 				if (found == true) {
 					Debug.LogWarning ("Multiple values of the same type detected: " + type.ToString ());
@@ -129,21 +138,21 @@ public class valueManager : MonoBehaviour {
 	}
 
 	//Set a value to an exact number. Example: Set the state of marriage to 1
-	public void setValue(valueDefinitions.values type, float valueToSet){
+	public void setValue(ValueDefinitions.값정의 type, float valueToSet){
 		bool found = false;
 		float oldValue;
 		float valueDifference;
-		foreach (ValueScript vs in values) {
-			if (vs.valueType == type) {
+		foreach (ValueScript vs in 볼륨스크립트리스트) {
+			if (vs.내역활 == type) {
 
 				if (found == true) {
 					Debug.LogWarning ("Multiple values of the same type detected: " + type.ToString ());
 				}
 
 				found = true;
-				oldValue = vs.value;
+				oldValue = vs.플레이어프랩스데이터;
 				vs.setValue (valueToSet);
-				valueDifference = oldValue - vs.value;
+				valueDifference = oldValue - vs.플레이어프랩스데이터;
 
 				//display the value change to the user
 				if (vs.UserInterface.showActualization == true) {
@@ -163,7 +172,7 @@ public class valueManager : MonoBehaviour {
     /// </summary>
 	public void setRandomValues()
     {
-		foreach (ValueScript vs in values)
+		foreach (ValueScript vs in 볼륨스크립트리스트)
         {
 			vs.newGameStart ();
 		}
@@ -189,12 +198,12 @@ public class valueManager : MonoBehaviour {
 			ValueScript testingValueType;
 			int duplicateCnt = 0;
 
-			for (i = 0; i < values.Count; i++) {
+			for (i = 0; i < 볼륨스크립트리스트.Count; i++) {
 				nrOfDetections = 0;
-				testingValueType = values [i];
+				testingValueType = 볼륨스크립트리스트 [i];
 
-				for (j = 0; j < values.Count; j++) {
-					if (testingValueType.valueType == values [j].valueType) {
+				for (j = 0; j < 볼륨스크립트리스트.Count; j++) {
+					if (testingValueType.내역활 == 볼륨스크립트리스트 [j].내역활) {
 						nrOfDetections++;
 					}
 				}
@@ -204,7 +213,7 @@ public class valueManager : MonoBehaviour {
 				} else if (nrOfDetections == 1) {
 					//One is ok, valueScript with an specific value type found itself.
 				} else {
-					Debug.LogError ("Multible valueScripts with the type '" + testingValueType.valueType.ToString () + "' detected. Detection on gameobject '" + testingValueType.gameObject.name + "'.");
+					Debug.LogError ("Multible valueScripts with the type '" + testingValueType.내역활.ToString () + "' detected. Detection on gameobject '" + testingValueType.gameObject.name + "'.");
 					duplicateCnt++;
 				}
 			}
@@ -216,13 +225,13 @@ public class valueManager : MonoBehaviour {
 
 			//test for missing values
 			int notLinkedCnt = 0;
-			string[] valueTypes = System.Enum.GetNames (typeof(valueDefinitions.values));
+			string[] valueTypes = System.Enum.GetNames (typeof(ValueDefinitions.값정의));
 			for (i = 0; i < valueTypes.Length; i++) {
 				nrOfDetections = 0;
 
 				//test value type against the list
-				for (j = 0; j < values.Count; j++) {
-					if (valueTypes [i] == values [j].valueType.ToString ()) {
+				for (j = 0; j < 볼륨스크립트리스트.Count; j++) {
+					if (valueTypes [i] == 볼륨스크립트리스트 [j].내역활.ToString ()) {
 						nrOfDetections++;
 					}
 				}

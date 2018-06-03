@@ -21,7 +21,7 @@ public class ValueDependentGameLogs : TranslatableContent {
 	 */
 	public void executeValueLogging(bool lockOutput = false){
 		foreach (valueLog vl in logConditions) {
-			if (valueManager.instance.getConditionMet (vl.condition) == true) {
+			if (ValueManager.나자신.getConditionMet (vl.condition) == true) {
 				GameLogger.instance.addGameLog (vl.logConditionMet);
 			}
 		}

@@ -18,10 +18,10 @@ public class CountryNameGenerator : TranslatableContent {
     /// 성별을 정의한 열거형. 남자, 여자 성별이 있음.
     /// </summary>
 	[System.Serializable] /// 인스펙터에 노출하기 위한 직렬화
-	public enum genderTypes
+	public enum 성별
     {
-		male,
-		female
+		남성,
+		여성
 	}
 
     /// <summary>
@@ -29,7 +29,7 @@ public class CountryNameGenerator : TranslatableContent {
     /// </summary>
 	[Tooltip("플레이의 실제 성별입니다.")]
 	[ReadOnlyInspector] /// 인스펙터에서 읽기 전용으로 프로그래머가 만든 애트리뷰트
-    public genderTypes gender;
+    public 성별 성구분;
 
     /// <summary>
     /// 게임에 사용할 국가 숫자와 왕의 이름,성별 그리고 별칭에 대한 정보를 담을 변수를 정의한 클래스. 
@@ -56,7 +56,7 @@ public class CountryNameGenerator : TranslatableContent {
         /// 인스펙터에서 미리 해당국가에 맞는 왕의 성씨를 넣어둔다.
         /// </summary>
         [Tooltip("게임시작시 랜덤으로 정해지는 왕의 별칭의 가능한 조합 목록을 미리 등록합니다.")]
-        public string[] surname;
+        public string[] 성씨;
     }
 
     /// <summary>
@@ -84,7 +84,7 @@ public class CountryNameGenerator : TranslatableContent {
     /// 인스펙터에서 드롭다운 목록에서 열거형으로 정의한 목록 중 Country를 선택.
     /// </summary>
 	[Tooltip("국가를 정의하는 값 유형입니다.")]
-    public valueDefinitions.values vs_type_country;
+    public ValueDefinitions.값정의 vs_type_country;
 
     ValueScript vs_country;
 
@@ -92,7 +92,7 @@ public class CountryNameGenerator : TranslatableContent {
     /// 인스펙터에서 드롭다운 목록에서 열거형으로 정의한 목록 중 Name를 선택.
     /// </summary>
 	[Tooltip("지정된 이름을 정의하는 값 유형입니다.")]
-    public valueDefinitions.values vs_type_givenName;
+    public ValueDefinitions.값정의 vs_type_givenName;
 
     /// <summary>
     /// 모르겠다.
@@ -103,7 +103,7 @@ public class CountryNameGenerator : TranslatableContent {
     /// 인스펙터에서 드롭다운 목록에서 열거형으로 정의한 목록 중 Surname를 선택.
     /// </summary>
     [Tooltip("성씨를 정의하는 값 유형입니다.")]
-    public valueDefinitions.values vs_type_surname;
+    public ValueDefinitions.값정의 vs_type_surname;
 
     ValueScript vs_surname;
 
@@ -111,7 +111,7 @@ public class CountryNameGenerator : TranslatableContent {
     /// 인스펙터에서 드롭다운 목록에서 열거형으로 정의한 목록 중 Gender를 선택.
     /// </summary>
     [Tooltip("성별을 포함하는 값 유형입니다. 이 스크립트의 값은 'Country Name Generator'에 의해 정의되며, 그렇지 않은 경우는 정의되지 않습니다.")]
-    public valueDefinitions.values vs_type_gender;
+    public ValueDefinitions.값정의 vs_type_gender;
 
     ValueScript vs_gender;
 
@@ -129,7 +129,7 @@ public class CountryNameGenerator : TranslatableContent {
         /// <summary>
         /// 인스펙터에서 왕의 성별을 선택할 수 있게 하기 위한 열거형. 
         /// </summary>
-		public genderTypes gender;
+		public 성별 gender;
     }
 
     /// <summary>
@@ -143,7 +143,7 @@ public class CountryNameGenerator : TranslatableContent {
         {
             if (countryText != null)
             {
-                countryText.text = getCountryTranslatedStringFromValue();
+                countryText.text = GetCountryTranslatedStringFromValue();
             }
             if (nameText != null)
             {
@@ -159,14 +159,14 @@ public class CountryNameGenerator : TranslatableContent {
             }
 
             /// 아파치 헬리콥터를 원하면 이것을 확장하십시오. 아파치 그림을 보려면 'Gender Generator'스크립트를 수정하십시오.
-            gender = getNameAndGenderFromValue().gender;
-            if (gender != null)
+            성구분 = getNameAndGenderFromValue().gender;
+            if (성구분 != null)
             {
-                if (gender == genderTypes.male)
+                if (성구분 == 성별.남성)
                 {
                     vs_gender.setValue(0f);
                 }
-                else if (gender == genderTypes.female)
+                else if (성구분 == 성별.여성)
                 {
                     vs_gender.setValue(1f);
                 }
@@ -182,7 +182,7 @@ public class CountryNameGenerator : TranslatableContent {
     {
         if (vs_name != null)
         {
-            int index = Mathf.RoundToInt(vs_name.value);
+            int index = Mathf.RoundToInt(vs_name.플레이어프랩스데이터);
             if (index >= Countries[getCountryIndexFromValue()].nameComb.Length)
             {
                 index = Countries[getCountryIndexFromValue()].nameComb.Length - 1;
@@ -200,12 +200,12 @@ public class CountryNameGenerator : TranslatableContent {
     {
         if (vs_surname != null)
         {
-            int index = Mathf.RoundToInt(vs_surname.value);
-            if (index >= Countries[getCountryIndexFromValue()].surname.Length)
+            int index = Mathf.RoundToInt(vs_surname.플레이어프랩스데이터);
+            if (index >= Countries[getCountryIndexFromValue()].성씨.Length)
             {
-                index = Countries[getCountryIndexFromValue()].surname.Length - 1;
+                index = Countries[getCountryIndexFromValue()].성씨.Length - 1;
             }
-            return Countries[getCountryIndexFromValue()].surname[index];
+            return Countries[getCountryIndexFromValue()].성씨[index];
         }
         return "";
     }
@@ -216,7 +216,7 @@ public class CountryNameGenerator : TranslatableContent {
     {
         if (vs_country != null)
         {
-            int index = Mathf.RoundToInt(vs_country.value);
+            int index = Mathf.RoundToInt(vs_country.플레이어프랩스데이터);
             if (index >= Countries.Length)
             {
                 index = Countries.Length - 1;
@@ -235,7 +235,7 @@ public class CountryNameGenerator : TranslatableContent {
         nameGenderLink ngl = getNameAndGenderFromValue();
         if (ngl != null)
         {
-            retText += ngl.name + " " + getSurnameFromValue() + ", " + getCountryTranslatedStringFromValue();
+            retText += ngl.name + " " + getSurnameFromValue() + ", " + GetCountryTranslatedStringFromValue();
         }
         else
         {
@@ -244,10 +244,11 @@ public class CountryNameGenerator : TranslatableContent {
         return retText;
     }
 
-    /*
-	 * Get the country name, translated if available. 
-	 */
-    public string getCountryTranslatedStringFromValue()
+    /// <summary>
+    /// 가능한 경우 번역 된 국가 이름을 가져옵니다.
+    /// </summary>
+    /// <returns></returns>
+    public string GetCountryTranslatedStringFromValue()
     {
         return TranslationManager.translateIfAvail(Countries[getCountryIndexFromValue()].listEntry);
     }
@@ -306,10 +307,10 @@ public class CountryNameGenerator : TranslatableContent {
     /// 값 스크립트 링크 만들기.
     /// </summary>
 	void createValueScriptLinks(){
-		vs_gender = valueManager.instance.getFirstFittingValue (vs_type_gender);
-		vs_name = valueManager.instance.getFirstFittingValue (vs_type_givenName);
-		vs_surname = valueManager.instance.getFirstFittingValue (vs_type_surname);
-		vs_country = valueManager.instance.getFirstFittingValue (vs_type_country);
+		vs_gender = ValueManager.나자신.getFirstFittingValue (vs_type_gender);
+		vs_name = ValueManager.나자신.getFirstFittingValue (vs_type_givenName);
+		vs_surname = ValueManager.나자신.getFirstFittingValue (vs_type_surname);
+		vs_country = ValueManager.나자신.getFirstFittingValue (vs_type_country);
 	}
 
 	

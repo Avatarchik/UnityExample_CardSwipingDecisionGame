@@ -13,25 +13,27 @@ using UnityEngine.Events;
 /// </summary>
 public class GlobalMessageEventReceiver : MonoBehaviour {
 
+    /// <summary>
+    /// 인스펙터에서 유니티이벤트를 사용하귀 위한 클래스
+    /// </summary>
 	[System.Serializable] /// 클래스를 인스펙터에 노출하기 위해 직렬화.
-    public class mEvent : UnityEvent {}
+    public class 유니티이벤트 : UnityEvent {}
 
 	bool OutputReceivedMessages = true;
 
+
 	[System.Serializable] /// 클래스를 인스펙터에 노출하기 위해 직렬화.
-	public class MessageEvent
+	public class 메시지이벤트
 	{
         /// <summary>
-        /// ???????
-        /// 인스펙터에서 'spawnStart' 텍스트를 할당.
+        /// 유니티 이벤트 실행될때 애니메이션 트리거로 사용되는 텍스트를 인스펙터에서 적어주는 것 같음.
         /// </summary>
 		public string trigger;
 
         /// <summary>
-        /// 인스펙터에 노출되는 유니티 이벤트.
-        /// 여기서는 Game -> Scripts -> CardStack.setCardMoveEnable를 할당.
+        /// 인스펙터에 노출되는 유니티 이벤트. 
         /// </summary>
-		public mEvent _event;
+		public 유니티이벤트 _event;
 	}	
 		
 	void Start()
@@ -47,7 +49,7 @@ public class GlobalMessageEventReceiver : MonoBehaviour {
     void createManagerIfNonExisting()
     {
         /// GlobalMessageEventManager 클래스의 인스턴스에 아무것도 할당안되 있으면, 
-		if (GlobalMessageEventManager.instance == null)
+		if (GlobalMessageEventManager.나자신 == null)
         {
             /// "GlobalMessageEventManager" 이름의 새로운 게임 오브젝트를 만들어서 로컬변수에 할당하고
 			GameObject go = new GameObject("GlobalMessageEventManager");
@@ -66,7 +68,7 @@ public class GlobalMessageEventReceiver : MonoBehaviour {
 	}
 
 	[Tooltip("List of event - message combinations. Only relevant messages for this gameobject have to be added.")]
-	public MessageEvent[] MessageEvents;
+	public 메시지이벤트[] MessageEvents;
 
 
 	/*
@@ -80,7 +82,7 @@ public class GlobalMessageEventReceiver : MonoBehaviour {
 		}
 
 		int invokeCnt = 0;
-		foreach (MessageEvent me in MessageEvents) {
+		foreach (메시지이벤트 me in MessageEvents) {
 			if (trigger == me.trigger) {	//if the message was configured..
 				me._event.Invoke ();		//..execute/invoke the corresponding event
 				invokeCnt++;

@@ -12,7 +12,7 @@ public class setValue : MonoBehaviour {
 
 	public void setValues(){
 		foreach (EventScript.resultModifier rm in  valuesToChange) {
-			valueManager.instance.setValue (rm.modifier, rm.valueAdd);
+			ValueManager.나자신.setValue (rm.modifier, rm.valueAdd);
 		}
 	}
 }

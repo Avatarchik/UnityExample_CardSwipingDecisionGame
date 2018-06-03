@@ -79,9 +79,12 @@ public class CardStack :  TranslatableContent {
 	public Swipe swipe;
 
     /// <summary>
-    /// 카드를 움직여도 되는지 여부. true면 카드를 움직여도 되는 상태이다.
+    /// 카드를 움직여도 되는지 여부 상태를 가지고 있는 변수. 
+    /// 카드가 스폰시작되서 끝날때까지는 다른 카드로 넘어가면 안되기때문에 스폰시작때는 true값을 가지고 있고, 
+    /// 스폰 끝날때는 false값을 가지고 있게 된다.
+    /// true면 게임화면에 등장하는 카드를 움직여도 되는 상태(넘겨도 되는 상태)이다.
     /// </summary>
-    private bool cardMoveEnabled = true;
+    private bool 카드이동가능여부 = true;
 
     //카드의 애니메이터 (왼쪽 / 오른쪽) 움직임. 각 카드에는 자체 애니메이터가 있습니다.
     Animator anim;
@@ -302,18 +305,24 @@ public class CardStack :  TranslatableContent {
 		return true;
 	}
 
-	/*
-	 * Enable/Disable the movement of the card
-	 */
-	public void setCardMoveEnable(bool enable){
-		cardMoveEnabled = enable;
+    /// <summary>
+    /// 게임에서 사용하는 카드를 좌우로 넘겨서 움직일 수 있는 상태인지 여부를 파라미터로 받아서 카드이동가능여부 변수에 전달하는 메서드.
+    /// 본 메서드의 파라미터값은 GlobalMessages 오브젝트의 인스펙터에서 넘겨 받을 수 있게 세팅한다.
+    /// 카드가 스폰시작할때는 움직일수 없게 본 메서드에 파라미터로 넘겨주는 bool값을 인스펙터에서 미리 체크해제(false)하고
+    /// 카드가 스폰이 끝나서 움직일 수 있을때는 본 메서드에 파라미터로 넘겨주는 bool값을 인스펙터에서 미리 체크(true)해놓는다.
+    /// true면 카드를 움직일 수 있는 상태이고, false면 카드를 아직 움직일 수 없는 상태이다.
+    /// </summary>
+    /// <param name="상태">true면 카드를 움직일 수 있는 상태이고, false면 카드를 아직 움직일 수 없는 상태인것</param>
+    public void 카드움직임가능여부세팅(bool 상태)
+    {
+		카드이동가능여부 = 상태;
 	}
 
 	/*
 	 * Get the card move enabled state (e.g. we are inside a menue and its blocked)
 	 */
 	public bool getCardMoveEnabled(){
-		return cardMoveEnabled;
+		return 카드이동가능여부;
 	}
 
 	[Tooltip("만약 카드가 중간으로 돌아가면 : 얼마나 빨리 움직일까?")]
@@ -338,7 +347,7 @@ public class CardStack :  TranslatableContent {
 
 				Vector2 moveCardVector = swipe.getScaledSwipeVector ();
 
-				if (cardMoveEnabled == true) {
+				if (카드이동가능여부 == true) {
 					if (moveCardVector.x > 0f) {
 						moveCardDistance = moveCardVector.magnitude;
 					} else {
@@ -415,7 +424,7 @@ public class CardStack :  TranslatableContent {
 	}
 	//start the coroutine for moving the card (and spawning a new one after computation)
 	public void nextCard(){
-		if (cardMoveEnabled == true) {
+		if (카드이동가능여부 == true) {
 			StartCoroutine (moveCardOut ());
 		}
 	}
@@ -524,7 +533,7 @@ public class CardStack :  TranslatableContent {
 
 		for (int i = 0; i<allCards.Length; i++) {
 			//test, if condition for group is met
-			if (valueManager.instance.AreConditinsForResultMet (allCards[i].subStackCondition ) == true) {
+			if (ValueManager.나자신.AreConditinsForResultMet (allCards[i].subStackCondition ) == true) {
 
 				//if the group condition is true, test the cards from the group
 				for (int j = 0; j < allCards [i].groupCards.Length; j++) {
@@ -536,7 +545,7 @@ public class CardStack :  TranslatableContent {
 					}
 
 					foreach (EventScript.condition c in es.conditions) {
-						if (valueManager.instance.getConditionMet (c) == true) {
+						if (ValueManager.나자신.getConditionMet (c) == true) {
 							//condition is ok.
 						} else {
 							conditionOk = false;
@@ -561,7 +570,7 @@ public class CardStack :  TranslatableContent {
 	 *	Execution of an swipe to the left. This is called by an event in the inspector of the swipe script. 
 	 */
 	public void leftSwipe(){
-		if (cardMoveEnabled == true) {
+		if (카드이동가능여부 == true) {
 			EventScript es = spawnedCard.GetComponent<EventScript> ();
 			if (es != null) {
 				es.onLeftSwipe ();	//call the eventscript on the card for stat-changes, linking of follow up cards, etc.
@@ -580,7 +589,7 @@ public class CardStack :  TranslatableContent {
     public void rightSwipe()
     {
         /// 카드를 움직일 수 있는 상태이면
-		if (cardMoveEnabled == true)
+		if (카드이동가능여부 == true)
         {
 			EventScript es = spawnedCard.GetComponent<EventScript> ();
 
@@ -600,7 +609,7 @@ public class CardStack :  TranslatableContent {
 
 	public void additionalChoices(int choiceNr){
 		bool executed = false;
-		if (cardMoveEnabled == true) {
+		if (카드이동가능여부 == true) {
 			EventScript es = spawnedCard.GetComponent<EventScript> ();
 			if (es != null) {
 				executed = es.ExecuteAddtionalChoices (choiceNr); //call the eventscript on the card for stat-changes, linking of follow up cards, etc.

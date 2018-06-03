@@ -14,7 +14,7 @@ public class GlobalMessageEventManager : MonoBehaviour {
     /// <summary>
     /// GlobalMessageEventManager 클래스의 인스턴스.
     /// </summary>
-	public static GlobalMessageEventManager instance;
+	public static GlobalMessageEventManager 나자신;
 
 	public List<GlobalMessageEventReceiver> receivers;
 
@@ -29,15 +29,18 @@ public class GlobalMessageEventManager : MonoBehaviour {
     /// </summary>
     public void buildAwake()
     {
-		if (instance == null)
+
+		if (나자신 == null)
         {
-			instance = this;
+            /// 나자신을 할당한후 다른씬에서도 내 오브젝트가 사라지지 않도록 계속 유지시킨다.
+			나자신 = this;
 			GameObject.DontDestroyOnLoad (gameObject);
-			receivers = new List<GlobalMessageEventReceiver> ();
+
+            receivers = new List<GlobalMessageEventReceiver> ();
 		}
         else
         {
-			if (instance != this)
+			if (나자신 != this)
             {
 				Destroy (gameObject);
 			}
@@ -50,8 +53,8 @@ public class GlobalMessageEventManager : MonoBehaviour {
     /// <param name="recv"></param>
     public static void registerMessageReceiver(GlobalMessageEventReceiver recv)
     {
-		if (instance != null) {
-			instance.receivers.Add (recv);
+		if (나자신 != null) {
+			나자신.receivers.Add (recv);
 		}
 	}
 
@@ -60,8 +63,8 @@ public class GlobalMessageEventManager : MonoBehaviour {
     /// </summary>
     /// <param name="recv"></param>
     public static void unregisterMessageReceiver(GlobalMessageEventReceiver recv){
-		if (instance != null) {
-			instance.receivers.Remove (recv);
+		if (나자신 != null) {
+			나자신.receivers.Remove (recv);
 		}
 	}
 
@@ -70,9 +73,9 @@ public class GlobalMessageEventManager : MonoBehaviour {
     /// </summary>
     /// <param name="message"></param>
     public static void sendToReceivers(string message){
-		if (instance != null) {
+		if (나자신 != null) {
 			//Debug.Log ("Manager, sending:'" + message + "'");
-			foreach (GlobalMessageEventReceiver recv in instance.receivers) {
+			foreach (GlobalMessageEventReceiver recv in 나자신.receivers) {
 				recv.globalMessage (message);
 			}
 		} else {

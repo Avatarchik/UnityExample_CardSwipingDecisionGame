@@ -36,7 +36,7 @@ public class HighScoreNameLinker : MonoBehaviour {
 	[HideInInspector]public string key = "saveKey";
 	public scoreCounter sc;
 	ValueScript vs;
-	public valueDefinitions.values valueType;
+	public ValueDefinitions.값정의 valueType;
 	[Tooltip("Select text field to show the player identity with the score.")]
 	public Text countryNameText;
 	[Tooltip("Select text field to show the score.")]
@@ -60,17 +60,17 @@ public class HighScoreNameLinker : MonoBehaviour {
 	}
 
 	void getVSscript(){
-		vs = valueManager.instance.getFirstFittingValue (valueType);
+		vs = ValueManager.나자신.getFirstFittingValue (valueType);
 	}
 
 	void generateSaveKey(){
 		getVSscript ();
 		if (highScoreSource == hsnSelection.valueScriptActual){
-			key = vs.valueType.ToString() + "_HS_pair_act";
+			key = vs.내역활.ToString() + "_HS_pair_act";
 		} else if (highScoreSource == hsnSelection.valueScriptMaximal) {
-			key = vs.valueType.ToString() + "_HS_pair_max";
+			key = vs.내역활.ToString() + "_HS_pair_max";
 		} else if (highScoreSource == hsnSelection.valueScriptMinimal) {
-			key = vs.valueType.ToString() + "_HS_pair_min";
+			key = vs.내역활.ToString() + "_HS_pair_min";
 		} else if (highScoreSource == hsnSelection.scoreCounter) {
 			key = sc.key + "_HS_pair";
 		}
@@ -139,7 +139,7 @@ public class HighScoreNameLinker : MonoBehaviour {
 
 		getVSscript ();
 		if (highScoreSource == hsnSelection.valueScriptActual) {
-			score = Mathf.RoundToInt (vs.value);
+			score = Mathf.RoundToInt (vs.플레이어프랩스데이터);
 		} else if (highScoreSource == hsnSelection.valueScriptMaximal) {
 			score = Mathf.RoundToInt (vs.getMaxValue ());
 		} else if (highScoreSource == hsnSelection.valueScriptMinimal) {

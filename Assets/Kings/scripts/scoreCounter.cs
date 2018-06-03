@@ -39,11 +39,11 @@ public class scoreCounter : MonoBehaviour {
 	}
 
 	void save(){
-		SecurePlayerPrefs.SetInt (key, score);
+		SecurePlayerPrefs.저장int (key, score);
 	}
 
 	int load(){
-		score = SecurePlayerPrefs.GetInt (key);
+		score = SecurePlayerPrefs.얻기int (key);
 		return score;
 	}
 

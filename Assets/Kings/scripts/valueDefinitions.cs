@@ -2,34 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class valueDefinitions : MonoBehaviour {
-    
+public class ValueDefinitions : MonoBehaviour {
+
     /// <summary>
-    /// 게임에서 사용되는 모든 가치를 정의한 열거형. 이름, 성별, 나라, 카리스마등 게임에서 사용되는 모든 종류의 분류를 정의해놓은 열거형이다. 
-    /// 유니티에서 열거형 변수는 인스펙터에서 드롭 다운 메뉴를 표시되기때문에 사용자가 열거형에 요소를 쉽게 선택해서 지정할 수 있다.
-    /// 가령 이름 변수일경우 인스펙터 드롭다운 메뉴에서 name을 지정하는 방식으로 사용한다.
+    /// 게임에서 사용되는 모든 가치값을 정의해놓은 열거형.
+    /// 유니티에서 열거형 변수는 인스펙터에서 드롭 다운 메뉴를 표시되기때문에 프로그래머가 인스펙터에서 목록의 요소를 쉽게 선택해서 지정할 수 있게 하기 위해 본 게임에서 사용되는 모든 값들을 열거형으로 정의해놨다.
     /// </summary>
-    public enum values
+    public enum 값정의
     {
-        name, // 이름
-        surname, // 성
-        gender, // 성별
-        country, // 나라
-        years, // 통치기간
-        army, // 군대수치
-        people, // 국민수치
-        religion, // 종교수치
-        money, // 돈
-        authority, // 권위
-        intelligence, // 지성
-        charisma, // 카리스마
-        luck, // 행운
-        creativity, // 독창성
+        이름, // 이름
+        서브네임, // 성
+        성별, // 성별
+        국가, // 나라
+        통치기간, // 통치기간
+        군대, // 군대수치
+        국민, // 국민수치
+        종교, // 종교수치
+        돈, // 돈
+        권위, // 권위
+        지성, // 지성
+        카리스마, // 카리스마
+        행운, // 행운
+        독창성, // 독창성
         look, //
-        health, // 건강
-        marriage, // 결혼
-        married, // 기혼
-        adready, // 광고준비
-        gamesPlayed // 게임플레이중
+        건강, // 건강
+        결혼, // 결혼
+        기혼, // 기혼
+        광고준비, // 광고준비
+        게임플레이중 // 게임플레이중
     }
 }

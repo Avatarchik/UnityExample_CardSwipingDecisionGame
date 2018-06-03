@@ -1625,8 +1625,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c26748c1f51a9aa41b86d84f82419c05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  valueType: 17
-  value: 0
+  "\uB0B4\uC5ED\uD65C": 17
+  "\uD50C\uB808\uC774\uC5B4\uD504\uB7A9\uC2A4\uB370\uC774\uD130": 0
   debugValueChanges: 0
   UserInterface:
     uiScrollbar: {fileID: 0}
@@ -1637,33 +1637,33 @@ MonoBehaviour:
     textValue: {fileID: 0}
     showActualization: 0
     miniatureSprite: {fileID: 0}
-  limits:
-    min: 0
-    max: 1
-    randomMin: 0
-    randomMax: 0
+  "\uBC94\uC704":
+    "\uCD5C\uC18C\uAC12": 0
+    "\uCD5C\uB300\uAC12": 100
+    "\uB79C\uB364\uCD5C\uC18C\uAC12": 0
+    "\uB79C\uB364\uCD5C\uB300\uAC12": 100
   keepValue: 0
-  events:
-    OnIncrease:
+  "\uC2E4\uD589\uD560\uC774\uBCA4\uD2B8":
+    "\uC99D\uAC00\uD560\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnDecrease:
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    "\uAC10\uC18C\uD560\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnMax:
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    "\uCD5C\uB300\uAC12\uC77C\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnMin:
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    "\uCD5C\uC18C\uAC12\uC77C\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
 --- !u!114 &240206873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2855,8 +2855,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c26748c1f51a9aa41b86d84f82419c05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  valueType: 15
-  value: 0
+  "\uB0B4\uC5ED\uD65C": 15
+  "\uD50C\uB808\uC774\uC5B4\uD504\uB7A9\uC2A4\uB370\uC774\uD130": 0
   debugValueChanges: 0
   UserInterface:
     uiScrollbar: {fileID: 0}
@@ -2867,33 +2867,33 @@ MonoBehaviour:
     textValue: {fileID: 292464338}
     showActualization: 1
     miniatureSprite: {fileID: 21300000, guid: dcad90a0c52337e4098095664842dd98, type: 3}
-  limits:
-    min: 0
-    max: 100
-    randomMin: 1
-    randomMax: 100
+  "\uBC94\uC704":
+    "\uCD5C\uC18C\uAC12": 0
+    "\uCD5C\uB300\uAC12": 100
+    "\uB79C\uB364\uCD5C\uC18C\uAC12": 0
+    "\uB79C\uB364\uCD5C\uB300\uAC12": 100
   keepValue: 0
-  events:
-    OnIncrease:
+  "\uC2E4\uD589\uD560\uC774\uBCA4\uD2B8":
+    "\uC99D\uAC00\uD560\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnDecrease:
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    "\uAC10\uC18C\uD560\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnMax:
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    "\uCD5C\uB300\uAC12\uC77C\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnMin:
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    "\uCD5C\uC18C\uAC12\uC77C\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
 --- !u!1 &452143755
 GameObject:
   m_ObjectHideFlags: 0
@@ -3432,8 +3432,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c26748c1f51a9aa41b86d84f82419c05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  valueType: 2
-  value: 0
+  "\uB0B4\uC5ED\uD65C": 2
+  "\uD50C\uB808\uC774\uC5B4\uD504\uB7A9\uC2A4\uB370\uC774\uD130": 0
   debugValueChanges: 0
   UserInterface:
     uiScrollbar: {fileID: 0}
@@ -3444,33 +3444,33 @@ MonoBehaviour:
     textValue: {fileID: 0}
     showActualization: 0
     miniatureSprite: {fileID: 0}
-  limits:
-    min: 0
-    max: 1
-    randomMin: 0
-    randomMax: 1
+  "\uBC94\uC704":
+    "\uCD5C\uC18C\uAC12": 0
+    "\uCD5C\uB300\uAC12": 100
+    "\uB79C\uB364\uCD5C\uC18C\uAC12": 0
+    "\uB79C\uB364\uCD5C\uB300\uAC12": 100
   keepValue: 0
-  events:
-    OnIncrease:
+  "\uC2E4\uD589\uD560\uC774\uBCA4\uD2B8":
+    "\uC99D\uAC00\uD560\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnDecrease:
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    "\uAC10\uC18C\uD560\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnMax:
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    "\uCD5C\uB300\uAC12\uC77C\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnMin:
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    "\uCD5C\uC18C\uAC12\uC77C\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
 --- !u!114 &485818395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3530,8 +3530,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c26748c1f51a9aa41b86d84f82419c05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  valueType: 0
-  value: 0
+  "\uB0B4\uC5ED\uD65C": 0
+  "\uD50C\uB808\uC774\uC5B4\uD504\uB7A9\uC2A4\uB370\uC774\uD130": 0
   debugValueChanges: 0
   UserInterface:
     uiScrollbar: {fileID: 0}
@@ -3542,33 +3542,33 @@ MonoBehaviour:
     textValue: {fileID: 0}
     showActualization: 0
     miniatureSprite: {fileID: 0}
-  limits:
-    min: 0
-    max: 5
-    randomMin: 0
-    randomMax: 5
+  "\uBC94\uC704":
+    "\uCD5C\uC18C\uAC12": 0
+    "\uCD5C\uB300\uAC12": 100
+    "\uB79C\uB364\uCD5C\uC18C\uAC12": 0
+    "\uB79C\uB364\uCD5C\uB300\uAC12": 100
   keepValue: 0
-  events:
-    OnIncrease:
+  "\uC2E4\uD589\uD560\uC774\uBCA4\uD2B8":
+    "\uC99D\uAC00\uD560\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnDecrease:
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    "\uAC10\uC18C\uD560\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnMax:
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    "\uCD5C\uB300\uAC12\uC77C\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnMin:
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    "\uCD5C\uC18C\uAC12\uC77C\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
 --- !u!1 &495641995
 GameObject:
   m_ObjectHideFlags: 0
@@ -4727,8 +4727,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c26748c1f51a9aa41b86d84f82419c05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  valueType: 6
-  value: 0
+  "\uB0B4\uC5ED\uD65C": 6
+  "\uD50C\uB808\uC774\uC5B4\uD504\uB7A9\uC2A4\uB370\uC774\uD130": 0
   debugValueChanges: 0
   UserInterface:
     uiScrollbar: {fileID: 0}
@@ -4739,55 +4739,33 @@ MonoBehaviour:
     textValue: {fileID: 0}
     showActualization: 0
     miniatureSprite: {fileID: 0}
-  limits:
-    min: 0
-    max: 100
-    randomMin: 80
-    randomMax: 80
+  "\uBC94\uC704":
+    "\uCD5C\uC18C\uAC12": 0
+    "\uCD5C\uB300\uAC12": 100
+    "\uB79C\uB364\uCD5C\uC18C\uAC12": 0
+    "\uB79C\uB364\uCD5C\uB300\uAC12": 100
   keepValue: 0
-  events:
-    OnIncrease:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1657626518}
-          m_MethodName: SetTrigger
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: valueUp
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnDecrease:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1657626518}
-          m_MethodName: SetTrigger
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: valueDown
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnMax:
+  "\uC2E4\uD589\uD560\uC774\uBCA4\uD2B8":
+    "\uC99D\uAC00\uD560\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnMin:
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    "\uAC10\uC18C\uD560\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    "\uCD5C\uB300\uAC12\uC77C\uB54C":
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    "\uCD5C\uC18C\uAC12\uC77C\uB54C":
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
 --- !u!1 &642090318
 GameObject:
   m_ObjectHideFlags: 0
@@ -4828,8 +4806,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c26748c1f51a9aa41b86d84f82419c05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  valueType: 10
-  value: 0
+  "\uB0B4\uC5ED\uD65C": 10
+  "\uD50C\uB808\uC774\uC5B4\uD504\uB7A9\uC2A4\uB370\uC774\uD130": 0
   debugValueChanges: 0
   UserInterface:
     uiScrollbar: {fileID: 0}
@@ -4840,33 +4818,33 @@ MonoBehaviour:
     textValue: {fileID: 1258367562}
     showActualization: 1
     miniatureSprite: {fileID: 21300000, guid: b2f7551d3cd71504dbdc11ecd35e5d0d, type: 3}
-  limits:
-    min: 0
-    max: 100
-    randomMin: 1
-    randomMax: 100
+  "\uBC94\uC704":
+    "\uCD5C\uC18C\uAC12": 0
+    "\uCD5C\uB300\uAC12": 100
+    "\uB79C\uB364\uCD5C\uC18C\uAC12": 0
+    "\uB79C\uB364\uCD5C\uB300\uAC12": 100
   keepValue: 0
-  events:
-    OnIncrease:
+  "\uC2E4\uD589\uD560\uC774\uBCA4\uD2B8":
+    "\uC99D\uAC00\uD560\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnDecrease:
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    "\uAC10\uC18C\uD560\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnMax:
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    "\uCD5C\uB300\uAC12\uC77C\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnMin:
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    "\uCD5C\uC18C\uAC12\uC77C\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
 --- !u!1 &658934258
 GameObject:
   m_ObjectHideFlags: 0
@@ -4907,8 +4885,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c26748c1f51a9aa41b86d84f82419c05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  valueType: 5
-  value: 0
+  "\uB0B4\uC5ED\uD65C": 5
+  "\uD50C\uB808\uC774\uC5B4\uD504\uB7A9\uC2A4\uB370\uC774\uD130": 0
   debugValueChanges: 0
   UserInterface:
     uiScrollbar: {fileID: 0}
@@ -4919,55 +4897,33 @@ MonoBehaviour:
     textValue: {fileID: 0}
     showActualization: 0
     miniatureSprite: {fileID: 0}
-  limits:
-    min: 0
-    max: 100
-    randomMin: 80
-    randomMax: 80
+  "\uBC94\uC704":
+    "\uCD5C\uC18C\uAC12": 0
+    "\uCD5C\uB300\uAC12": 100
+    "\uB79C\uB364\uCD5C\uC18C\uAC12": 0
+    "\uB79C\uB364\uCD5C\uB300\uAC12": 100
   keepValue: 0
-  events:
-    OnIncrease:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1801745827}
-          m_MethodName: SetTrigger
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: valueUp
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnDecrease:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1801745827}
-          m_MethodName: SetTrigger
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: valueDown
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnMax:
+  "\uC2E4\uD589\uD560\uC774\uBCA4\uD2B8":
+    "\uC99D\uAC00\uD560\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnMin:
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    "\uAC10\uC18C\uD560\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    "\uCD5C\uB300\uAC12\uC77C\uB54C":
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    "\uCD5C\uC18C\uAC12\uC77C\uB54C":
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
 --- !u!1 &680467669
 GameObject:
   m_ObjectHideFlags: 0
@@ -5008,8 +4964,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c26748c1f51a9aa41b86d84f82419c05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  valueType: 9
-  value: 0
+  "\uB0B4\uC5ED\uD65C": 9
+  "\uD50C\uB808\uC774\uC5B4\uD504\uB7A9\uC2A4\uB370\uC774\uD130": 0
   debugValueChanges: 0
   UserInterface:
     uiScrollbar: {fileID: 0}
@@ -5020,33 +4976,33 @@ MonoBehaviour:
     textValue: {fileID: 598637639}
     showActualization: 1
     miniatureSprite: {fileID: 21300000, guid: 0c9e9fef11716604ca6a13aad8aca253, type: 3}
-  limits:
-    min: 0
-    max: 100
-    randomMin: 1
-    randomMax: 100
+  "\uBC94\uC704":
+    "\uCD5C\uC18C\uAC12": 0
+    "\uCD5C\uB300\uAC12": 100
+    "\uB79C\uB364\uCD5C\uC18C\uAC12": 0
+    "\uB79C\uB364\uCD5C\uB300\uAC12": 100
   keepValue: 0
-  events:
-    OnIncrease:
+  "\uC2E4\uD589\uD560\uC774\uBCA4\uD2B8":
+    "\uC99D\uAC00\uD560\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnDecrease:
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    "\uAC10\uC18C\uD560\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnMax:
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    "\uCD5C\uB300\uAC12\uC77C\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnMin:
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    "\uCD5C\uC18C\uAC12\uC77C\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
 --- !u!1 &682396749
 GameObject:
   m_ObjectHideFlags: 0
@@ -5939,8 +5895,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c26748c1f51a9aa41b86d84f82419c05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  valueType: 13
-  value: 0
+  "\uB0B4\uC5ED\uD65C": 13
+  "\uD50C\uB808\uC774\uC5B4\uD504\uB7A9\uC2A4\uB370\uC774\uD130": 0
   debugValueChanges: 0
   UserInterface:
     uiScrollbar: {fileID: 0}
@@ -5951,33 +5907,33 @@ MonoBehaviour:
     textValue: {fileID: 69490533}
     showActualization: 1
     miniatureSprite: {fileID: 21300000, guid: d55930b401155244499ff04fa330ac66, type: 3}
-  limits:
-    min: 0
-    max: 100
-    randomMin: 1
-    randomMax: 100
+  "\uBC94\uC704":
+    "\uCD5C\uC18C\uAC12": 0
+    "\uCD5C\uB300\uAC12": 100
+    "\uB79C\uB364\uCD5C\uC18C\uAC12": 0
+    "\uB79C\uB364\uCD5C\uB300\uAC12": 100
   keepValue: 0
-  events:
-    OnIncrease:
+  "\uC2E4\uD589\uD560\uC774\uBCA4\uD2B8":
+    "\uC99D\uAC00\uD560\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnDecrease:
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    "\uAC10\uC18C\uD560\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnMax:
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    "\uCD5C\uB300\uAC12\uC77C\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnMin:
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    "\uCD5C\uC18C\uAC12\uC77C\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
 --- !u!1 &771782565
 GameObject:
   m_ObjectHideFlags: 0
@@ -6092,8 +6048,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c26748c1f51a9aa41b86d84f82419c05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  valueType: 1
-  value: 0
+  "\uB0B4\uC5ED\uD65C": 1
+  "\uD50C\uB808\uC774\uC5B4\uD504\uB7A9\uC2A4\uB370\uC774\uD130": 0
   debugValueChanges: 0
   UserInterface:
     uiScrollbar: {fileID: 0}
@@ -6104,33 +6060,33 @@ MonoBehaviour:
     textValue: {fileID: 0}
     showActualization: 0
     miniatureSprite: {fileID: 0}
-  limits:
-    min: 0
-    max: 5
-    randomMin: 0
-    randomMax: 5
+  "\uBC94\uC704":
+    "\uCD5C\uC18C\uAC12": 0
+    "\uCD5C\uB300\uAC12": 5
+    "\uB79C\uB364\uCD5C\uC18C\uAC12": 0
+    "\uB79C\uB364\uCD5C\uB300\uAC12": 5
   keepValue: 0
-  events:
-    OnIncrease:
+  "\uC2E4\uD589\uD560\uC774\uBCA4\uD2B8":
+    "\uC99D\uAC00\uD560\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnDecrease:
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    "\uAC10\uC18C\uD560\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnMax:
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    "\uCD5C\uB300\uAC12\uC77C\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnMin:
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    "\uCD5C\uC18C\uAC12\uC77C\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
 --- !u!1 &796274709
 GameObject:
   m_ObjectHideFlags: 0
@@ -6411,8 +6367,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c26748c1f51a9aa41b86d84f82419c05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  valueType: 7
-  value: 0
+  "\uB0B4\uC5ED\uD65C": 7
+  "\uD50C\uB808\uC774\uC5B4\uD504\uB7A9\uC2A4\uB370\uC774\uD130": 0
   debugValueChanges: 0
   UserInterface:
     uiScrollbar: {fileID: 0}
@@ -6423,55 +6379,33 @@ MonoBehaviour:
     textValue: {fileID: 0}
     showActualization: 0
     miniatureSprite: {fileID: 0}
-  limits:
-    min: 0
-    max: 100
-    randomMin: 80
-    randomMax: 80
+  "\uBC94\uC704":
+    "\uCD5C\uC18C\uAC12": 0
+    "\uCD5C\uB300\uAC12": 100
+    "\uB79C\uB364\uCD5C\uC18C\uAC12": 0
+    "\uB79C\uB364\uCD5C\uB300\uAC12": 100
   keepValue: 0
-  events:
-    OnIncrease:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1484496494}
-          m_MethodName: SetTrigger
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: valueUp
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnDecrease:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1484496494}
-          m_MethodName: SetTrigger
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: valueDown
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnMax:
+  "\uC2E4\uD589\uD560\uC774\uBCA4\uD2B8":
+    "\uC99D\uAC00\uD560\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnMin:
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    "\uAC10\uC18C\uD560\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    "\uCD5C\uB300\uAC12\uC77C\uB54C":
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    "\uCD5C\uC18C\uAC12\uC77C\uB54C":
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
 --- !u!1 &804711189
 GameObject:
   m_ObjectHideFlags: 0
@@ -6850,8 +6784,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c26748c1f51a9aa41b86d84f82419c05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  valueType: 16
-  value: 0
+  "\uB0B4\uC5ED\uD65C": 16
+  "\uD50C\uB808\uC774\uC5B4\uD504\uB7A9\uC2A4\uB370\uC774\uD130": 0
   debugValueChanges: 0
   UserInterface:
     uiScrollbar: {fileID: 0}
@@ -6862,33 +6796,33 @@ MonoBehaviour:
     textValue: {fileID: 1386090597}
     showActualization: 1
     miniatureSprite: {fileID: 21300000, guid: 0df08b8552e42f64c874b073500661bb, type: 3}
-  limits:
-    min: 0
-    max: 100
-    randomMin: 0
-    randomMax: 0
+  "\uBC94\uC704":
+    "\uCD5C\uC18C\uAC12": 0
+    "\uCD5C\uB300\uAC12": 100
+    "\uB79C\uB364\uCD5C\uC18C\uAC12": 0
+    "\uB79C\uB364\uCD5C\uB300\uAC12": 100
   keepValue: 0
-  events:
-    OnIncrease:
+  "\uC2E4\uD589\uD560\uC774\uBCA4\uD2B8":
+    "\uC99D\uAC00\uD560\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnDecrease:
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    "\uAC10\uC18C\uD560\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnMax:
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    "\uCD5C\uB300\uAC12\uC77C\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnMin:
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    "\uCD5C\uC18C\uAC12\uC77C\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
 --- !u!1 &893812787
 GameObject:
   m_ObjectHideFlags: 0
@@ -7030,7 +6964,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: swipe to start
+  m_Text: "\uC2A4\uC640\uC774\uD504 \uD574\uC11C \uC2DC\uC791"
 --- !u!222 &899493290
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7113,8 +7047,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c26748c1f51a9aa41b86d84f82419c05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  valueType: 8
-  value: 0
+  "\uB0B4\uC5ED\uD65C": 8
+  "\uD50C\uB808\uC774\uC5B4\uD504\uB7A9\uC2A4\uB370\uC774\uD130": 0
   debugValueChanges: 0
   UserInterface:
     uiScrollbar: {fileID: 0}
@@ -7125,55 +7059,33 @@ MonoBehaviour:
     textValue: {fileID: 0}
     showActualization: 0
     miniatureSprite: {fileID: 0}
-  limits:
-    min: 0
-    max: 100
-    randomMin: 80
-    randomMax: 80
+  "\uBC94\uC704":
+    "\uCD5C\uC18C\uAC12": 0
+    "\uCD5C\uB300\uAC12": 100
+    "\uB79C\uB364\uCD5C\uC18C\uAC12": 0
+    "\uB79C\uB364\uCD5C\uB300\uAC12": 100
   keepValue: 0
-  events:
-    OnIncrease:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1178378300}
-          m_MethodName: SetTrigger
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: valueUp
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnDecrease:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1178378300}
-          m_MethodName: SetTrigger
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: valueDown
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnMax:
+  "\uC2E4\uD589\uD560\uC774\uBCA4\uD2B8":
+    "\uC99D\uAC00\uD560\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnMin:
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    "\uAC10\uC18C\uD560\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    "\uCD5C\uB300\uAC12\uC77C\uB54C":
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    "\uCD5C\uC18C\uAC12\uC77C\uB54C":
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
 --- !u!1 &956058929
 GameObject:
   m_ObjectHideFlags: 0
@@ -7214,8 +7126,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c26748c1f51a9aa41b86d84f82419c05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  valueType: 19
-  value: 0
+  "\uB0B4\uC5ED\uD65C": 19
+  "\uD50C\uB808\uC774\uC5B4\uD504\uB7A9\uC2A4\uB370\uC774\uD130": 0
   debugValueChanges: 0
   UserInterface:
     uiScrollbar: {fileID: 0}
@@ -7226,33 +7138,33 @@ MonoBehaviour:
     textValue: {fileID: 0}
     showActualization: 0
     miniatureSprite: {fileID: 0}
-  limits:
-    min: 0
-    max: 10000
-    randomMin: 0
-    randomMax: 0
+  "\uBC94\uC704":
+    "\uCD5C\uC18C\uAC12": 0
+    "\uCD5C\uB300\uAC12": 100
+    "\uB79C\uB364\uCD5C\uC18C\uAC12": 0
+    "\uB79C\uB364\uCD5C\uB300\uAC12": 100
   keepValue: 1
-  events:
-    OnIncrease:
+  "\uC2E4\uD589\uD560\uC774\uBCA4\uD2B8":
+    "\uC99D\uAC00\uD560\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnDecrease:
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    "\uAC10\uC18C\uD560\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnMax:
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    "\uCD5C\uB300\uAC12\uC77C\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnMin:
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    "\uCD5C\uC18C\uAC12\uC77C\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
 --- !u!1 &964252217
 GameObject:
   m_ObjectHideFlags: 0
@@ -7327,8 +7239,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c26748c1f51a9aa41b86d84f82419c05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  valueType: 11
-  value: 0
+  "\uB0B4\uC5ED\uD65C": 11
+  "\uD50C\uB808\uC774\uC5B4\uD504\uB7A9\uC2A4\uB370\uC774\uD130": 0
   debugValueChanges: 0
   UserInterface:
     uiScrollbar: {fileID: 0}
@@ -7339,33 +7251,33 @@ MonoBehaviour:
     textValue: {fileID: 1493200771}
     showActualization: 1
     miniatureSprite: {fileID: 21300000, guid: c00a318cda81c38469b76efd0191cddb, type: 3}
-  limits:
-    min: 0
-    max: 100
-    randomMin: 1
-    randomMax: 100
+  "\uBC94\uC704":
+    "\uCD5C\uC18C\uAC12": 0
+    "\uCD5C\uB300\uAC12": 100
+    "\uB79C\uB364\uCD5C\uC18C\uAC12": 0
+    "\uB79C\uB364\uCD5C\uB300\uAC12": 100
   keepValue: 0
-  events:
-    OnIncrease:
+  "\uC2E4\uD589\uD560\uC774\uBCA4\uD2B8":
+    "\uC99D\uAC00\uD560\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnDecrease:
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    "\uAC10\uC18C\uD560\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnMax:
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    "\uCD5C\uB300\uAC12\uC77C\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnMin:
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    "\uCD5C\uC18C\uAC12\uC77C\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
 --- !u!1 &975190281
 GameObject:
   m_ObjectHideFlags: 0
@@ -7542,8 +7454,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c26748c1f51a9aa41b86d84f82419c05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  valueType: 4
-  value: 0
+  "\uB0B4\uC5ED\uD65C": 4
+  "\uD50C\uB808\uC774\uC5B4\uD504\uB7A9\uC2A4\uB370\uC774\uD130": 0
   debugValueChanges: 0
   UserInterface:
     uiScrollbar: {fileID: 0}
@@ -7554,33 +7466,33 @@ MonoBehaviour:
     textValue: {fileID: 1773188270}
     showActualization: 0
     miniatureSprite: {fileID: 0}
-  limits:
-    min: 0
-    max: 200
-    randomMin: 0
-    randomMax: 0
+  "\uBC94\uC704":
+    "\uCD5C\uC18C\uAC12": 0
+    "\uCD5C\uB300\uAC12": 100
+    "\uB79C\uB364\uCD5C\uC18C\uAC12": 0
+    "\uB79C\uB364\uCD5C\uB300\uAC12": 100
   keepValue: 0
-  events:
-    OnIncrease:
+  "\uC2E4\uD589\uD560\uC774\uBCA4\uD2B8":
+    "\uC99D\uAC00\uD560\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnDecrease:
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    "\uAC10\uC18C\uD560\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnMax:
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    "\uCD5C\uB300\uAC12\uC77C\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnMin:
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    "\uCD5C\uC18C\uAC12\uC77C\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
 --- !u!1 &994011254
 GameObject:
   m_ObjectHideFlags: 0
@@ -7716,12 +7628,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MessageEvents:
-  - trigger: spawnStart
+  - trigger: spawnEnd
     _event:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1179489438}
-          m_MethodName: setCardMoveEnable
+          m_MethodName: "\uCE74\uB4DC\uC6C0\uC9C1\uC784\uAC00\uB2A5\uC5EC\uBD80\uC138\uD305"
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -7731,14 +7643,14 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-      m_TypeName: GlobalMessageEventReceiver+mEvent, Assembly-CSharp, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
+      m_TypeName: "GlobalMessageEventReceiver+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8,
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
   - trigger: spawnEnd
     _event:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1179489438}
-          m_MethodName: setCardMoveEnable
+          m_MethodName: "\uCE74\uB4DC\uC6C0\uC9C1\uC784\uAC00\uB2A5\uC5EC\uBD80\uC138\uD305"
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -7748,8 +7660,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-      m_TypeName: GlobalMessageEventReceiver+mEvent, Assembly-CSharp, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
+      m_TypeName: "GlobalMessageEventReceiver+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8,
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
   - trigger: gameover
     _event:
       m_PersistentCalls:
@@ -7765,8 +7677,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-      m_TypeName: GlobalMessageEventReceiver+mEvent, Assembly-CSharp, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
+      m_TypeName: "GlobalMessageEventReceiver+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8,
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
   - trigger: preGameover
     _event:
       m_PersistentCalls:
@@ -7793,8 +7705,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-      m_TypeName: GlobalMessageEventReceiver+mEvent, Assembly-CSharp, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
+      m_TypeName: "GlobalMessageEventReceiver+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8,
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
   - trigger: playAd
     _event:
       m_PersistentCalls:
@@ -7810,8 +7722,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-      m_TypeName: GlobalMessageEventReceiver+mEvent, Assembly-CSharp, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
+      m_TypeName: "GlobalMessageEventReceiver+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8,
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
 --- !u!4 &994392025
 Transform:
   m_ObjectHideFlags: 0
@@ -8683,8 +8595,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c26748c1f51a9aa41b86d84f82419c05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  valueType: 3
-  value: 0
+  "\uB0B4\uC5ED\uD65C": 3
+  "\uD50C\uB808\uC774\uC5B4\uD504\uB7A9\uC2A4\uB370\uC774\uD130": 0
   debugValueChanges: 0
   UserInterface:
     uiScrollbar: {fileID: 0}
@@ -8695,33 +8607,33 @@ MonoBehaviour:
     textValue: {fileID: 0}
     showActualization: 0
     miniatureSprite: {fileID: 0}
-  limits:
-    min: 0
-    max: 2
-    randomMin: 0
-    randomMax: 2
+  "\uBC94\uC704":
+    "\uCD5C\uC18C\uAC12": 0
+    "\uCD5C\uB300\uAC12": 100
+    "\uB79C\uB364\uCD5C\uC18C\uAC12": 0
+    "\uB79C\uB364\uCD5C\uB300\uAC12": 100
   keepValue: 0
-  events:
-    OnIncrease:
+  "\uC2E4\uD589\uD560\uC774\uBCA4\uD2B8":
+    "\uC99D\uAC00\uD560\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnDecrease:
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    "\uAC10\uC18C\uD560\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnMax:
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    "\uCD5C\uB300\uAC12\uC77C\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnMin:
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    "\uCD5C\uC18C\uAC12\uC77C\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
 --- !u!1 &1160971894
 GameObject:
   m_ObjectHideFlags: 0
@@ -13368,8 +13280,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c26748c1f51a9aa41b86d84f82419c05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  valueType: 14
-  value: 0
+  "\uB0B4\uC5ED\uD65C": 14
+  "\uD50C\uB808\uC774\uC5B4\uD504\uB7A9\uC2A4\uB370\uC774\uD130": 0
   debugValueChanges: 0
   UserInterface:
     uiScrollbar: {fileID: 0}
@@ -13380,33 +13292,33 @@ MonoBehaviour:
     textValue: {fileID: 1693779522}
     showActualization: 1
     miniatureSprite: {fileID: 21300000, guid: 749b443b6b36d674f97225ad05ace9c0, type: 3}
-  limits:
-    min: 0
-    max: 100
-    randomMin: 1
-    randomMax: 100
+  "\uBC94\uC704":
+    "\uCD5C\uC18C\uAC12": 0
+    "\uCD5C\uB300\uAC12": 100
+    "\uB79C\uB364\uCD5C\uC18C\uAC12": 0
+    "\uB79C\uB364\uCD5C\uB300\uAC12": 100
   keepValue: 0
-  events:
-    OnIncrease:
+  "\uC2E4\uD589\uD560\uC774\uBCA4\uD2B8":
+    "\uC99D\uAC00\uD560\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnDecrease:
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    "\uAC10\uC18C\uD560\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnMax:
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    "\uCD5C\uB300\uAC12\uC77C\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnMin:
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    "\uCD5C\uC18C\uAC12\uC77C\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
 --- !u!1 &1747592233
 GameObject:
   m_ObjectHideFlags: 0
@@ -13562,7 +13474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48ca66abd9337a647997df7a0dd6e50f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  values: []
+  "\uBCFC\uB968\uC2A4\uD06C\uB9BD\uD2B8\uB9AC\uC2A4\uD2B8": []
 --- !u!114 &1760999221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13574,9 +13486,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb87df0a77283194bbf149bf1eb34eac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gender: 0
+  "\uC131\uAD6C\uBD84": 0
   Countries:
-  - listEntry: "England(\uC601\uAD6D)"
+  - listEntry: "\uC601\uAD6D"
     nameComb:
     - name: "George(\uC870\uC9C0)"
       gender: 0
@@ -13590,14 +13502,14 @@ MonoBehaviour:
       gender: 1
     - name: "Diana(\uB2E4\uC774\uC544\uB098)"
       gender: 1
-    surname:
-    - the Ruler
-    - the Emperor
-    - the Mighty
-    - the Strong
-    - I
-    - IV
-  - listEntry: "France(\uD504\uB791\uC2A4)"
+    "\uC131\uC528":
+    - "\uD1B5\uCE58\uC790"
+    - "\uD669\uC81C"
+    - "\uC804\uC9C0\uC804\uB2A5\uD55C"
+    - "\uAC15\uB825\uD55C"
+    - "1\uC138"
+    - "4\uC138"
+  - listEntry: "\uD504\uB791\uC2A4"
     nameComb:
     - name: "Louis(\uB8E8\uC774)"
       gender: 0
@@ -13611,14 +13523,14 @@ MonoBehaviour:
       gender: 1
     - name: "Maria(\uB9C8\uB9AC\uC544)"
       gender: 1
-    surname:
-    - the Great
-    - the Greatest
-    - the Fatty
-    - the Skinny
-    - II
-    - VI
-  - listEntry: "Fantasialand(\uAC00\uC0C1\uB098\uB77C)"
+    "\uC131\uC528":
+    - "\uC704\uB300\uD55C"
+    - "\uAC00\uC7A5 \uC704\uB300\uD55C"
+    - "\uB6B1\uB6B1\uD55C"
+    - "\uAE61\uB9C8\uB978"
+    - "2\uC138"
+    - "6\uC138"
+  - listEntry: "\uAC00\uC0C1\uB098\uB77C"
     nameComb:
     - name: "Jimmy(\uC9C0\uBBF8)"
       gender: 0
@@ -13632,13 +13544,13 @@ MonoBehaviour:
       gender: 1
     - name: "Kitty(\uD0A4\uD53C)"
       gender: 1
-    surname:
-    - the Funny
-    - the Fearsome
-    - the One
-    - the Weasel
-    - III
-    - VII
+    "\uC131\uC528":
+    - "\uC7AC\uBBF8\uC788\uB294"
+    - "\uBB34\uC2DC\uBB34\uC2DC\uD55C"
+    - "\uC720\uC77C\uD55C"
+    - "\uAD50\uD65C\uD55C"
+    - "3\uC138"
+    - "7\uC138"
   countryText: {fileID: 1450843499}
   nameText: {fileID: 1132481323}
   vs_type_country: 3
@@ -13685,8 +13597,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c26748c1f51a9aa41b86d84f82419c05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  valueType: 12
-  value: 0
+  "\uB0B4\uC5ED\uD65C": 12
+  "\uD50C\uB808\uC774\uC5B4\uD504\uB7A9\uC2A4\uB370\uC774\uD130": 0
   debugValueChanges: 0
   UserInterface:
     uiScrollbar: {fileID: 0}
@@ -13697,33 +13609,33 @@ MonoBehaviour:
     textValue: {fileID: 1579944478}
     showActualization: 1
     miniatureSprite: {fileID: 21300000, guid: 97c23cc65a2eeed409fb86e17cc78ce3, type: 3}
-  limits:
-    min: 0
-    max: 100
-    randomMin: 1
-    randomMax: 100
+  "\uBC94\uC704":
+    "\uCD5C\uC18C\uAC12": 0
+    "\uCD5C\uB300\uAC12": 100
+    "\uB79C\uB364\uCD5C\uC18C\uAC12": 0
+    "\uB79C\uB364\uCD5C\uB300\uAC12": 100
   keepValue: 0
-  events:
-    OnIncrease:
+  "\uC2E4\uD589\uD560\uC774\uBCA4\uD2B8":
+    "\uC99D\uAC00\uD560\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnDecrease:
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    "\uAC10\uC18C\uD560\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnMax:
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    "\uCD5C\uB300\uAC12\uC77C\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnMin:
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    "\uCD5C\uC18C\uAC12\uC77C\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
 --- !u!1 &1769341147
 GameObject:
   m_ObjectHideFlags: 0
@@ -15441,8 +15353,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c26748c1f51a9aa41b86d84f82419c05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  valueType: 18
-  value: 0
+  "\uB0B4\uC5ED\uD65C": 18
+  "\uD50C\uB808\uC774\uC5B4\uD504\uB7A9\uC2A4\uB370\uC774\uD130": 0
   debugValueChanges: 0
   UserInterface:
     uiScrollbar: {fileID: 0}
@@ -15453,33 +15365,33 @@ MonoBehaviour:
     textValue: {fileID: 0}
     showActualization: 0
     miniatureSprite: {fileID: 0}
-  limits:
-    min: 0
-    max: 1
-    randomMin: 0
-    randomMax: 0
+  "\uBC94\uC704":
+    "\uCD5C\uC18C\uAC12": 0
+    "\uCD5C\uB300\uAC12": 100
+    "\uB79C\uB364\uCD5C\uC18C\uAC12": 0
+    "\uB79C\uB364\uCD5C\uB300\uAC12": 100
   keepValue: 0
-  events:
-    OnIncrease:
+  "\uC2E4\uD589\uD560\uC774\uBCA4\uD2B8":
+    "\uC99D\uAC00\uD560\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnDecrease:
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    "\uAC10\uC18C\uD560\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnMax:
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    "\uCD5C\uB300\uAC12\uC77C\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-    OnMin:
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+    "\uCD5C\uC18C\uAC12\uC77C\uB54C":
       m_PersistentCalls:
         m_Calls: []
-      m_TypeName: ValueScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
+      m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
 --- !u!1 &2109790069
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,11 +12,14 @@ using System;
 using I2.Loc;
 #endif
 
+/// <summary>
+/// 번역과 관련된 클래스인듯....
+/// </summary>
 public class TranslationManager : MonoBehaviour {
 
     /// <summary>
     /// 'translateIfAvail' 메서드는 번역을 구현하는데 사용할 수 있습니다.
-    /// 겡미에 새 텍스트가 표시되면 먼저 이 기능을 통해 번역이 테스트됩니다.
+    /// 게임에 새 텍스트가 표시되면 먼저 이 기능을 통해 번역이 테스트됩니다.
     /// 언어가 변경되면 텍스트가 장면을 다시 불러올 때까지 업데이트 되지 않는다는 단점이 있습니다.
     /// </summary>
     /// <param name="term"></param>

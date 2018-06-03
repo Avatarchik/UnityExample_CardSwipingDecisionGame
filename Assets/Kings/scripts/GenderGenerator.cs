@@ -14,7 +14,7 @@ public class GenderGenerator : TranslatableContent {
 	public static GenderGenerator instance;
 
 	[Tooltip("성별 값을 보유하는 값 유형을 정의하십시오. 이 값 유형은 또한 'Country Name Generator'에 연결되어야 합니다..")]
-	public valueDefinitions.values valueType;
+	public ValueDefinitions.값정의 valueType;
 	ValueScript vs;
 
 	void Awake(){
@@ -33,7 +33,7 @@ public class GenderGenerator : TranslatableContent {
     /// <returns></returns>
 	IEnumerator frameDelay(){
 		yield return null; /// 다음 프레임까지 대기
-		vs = valueManager.instance.getFirstFittingValue (valueType);
+		vs = ValueManager.나자신.getFirstFittingValue (valueType);
 		actualizeUI ();
 	}
 
@@ -87,7 +87,7 @@ public class GenderGenerator : TranslatableContent {
 	public string getGenderText()
 	{
 		if (vs != null) {
-			int index = Mathf.RoundToInt (vs.value);
+			int index = Mathf.RoundToInt (vs.플레이어프랩스데이터);
 			if (index >= genders.Length) {
 				index = genders.Length - 1;
 			}
@@ -99,7 +99,7 @@ public class GenderGenerator : TranslatableContent {
 	public Sprite getGenderSprite()
 	{
 		if (vs != null) {
-			int index = Mathf.RoundToInt (vs.value);
+			int index = Mathf.RoundToInt (vs.플레이어프랩스데이터);
 			if (index >= genders.Length) {
 				index = genders.Length - 1;
 			}

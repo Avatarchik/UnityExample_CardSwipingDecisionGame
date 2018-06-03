@@ -56,7 +56,7 @@ public static class SecurePlayerPrefs
     /// 보안 미적용: 프로그래머가 디파인에서 보안이 필요없다고 정의했을때는 플레이어프랩스에 저장된 데이터를 가져온다. (암호화안된 데이터가 저장되어 있기때문에 그대로 가져와서 쓸수 있다)
     /// 보안 적용 : 플레이어프랩스에 암호화 처리되서 저장된 2개 그룹(원본과체크)의 데이터를 암호화를 풀어서 가져와서 비교한 위변조가 된게 없으면 원본데이터를 반환한다. 
     /// </summary>
-    /// <param name="가져올데이터키이름">플레이어프랩스에서 데이터를 저장할때 사용할 키값</param>
+    /// <param name="가져올데이터키이름">플레이어프랩스에서 데이터를 가져올때 사용할 키값</param>
     /// <returns></returns>
 	public static string 플레이어프랩스에데이터가져오기(string 가져올데이터키이름)
 	{
@@ -110,94 +110,170 @@ public static class SecurePlayerPrefs
         #endif
     }
 
-
-
-    public static void SetFloat(string key, float value){
-		플레이어프랩스에데이터저장 (key, value.ToString ());
+    /// <summary>
+    /// 플레이어프랩스에 float 타입의 데이터를 저장하는 메서드. 저장할때는 float -> string로 전환해서 저장한다.
+    /// </summary>
+    /// <param name="저장할키이름">플레이어프랩스에 저장할 키이름</param>
+    /// <param name="저장데이터">플레이어프랩스에 저장할 데이터</param>
+    public static void 저장float(string 저장할키이름, float 저장데이터)
+    {
+		플레이어프랩스에데이터저장 (저장할키이름, 저장데이터.ToString ());
 	}
 
-	public static float GetFloat(string key){
-		float value;
-		if (float.TryParse (플레이어프랩스에데이터가져오기 (key), out value)) {
-			return value;
-		} else {
+    /// <summary>
+    /// 플레이어프랩스에 저장된 데이터중 부동소수점데이터(float)를 가져오기 위한 메서드이다.
+    /// 만일 파라미터로 넣은 키값이 플레이어프랩스에 있고, 해당 되는 데이터가 float값이라면 해당 float값을 리턴하고, float타입 데이터가 아니라면 0을 리턴한다. 
+    /// </summary>
+    /// <param name="가져올데이터키이름">플레이어프랩스에서 데이터를 가져올때 사용할 키값</param>
+    /// <returns></returns>
+	public static float 얻기float(string 가져올데이터키이름)
+    {
+		float 가져온플로트데이터;
+ 
+        if (float.TryParse (플레이어프랩스에데이터가져오기 (가져올데이터키이름), out 가져온플로트데이터))
+        {
+			return 가져온플로트데이터;
+		}
+        else
+        {
 			return 0f;
 		}
 	}
-	public static void SetDouble(string key, double value){
-		플레이어프랩스에데이터저장 (key, value.ToString ());
+
+    /// <summary>
+    /// 플레이어프랩스에 Double 타입의 데이터를 저장하는 메서드. 저장할때는 double -> string로 전환해서 저장한다.
+    /// </summary>
+    /// <param name="저장할키이름">플레이어프랩스에 저장할 키이름</param>
+    /// <param name="저장할데이터">플레이어프랩스에 저장할 데이터</param>
+	public static void 저장double(string 저장할키이름, double 저장할데이터)
+    {
+		플레이어프랩스에데이터저장 (저장할키이름, 저장할데이터.ToString ());
 	}
-	public static double GetDouble(string key){
-		double value;
-		if (double.TryParse (플레이어프랩스에데이터가져오기 (key), out value)) {
-			return value;
-		} else {
+
+    /// <summary>
+    /// 플레이어프랩스에 저장된 데이터중 double타입을 가져오기 위한 메서드이다.
+    /// 만일 파라미터로 넣은 키값이 플레이어프랩스에 있고, 해당 되는 데이터가 double값이라면 해당 double값을 리턴하고, double타입 데이터가 아니라면 0을 리턴한다.
+    /// </summary>
+    /// <param name="가져올데이터키이름">플레이어프랩스에서 데이터를 가져올때 사용할 키값</param>
+    /// <returns></returns>
+	public static double 얻기double(string 가져올데이터키이름)
+    {
+		double 가져온더블데이터;
+
+        if (double.TryParse (플레이어프랩스에데이터가져오기 (가져올데이터키이름), out 가져온더블데이터))
+        {
+			return 가져온더블데이터;
+		}
+        else
+        {
 			return 0;
 		}
 	}
 
-	public static void SetBool(string key, bool value){
-		if (value) {
-			SetInt (key, 1);
-		} else {
-			SetInt (key, 0);
+    /// <summary>
+    /// 플레이어프랩스에 저장하는 데이터가 true이면, 1을 저장한다. false이면 0을 저장한다.
+    /// </summary>
+    /// <param name="저장할키이름">플레이어프랩스에 저장할 키이름</param>
+    /// <param name="저장할데이터">플레이어프랩스에 저장할 데이터</param>
+	public static void 저장Bool(string 저장할키이름, bool 저장할데이터)
+    {
+		if (저장할데이터)
+        {
+			저장int (저장할키이름, 1);
+		}
+        else
+        {
+			저장int (저장할키이름, 0);
 		}
 	}
-	public static bool GetBool(string key){
-		if(GetInt(key)==1)
-		{
-			return true;	
-		}
+
+    /// <summary>
+    /// 플레이어프랩스에서 가져온 데이터가 1이면 true를 반환하고, 1이 아니면 false를 반환한다.  
+    /// </summary>
+    /// <param name="가져올데이터키이름">플레이어프랩스에서 가져올 데이터 키이름</param>
+    /// <returns></returns>
+	public static bool 얻기Bool(string 가져올데이터키이름)
+    {
+        if (얻기int(가져올데이터키이름) == 1)
+        {
+            return true;
+        }
 		return false;
 	}
-	public static void SetInt(string key, int value){
-		플레이어프랩스에데이터저장 (key, value.ToString ());
-	}
-	public static int GetInt(string key){
-		int value;
-		if (int.TryParse (플레이어프랩스에데이터가져오기 (key), out value)) {
-			return value;
-		} else {
-			return 0;
-		}
+
+    /// <summary>
+    /// 플레이어프랩스에 int 타입의 데이터를 저장하는 메서드. 저장할때는 int->string로 전환해서 저장한다.
+    /// </summary>
+    /// <param name="저장할키이름"></param>
+    /// <param name="저장할데이터"></param>
+    public static void 저장int(string 저장할키이름, int 저장할데이터)
+    {
+        플레이어프랩스에데이터저장(저장할키이름, 저장할데이터.ToString());
 	}
 
-	public static string GetString(string key, string defaultValue)
+    /// <summary>
+    /// 플레이어프랩스에 저장된 데이터중 int타입을 가져오기 위한 메서드이다.
+    /// 만일 파라미터로 넣은 키값이 플레이어프랩스에 있고, 해당 되는 데이터가 int값이라면 해당 int값을 리턴하고, int타입 데이터가 아니라면 0을 리턴한다.
+    /// </summary>
+    /// <param name="가져올데이터키이름"></param>
+    /// <returns></returns>
+	public static int 얻기int(string 가져올데이터키이름)
+    {
+		int 가져온인트데이터;
+
+        if (int.TryParse(플레이어프랩스에데이터가져오기(가져올데이터키이름), out 가져온인트데이터))
+        {
+            return 가져온인트데이터;
+        }
+        else
+        {
+            return 0;
+        }
+	}
+
+    /// <summary>
+    /// 플레이어프랩스에 저장된 데이터중 string타입을 가져오기 위한 메서드이다.
+    /// 만일 파라미터로 넣은 키값이 플레이어프랩스에 있다면 저장되어 있던 string타입의 데이터를 반환하고, 없다면 파라미터로 넣어준 디폴트문자를 반환한다.
+    /// </summary>
+    /// <param name="가져올데이터키이름"></param>
+    /// <param name="디폴트문자"></param>
+    /// <returns></returns>
+	public static string 얻기String(string 가져올데이터키이름, string 디폴트문자)
 	{
-		if (HasKey(key))
-		{
-			return 플레이어프랩스에데이터가져오기(key);
-		}
-		else
-		{
-			return defaultValue;
-		}
+        if (키값존재여부(가져올데이터키이름))
+        {
+            return 플레이어프랩스에데이터가져오기(가져올데이터키이름);
+        }
+        else
+        {
+            return 디폴트문자;
+        }
 	}
 
     /// <summary>
     /// 파라미터로 받은 값이 플레이어프랩스에 이미 존재하는 키값인지 확인해서 존재하면 true를, 존재하지 않으면 false를 반환한다.
     /// </summary>
-    /// <param name="key">????</param>
+    /// <param name="키값">플레이어프랩스에 키값이 있는지 검사할 키값</param>
     /// <returns></returns>
-	public static bool HasKey(string key)
+	public static bool 키값존재여부(string 키값)
 	{
 		#if(SECURED) /// 전처리기 지시문에서 프로그래머가 보안이 필요한 상황이라고 작성했다면 처리되는 코드
         /// 파라미터로 입력받은 값을 MD5 해시값으로 바꿔서 저장
-		string hashedKey = MD5해시생성 (key);
+		string 해시로바꾼키값 = MD5해시생성 (키값);
         /// MD5로 바꾼값이 플레이어프랩스에 존재하는 지를 확인한다
-		bool hasKey = PlayerPrefs.HasKey (hashedKey);
+		bool 키값존재 = PlayerPrefs.HasKey (해시로바꾼키값);
         /// 확인한 값을 리턴한다.
-		return hasKey;
-		#else /// 전처리기 지시문에서 프로그래머가 보안이 필요하지 않은 상황으로 작성했다면 처리되는 코드
+		return 키값존재;
+        #else /// 전처리기 지시문에서 프로그래머가 보안이 필요하지 않은 상황으로 작성했다면 처리되는 코드
         /// 파라미터로 입력받은 값이 플레이어프랩스에 존재하는지를 확인한다.
-		bool hasKey = PlayerPrefs.HasKey (key);
+		bool 키값존재 = PlayerPrefs.HasKey (키값);
         /// 확인한 값을 리턴한다.
-		return hasKey;
-		#endif
-	}
+		return 키값존재;
+        #endif
+    }
 
-    #if (SECURED) /// 보안이 필요한 경우라면.
-   
+#if (SECURED) /// 보안이 필요한 경우라면.
+
     /// 비트 연산을 통해 이진수 숫자를 흩트려놓기 위한 그냥 프로그래머가 넣은 아무 숫자. xor 암호를 하기 위해.
     /// 이진수차원에서 이값과 비트연산을 통해 원래 값을 흩트려놓기 때문에 다른 사람이 이값을 알지 못하면 다시 비트 연산을 한다고 해도 원래 글자를 알수 없을 것이다.
     public static int 아무숫자 = 129;

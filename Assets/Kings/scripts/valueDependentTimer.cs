@@ -32,7 +32,7 @@ public class valueDependentTimer : MonoBehaviour {
 				yield return null;
 			}
 
-			if (valueManager.instance.AreConditinsForResultMet (conditionsToTest)) {
+			if (ValueManager.나자신.AreConditinsForResultMet (conditionsToTest)) {
 				OnConditionsTrue.Invoke ();
 			}
 			else

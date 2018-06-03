@@ -15,16 +15,16 @@ public class addValueToValue : MonoBehaviour {
 
 	[System.Serializable]
 	public class resultModifierForAddingValueToValue{
-		public valueDefinitions.values lArgument;
+		public ValueDefinitions.값정의 lArgument;
 		public float multiplier = 1.0f;
-		public valueDefinitions.values rArgument;
+		public ValueDefinitions.값정의 rArgument;
 	}
 
 	public void addValues(){
 		float rValue = 0f;
 		foreach (resultModifierForAddingValueToValue vtv in  valuesToChange) {
-			rValue =  valueManager.instance.getFirstFittingValue(vtv.rArgument).value;
-			valueManager.instance.changeValue (vtv.lArgument, vtv.multiplier * rValue);
+			rValue =  ValueManager.나자신.getFirstFittingValue(vtv.rArgument).플레이어프랩스데이터;
+			ValueManager.나자신.changeValue (vtv.lArgument, vtv.multiplier * rValue);
 		}
 	}
 }

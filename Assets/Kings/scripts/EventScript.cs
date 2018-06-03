@@ -60,7 +60,7 @@ public class EventScript : MonoBehaviour {
 
 	[System.Serializable]
 	public class condition{
-		public valueDefinitions.values value;
+		public ValueDefinitions.값정의 value;
 		public float valueMin = 0f;
 		public float valueMax = 100f;
 	}
@@ -71,7 +71,7 @@ public class EventScript : MonoBehaviour {
 	[System.Serializable]
 	public class resultModifier
     {
-		public valueDefinitions.values modifier;
+		public ValueDefinitions.값정의 modifier;
 		public float valueAdd = 0f;
 	}
 
@@ -263,13 +263,13 @@ public class EventScript : MonoBehaviour {
 			ValueScript v = null;
 			foreach (condition c in res.conditions) {
 				rndResult = Random.Range (0f, 1f);
-				v = valueManager.instance.getFirstFittingValue (c.value);
+				v = ValueManager.나자신.getFirstFittingValue (c.value);
 
 				if (v != null) {
 					//set the minimum border for the conditon between min and max, 
 					//if the real value is over min, the path 'true' is executed
-					c.valueMin = v.limits.min + rndResult*(v.limits.max - v.limits.min);	
-					c.valueMax = v.limits.max;
+					c.valueMin = v.범위.최소값 + rndResult*(v.범위.최대값 - v.범위.최소값);	
+					c.valueMax = v.범위.최대값;
 				} else {
 					Debug.LogWarning ("Missing value type: " + c.value);
 				}
@@ -298,7 +298,7 @@ public class EventScript : MonoBehaviour {
 		}
 
 		foreach (resultModifier rm in  changeValueOnCardDespawn) {
-			valueManager.instance.changeValue (rm.modifier, rm.valueAdd);
+			ValueManager.나자신.changeValue (rm.modifier, rm.valueAdd);
 		}
 			
 		OnCardDespawn.Invoke ();
@@ -311,7 +311,7 @@ public class EventScript : MonoBehaviour {
 		//InfoDisplay.instance.clearDisplay ();
 
 		foreach (resultModifier rm in  modsGroup.valueChanges) {
-			valueManager.instance.changeValue (rm.modifier, rm.valueAdd);
+			ValueManager.나자신.changeValue (rm.modifier, rm.valueAdd);
 		}
 
 		//Tell the cardstack the follow up card.
@@ -328,7 +328,7 @@ public class EventScript : MonoBehaviour {
 		bool conditionOk = true;
 
 		foreach (EventScript.condition c in cond) {
-			if (valueManager.instance.getConditionMet (c) == true) {
+			if (ValueManager.나자신.getConditionMet (c) == true) {
 				//condition is ok.
 			} else {
 				conditionOk = false;

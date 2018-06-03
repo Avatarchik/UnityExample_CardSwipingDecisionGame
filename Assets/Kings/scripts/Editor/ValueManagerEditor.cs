@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[CustomEditor(typeof(valueManager))]
+[CustomEditor(typeof(ValueManager))]
 public class valueMangerEditor : Editor {
 
 	public override void OnInspectorGUI ()
 	{
 		base.OnInspectorGUI ();
 
-		valueManager myScript = (valueManager)target;
+		ValueManager myScript = (ValueManager)target;
 
 		EditorGUILayout.HelpBox ("Test of duplicates and missing values are only possible ingame.",MessageType.Info);
 

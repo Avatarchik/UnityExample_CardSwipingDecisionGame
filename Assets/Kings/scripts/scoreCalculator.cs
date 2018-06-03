@@ -30,7 +30,7 @@ public class scoreCalculator : MonoBehaviour {
         /// 게임에서 사용되는 모든 값의 유형들 타입의 변수(돈, 성별, 나라 등등)
         /// 인스펙터에서 목록 선택 형태로 고르기 위한 방식으로 사용하기 위해 변수를 선언한다.
         /// </summary>
-		public valueDefinitions.values valueType;
+		public ValueDefinitions.값정의 valueType;
 
         /// <summary>
         /// 이긴 수.
@@ -62,8 +62,8 @@ public class scoreCalculator : MonoBehaviour {
 		ValueScript vs;
 
         foreach (scoreRelevantPair srp in scoreValues) {
-			vs = valueManager.instance.getFirstFittingValue (srp.valueType);
-			score += vs.value * srp.multiplier;
+			vs = ValueManager.나자신.getFirstFittingValue (srp.valueType);
+			score += vs.플레이어프랩스데이터 * srp.multiplier;
 		}
 
 		foreach (scoreCounter sc in extraScores) {

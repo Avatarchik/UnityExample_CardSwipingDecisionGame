@@ -16,7 +16,7 @@ public class addValue : MonoBehaviour {
 
 	public void addValues(){
 		foreach (EventScript.resultModifier rm in  valuesToChange) {
-			valueManager.instance.changeValue (rm.modifier, rm.valueAdd);
+			ValueManager.나자신.changeValue (rm.modifier, rm.valueAdd);
 		}
 	}
 }
