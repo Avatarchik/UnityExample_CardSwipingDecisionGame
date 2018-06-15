@@ -33,7 +33,7 @@ public class GenderGenerator : TranslatableContent {
     /// <returns></returns>
 	IEnumerator frameDelay(){
 		yield return null; /// 다음 프레임까지 대기
-		vs = ValueManager.나자신.getFirstFittingValue (valueType);
+		vs = ValueManager.나자신.첫번째피팅값가져오기 (valueType);
 		actualizeUI ();
 	}
 

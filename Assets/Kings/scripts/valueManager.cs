@@ -53,21 +53,35 @@ public class ValueManager : MonoBehaviour {
 	//search for fitting the first fitting value script through the list
 	//ATTENTION: because of the script execution order it's possible this function fails if called from 'Start()' or 'Awake()'
 	//Therefore call it with at least one frame delay.
-	public ValueScript getFirstFittingValue(ValueDefinitions.값정의 v){
-		foreach (ValueScript vs in 볼륨스크립트리스트) {
-			if (vs.내역활 == v) {
 
-				return vs;
+    /// <summary>
+    /// 목록을 통해 첫번째 피팅 값 스크립트 피팅 검색
+    /// 주의 : 스크립트 실행 순서때문에 'Start()' 또는 'Awake()'에서 호출하면 이 함수가 실패 할 수 있습니다.
+    /// 따라서 적어도 하나의 프레임 지연으로 호출하십시오.
+    /// </summary>
+    /// <param name="v"></param>
+    /// <returns></returns>
+	public ValueScript 첫번째피팅값가져오기(ValueDefinitions.값정의 정의)
+    {
+		foreach (ValueScript 게임에서 in 볼륨스크립트리스트)
+        {
+			if (게임에서.내역활 == 정의)
+            {
+				return 게임에서;
 			}
 		}
 		return null;
 	}
 
-	//Test and save the min and max values of the script.
-	//This is used after a game to save statistics like maximum age, health etc.
-	public void saveAllMinMaxValues(){
-		foreach (ValueScript vs in 볼륨스크립트리스트) {
-			vs.saveMinMax ();
+	/// <summary>
+    /// 스크립트의 최소값과 최대값을 테스트하고 저장하십시오.
+    /// 이것은 게임 후에 최대 연령, 건강 등의 통계를 저장하는데 사용됩니다.
+    /// </summary>
+	public void SaveAllMinMaxValues()
+    {
+		foreach (ValueScript 게임에서 in 볼륨스크립트리스트)
+        {
+			게임에서.SaveMinMax ();
 		}
 	}
 

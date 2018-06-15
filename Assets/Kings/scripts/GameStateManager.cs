@@ -97,7 +97,7 @@ public class GameStateManager : MonoBehaviour {
 			gamesPlayedCounter.increase (1);	//log the number of played games
 		}
 			
-		ValueManager.나자신.saveAllMinMaxValues ();			//save min and max values for all values for the statistics tab
+		ValueManager.나자신.SaveAllMinMaxValues ();			//save min and max values for all values for the statistics tab
 		HighScoreNameLinkerGroup.instance.generateLinks ();		
 		CardStack.instance.resetCardStack ();					//reset the card stack
 

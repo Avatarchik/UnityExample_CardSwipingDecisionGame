@@ -60,7 +60,7 @@ public class HighScoreNameLinker : MonoBehaviour {
 	}
 
 	void getVSscript(){
-		vs = ValueManager.나자신.getFirstFittingValue (valueType);
+		vs = ValueManager.나자신.첫번째피팅값가져오기 (valueType);
 	}
 
 	void generateSaveKey(){

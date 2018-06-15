@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 게임에서 사용되는 모든 가치를 정의한 열거형을 포함하고 있는 클래스.
+/// </summary>
 public class ValueDefinitions : MonoBehaviour {
 
     /// <summary>

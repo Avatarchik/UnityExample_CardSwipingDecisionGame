@@ -28,7 +28,7 @@ public class ValueDisplay : MonoBehaviour {
 
 	public void showMinMaxValue(){
 
-		vs = ValueManager.나자신.getFirstFittingValue (valueTyp);
+		vs = ValueManager.나자신.첫번째피팅값가져오기 (valueTyp);
 
 		if (vs != null) {
 			if (maxValueText != null) {

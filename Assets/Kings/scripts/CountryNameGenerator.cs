@@ -307,10 +307,10 @@ public class CountryNameGenerator : TranslatableContent {
     /// 값 스크립트 링크 만들기.
     /// </summary>
 	void createValueScriptLinks(){
-		vs_gender = ValueManager.나자신.getFirstFittingValue (vs_type_gender);
-		vs_name = ValueManager.나자신.getFirstFittingValue (vs_type_givenName);
-		vs_surname = ValueManager.나자신.getFirstFittingValue (vs_type_surname);
-		vs_country = ValueManager.나자신.getFirstFittingValue (vs_type_country);
+		vs_gender = ValueManager.나자신.첫번째피팅값가져오기 (vs_type_gender);
+		vs_name = ValueManager.나자신.첫번째피팅값가져오기 (vs_type_givenName);
+		vs_surname = ValueManager.나자신.첫번째피팅값가져오기 (vs_type_surname);
+		vs_country = ValueManager.나자신.첫번째피팅값가져오기 (vs_type_country);
 	}
 
 	

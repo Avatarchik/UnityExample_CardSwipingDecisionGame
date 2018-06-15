@@ -263,7 +263,7 @@ public class EventScript : MonoBehaviour {
 			ValueScript v = null;
 			foreach (condition c in res.conditions) {
 				rndResult = Random.Range (0f, 1f);
-				v = ValueManager.나자신.getFirstFittingValue (c.value);
+				v = ValueManager.나자신.첫번째피팅값가져오기 (c.value);
 
 				if (v != null) {
 					//set the minimum border for the conditon between min and max, 

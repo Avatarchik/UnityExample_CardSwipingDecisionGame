@@ -9,14 +9,14 @@ using UnityEditor;
 /// <summary>
 /// 스코어 계산하는 클래스.
 /// </summary>
-public class scoreCalculator : MonoBehaviour {
+public class ScoreCalculator : MonoBehaviour {
 
     /// <summary>
     /// 스코어 점수.
     /// </summary>
 	public float score;
 
-	public static scoreCalculator instance;
+	public static ScoreCalculator instance;
 
     /// <summary>
     /// 게임이 끝나고 결과화면 나올때 표시할 정보를 담고 있는 클래스. 
@@ -62,7 +62,7 @@ public class scoreCalculator : MonoBehaviour {
 		ValueScript vs;
 
         foreach (scoreRelevantPair srp in scoreValues) {
-			vs = ValueManager.나자신.getFirstFittingValue (srp.valueType);
+			vs = ValueManager.나자신.첫번째피팅값가져오기 (srp.valueType);
 			score += vs.플레이어프랩스데이터 * srp.multiplier;
 		}
 
@@ -96,7 +96,7 @@ public class scoreCalculator : MonoBehaviour {
 
 #if UNITY_EDITOR
 
-[CustomPropertyDrawer(typeof(scoreCalculator.scoreRelevantPair))]
+[CustomPropertyDrawer(typeof(ScoreCalculator.scoreRelevantPair))]
 public class scoreRelevantPairDrawer : PropertyDrawer
 {
 	// Draw the property inside the given rect

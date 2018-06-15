@@ -76,22 +76,25 @@ public class ValueScript : MonoBehaviour {
 
     }
 
+    
 
-
-
-	public void actualizeUI(float uiValue)
+    /// <summary>
+    /// 유니티니의 UGUI에 갑을 넣어주는 메서드.  
+    /// </summary>
+    /// <param name="ui값"></param>
+	public void UI실현(float ui값)
     {
-		if (유저인터페이스.uiScrollbar != null)
+		if (유저인터페이스.스크롤바 != null)
         {
-			유저인터페이스.uiScrollbar.size = uiValue / 범위.최대값;
+			유저인터페이스.스크롤바.size = ui값 / 범위.최대값;
 		}
 		if (유저인터페이스.textValue != null)
         {
-			유저인터페이스.textValue.text = uiValue.ToString(유저인터페이스.formatter);
+			유저인터페이스.textValue.text = ui값.ToString(유저인터페이스.formatter);
 		}
-		if (유저인터페이스.uiSlider != null)
+		if (유저인터페이스.슬라이더 != null)
         {
-			유저인터페이스.uiSlider.value = uiValue / 범위.최대값;
+			유저인터페이스.슬라이더.value = ui값 / 범위.최대값;
 		}
 	}
 
@@ -102,11 +105,11 @@ public class ValueScript : MonoBehaviour {
 	[System.Serializable]
 	public class UI구성
     {
-		[Tooltip("값을 채우기 막대로 표시하는 경우에는 스크롤 막대 또는 슬라이더를 사용할 수 있습니다. 여기에서 환경 설정을 정의하십시오.")]
-		public Scrollbar uiScrollbar;
+		[Tooltip("유니티의 UGUI의 스크롤바를 연결하는 변수. 스크롤바는 스크롤링을 통해 막대를 움직일수 있다.")]
+		public Scrollbar 스크롤바;
 
-        [Tooltip("값을 채우기 막대로 표시하는 경우에는 스크롤 막대 또는 슬라이더를 사용할 수 있습니다. 여기에서 환경 설정을 정의하십시오.")]
-		public Slider uiSlider;
+        [Tooltip("유니티의 UGUI의 슬라이더를 연결하는 변수. 슬라이더바는 정해진 범위상의 숫자값을 통해 막대를 움직일 수 있다.")]
+		public Slider 슬라이더;
 
         [Tooltip("값이 변경되면 바를 채우는 속도입니다.")]
 		[Range(0.1f,100f)]public float lerpSpeed = 10f;
@@ -114,6 +117,9 @@ public class ValueScript : MonoBehaviour {
         [Tooltip("값을 표시하기 위한 형식을 정의하십시오. \n예: 0 또는 # 을 입력하십시오. \n예 : #.00을 입력하면 두자리 숫자가 표시됩니다.")]
 		public string formatter = "0.##";
 
+        /// <summary>
+        /// 채워지는 값을 말하는 것 같은데???
+        /// </summary>
         [Tooltip("실제 lerped/filling 값.")]
 		[ReadOnlyInspector]public float lerpedValue = 0f;
 
@@ -137,9 +143,9 @@ public class ValueScript : MonoBehaviour {
 		
         //UserInterface.lerpedValue = Mathf.Lerp (UserInterface.lerpedValue, value, UserInterface.lerpSpeed * Time.deltaTime);
 
-		유저인터페이스.lerpedValue = MathExtension.linearInterpolate (유저인터페이스.lerpedValue, 플레이어프랩스데이터, 유저인터페이스.lerpSpeed * Time.deltaTime);
+		유저인터페이스.lerpedValue = MathExtension.늘어나는것보간하기 (유저인터페이스.lerpedValue, 플레이어프랩스데이터, 유저인터페이스.lerpSpeed * Time.deltaTime);
 
-		actualizeUI (유저인터페이스.lerpedValue);
+		UI실현 (유저인터페이스.lerpedValue);
 	}
 
 
@@ -222,7 +228,7 @@ public class ValueScript : MonoBehaviour {
 		} else {
 			실행할이벤트.감소할때.Invoke ();
 		}
-		saveValue ();
+		값저장 ();
 
 		if (debugValueChanges == true) {
 			Debug.Log ("Value '" + 내역활.ToString () + "' is now " + 플레이어프랩스데이터.ToString () + " (after limiter)");
@@ -237,7 +243,7 @@ public class ValueScript : MonoBehaviour {
 	public float setValue(float newValue){
 		플레이어프랩스데이터 = newValue;
 		설정값으로실행 ();
-		saveValue ();
+		값저장 ();
 		return 플레이어프랩스데이터;
 	}
 
@@ -259,7 +265,7 @@ public class ValueScript : MonoBehaviour {
         설정값으로실행();
 
         /// 플레이어프랩스에 데이터 저장
-		saveValue();
+		값저장();
 
         /// 랜덤으로 지정한 값을 반환
         return 플레이어프랩스데이터;
@@ -281,7 +287,7 @@ public class ValueScript : MonoBehaviour {
 		}else {
 			실행할이벤트.감소할때.Invoke ();
 		}
-		saveValue ();
+		값저장 ();
 		return 플레이어프랩스데이터;
 	}
 
@@ -306,27 +312,38 @@ public class ValueScript : MonoBehaviour {
     /// <summary>
     /// 플레이어프랩스에 데이터를 저장.
     /// </summary>
-	void saveValue()
+	void 값저장()
     {
         /// 플레이어프랩스에 데이터를 저장한다.
 		SecurePlayerPrefs.저장float (플레이어프랩스키값, 플레이어프랩스데이터);
 	}
 
-	public void saveMinMax(){
-		float min = SecurePlayerPrefs.얻기float (플레이어프랩스키값+"_min");
-		float max = SecurePlayerPrefs.얻기float (플레이어프랩스키값+"_max");
+    /// <summary>
+    /// 최대값과 최소값 저장하기.
+    /// </summary>
+	public void SaveMinMax()
+    {
+        /// 플레이어프랩스에 저장된 최소값과 최대값을 가져와서 할당한다.
+		float 플레이어프랩스키값최소 = SecurePlayerPrefs.얻기float (플레이어프랩스키값+"_최소");
+		float 플레이어프랩스키값최대 = SecurePlayerPrefs.얻기float (플레이어프랩스키값+"_최대");
 
-		if(SecurePlayerPrefs.키값존재여부(플레이어프랩스키값+"_min")){
-			if (플레이어프랩스데이터 < min) {
-				SecurePlayerPrefs.저장float (플레이어프랩스키값+"_min",플레이어프랩스데이터);
-			}	
-		}else{
-			SecurePlayerPrefs.저장float (플레이어프랩스키값+"_min",플레이어프랩스데이터);
-		}
 
-		if (플레이어프랩스데이터 > max) {
-			SecurePlayerPrefs.저장float (플레이어프랩스키값 + "_max", 플레이어프랩스데이터);
-		}
+        if (SecurePlayerPrefs.키값존재여부(플레이어프랩스키값 + "_최소"))
+        {
+            if (플레이어프랩스데이터 < 플레이어프랩스키값최소)
+            {
+                SecurePlayerPrefs.저장float(플레이어프랩스키값 + "_최대", 플레이어프랩스데이터);
+            }
+        }
+        else
+        {
+            SecurePlayerPrefs.저장float(플레이어프랩스키값 + "_최소", 플레이어프랩스데이터);
+        }
+
+        if (플레이어프랩스데이터 > 플레이어프랩스키값최대)
+        {
+            SecurePlayerPrefs.저장float(플레이어프랩스키값 + "_최대", 플레이어프랩스데이터);
+        }
 
 	}
 
@@ -339,7 +356,7 @@ public class ValueScript : MonoBehaviour {
 	}
 
 	void OnDestroy(){
-		saveValue ();
+		값저장 ();
 	}
 
     /// <summary>
