@@ -33,14 +33,16 @@ public class ValueManager : MonoBehaviour {
 	}
 
     /// <summary>
-    /// ValueScript 리스트를 하나 만들어서 
+    /// ValueScript 리스트를 하나 만들어서 게임에서 사용되는 모든 값을 리스트에 추가한다.
+    /// Game씬의 Values오브젝트 밑의 자식 오브젝트들이 이 리스트에 모두 등록된다.
     /// </summary>
 	[Tooltip("게임에서사용되는 모든 값을 리스트에 추가")]
 	[HideInInspector] /// 인스펙터에서 변수를 감추고 싶을때
     public List <ValueScript> 볼륨스크립트리스트;
 
     /// <summary>
-    /// 'ValueScript' 스크립트를 리스트에 등록되도록 하는 메서드
+    /// 'ValueScript' 스크립트를 리스트에 등록되도록 하는 메서드.
+    /// 결과적으로 Game씬의 Values오브젝트 밑의 자식 오브젝트들이 이 리스트에 모두 등록된다.
     /// </summary>
     /// <param name="볼륨스크립트">ValueScript 클래스 타입의 객체</param>
     public void ValueScript리스트에추가(ValueScript 볼륨스크립트)
@@ -126,8 +128,8 @@ public class ValueManager : MonoBehaviour {
 				vs.addValue (valueAdd);
 
 				//display the value change to the user
-				if (vs.UserInterface.showActualization == true) {
-					InfoDisplay.instance.addDisplay (vs.UserInterface.miniatureSprite, valueAdd);
+				if (vs.유저인터페이스.showActualization == true) {
+					InfoDisplay.instance.addDisplay (vs.유저인터페이스.miniatureSprite, valueAdd);
 				}
 			}
 		}
@@ -155,8 +157,8 @@ public class ValueManager : MonoBehaviour {
 				valueDifference = oldValue - vs.플레이어프랩스데이터;
 
 				//display the value change to the user
-				if (vs.UserInterface.showActualization == true) {
-					InfoDisplay.instance.addDisplay (vs.UserInterface.miniatureSprite, valueDifference);
+				if (vs.유저인터페이스.showActualization == true) {
+					InfoDisplay.instance.addDisplay (vs.유저인터페이스.miniatureSprite, valueDifference);
 				}
 			}
 		}

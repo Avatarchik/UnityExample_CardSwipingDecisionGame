@@ -1628,14 +1628,14 @@ MonoBehaviour:
   "\uB0B4\uC5ED\uD65C": 17
   "\uD50C\uB808\uC774\uC5B4\uD504\uB7A9\uC2A4\uB370\uC774\uD130": 0
   debugValueChanges: 0
-  UserInterface:
+  "\uC720\uC800\uC778\uD130\uD398\uC774\uC2A4":
     uiScrollbar: {fileID: 0}
     uiSlider: {fileID: 0}
-    lerpSpeed: 30
-    formatter: 0
+    lerpSpeed: 10
+    formatter: 0.##
     lerpedValue: 0
     textValue: {fileID: 0}
-    showActualization: 0
+    showActualization: 1
     miniatureSprite: {fileID: 0}
   "\uBC94\uC704":
     "\uCD5C\uC18C\uAC12": 0
@@ -2858,19 +2858,19 @@ MonoBehaviour:
   "\uB0B4\uC5ED\uD65C": 15
   "\uD50C\uB808\uC774\uC5B4\uD504\uB7A9\uC2A4\uB370\uC774\uD130": 0
   debugValueChanges: 0
-  UserInterface:
+  "\uC720\uC800\uC778\uD130\uD398\uC774\uC2A4":
     uiScrollbar: {fileID: 0}
-    uiSlider: {fileID: 375208534}
-    lerpSpeed: 30
-    formatter: 0
+    uiSlider: {fileID: 0}
+    lerpSpeed: 10
+    formatter: 0.##
     lerpedValue: 0
-    textValue: {fileID: 292464338}
+    textValue: {fileID: 0}
     showActualization: 1
-    miniatureSprite: {fileID: 21300000, guid: dcad90a0c52337e4098095664842dd98, type: 3}
+    miniatureSprite: {fileID: 0}
   "\uBC94\uC704":
     "\uCD5C\uC18C\uAC12": 0
     "\uCD5C\uB300\uAC12": 100
-    "\uB79C\uB364\uCD5C\uC18C\uAC12": 0
+    "\uB79C\uB364\uCD5C\uC18C\uAC12": 1
     "\uB79C\uB364\uCD5C\uB300\uAC12": 100
   keepValue: 0
   "\uC2E4\uD589\uD560\uC774\uBCA4\uD2B8":
@@ -3435,20 +3435,20 @@ MonoBehaviour:
   "\uB0B4\uC5ED\uD65C": 2
   "\uD50C\uB808\uC774\uC5B4\uD504\uB7A9\uC2A4\uB370\uC774\uD130": 0
   debugValueChanges: 0
-  UserInterface:
+  "\uC720\uC800\uC778\uD130\uD398\uC774\uC2A4":
     uiScrollbar: {fileID: 0}
     uiSlider: {fileID: 0}
     lerpSpeed: 10
     formatter: 0.##
     lerpedValue: 0
     textValue: {fileID: 0}
-    showActualization: 0
+    showActualization: 1
     miniatureSprite: {fileID: 0}
   "\uBC94\uC704":
     "\uCD5C\uC18C\uAC12": 0
-    "\uCD5C\uB300\uAC12": 100
+    "\uCD5C\uB300\uAC12": 1
     "\uB79C\uB364\uCD5C\uC18C\uAC12": 0
-    "\uB79C\uB364\uCD5C\uB300\uAC12": 100
+    "\uB79C\uB364\uCD5C\uB300\uAC12": 1
   keepValue: 0
   "\uC2E4\uD589\uD560\uC774\uBCA4\uD2B8":
     "\uC99D\uAC00\uD560\uB54C":
@@ -3533,20 +3533,20 @@ MonoBehaviour:
   "\uB0B4\uC5ED\uD65C": 0
   "\uD50C\uB808\uC774\uC5B4\uD504\uB7A9\uC2A4\uB370\uC774\uD130": 0
   debugValueChanges: 0
-  UserInterface:
+  "\uC720\uC800\uC778\uD130\uD398\uC774\uC2A4":
     uiScrollbar: {fileID: 0}
     uiSlider: {fileID: 0}
     lerpSpeed: 10
     formatter: 0.##
     lerpedValue: 0
     textValue: {fileID: 0}
-    showActualization: 0
+    showActualization: 1
     miniatureSprite: {fileID: 0}
   "\uBC94\uC704":
     "\uCD5C\uC18C\uAC12": 0
-    "\uCD5C\uB300\uAC12": 100
+    "\uCD5C\uB300\uAC12": 5
     "\uB79C\uB364\uCD5C\uC18C\uAC12": 0
-    "\uB79C\uB364\uCD5C\uB300\uAC12": 100
+    "\uB79C\uB364\uCD5C\uB300\uAC12": 5
   keepValue: 0
   "\uC2E4\uD589\uD560\uC774\uBCA4\uD2B8":
     "\uC99D\uAC00\uD560\uB54C":
@@ -4730,30 +4730,52 @@ MonoBehaviour:
   "\uB0B4\uC5ED\uD65C": 6
   "\uD50C\uB808\uC774\uC5B4\uD504\uB7A9\uC2A4\uB370\uC774\uD130": 0
   debugValueChanges: 0
-  UserInterface:
+  "\uC720\uC800\uC778\uD130\uD398\uC774\uC2A4":
     uiScrollbar: {fileID: 0}
-    uiSlider: {fileID: 1657626517}
-    lerpSpeed: 30
+    uiSlider: {fileID: 0}
+    lerpSpeed: 10
     formatter: 0.##
     lerpedValue: 0
     textValue: {fileID: 0}
-    showActualization: 0
+    showActualization: 1
     miniatureSprite: {fileID: 0}
   "\uBC94\uC704":
     "\uCD5C\uC18C\uAC12": 0
     "\uCD5C\uB300\uAC12": 100
-    "\uB79C\uB364\uCD5C\uC18C\uAC12": 0
-    "\uB79C\uB364\uCD5C\uB300\uAC12": 100
+    "\uB79C\uB364\uCD5C\uC18C\uAC12": 80
+    "\uB79C\uB364\uCD5C\uB300\uAC12": 80
   keepValue: 0
   "\uC2E4\uD589\uD560\uC774\uBCA4\uD2B8":
     "\uC99D\uAC00\uD560\uB54C":
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1657626518}
+          m_MethodName: SetTrigger
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: valueUp
+            m_BoolArgument: 0
+          m_CallState: 2
       m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
         Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
     "\uAC10\uC18C\uD560\uB54C":
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1657626518}
+          m_MethodName: SetTrigger
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: valueDown
+            m_BoolArgument: 0
+          m_CallState: 2
       m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
         Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
     "\uCD5C\uB300\uAC12\uC77C\uB54C":
@@ -4809,19 +4831,19 @@ MonoBehaviour:
   "\uB0B4\uC5ED\uD65C": 10
   "\uD50C\uB808\uC774\uC5B4\uD504\uB7A9\uC2A4\uB370\uC774\uD130": 0
   debugValueChanges: 0
-  UserInterface:
+  "\uC720\uC800\uC778\uD130\uD398\uC774\uC2A4":
     uiScrollbar: {fileID: 0}
-    uiSlider: {fileID: 230786808}
-    lerpSpeed: 20
-    formatter: 0
+    uiSlider: {fileID: 0}
+    lerpSpeed: 10
+    formatter: 0.##
     lerpedValue: 0
-    textValue: {fileID: 1258367562}
+    textValue: {fileID: 0}
     showActualization: 1
-    miniatureSprite: {fileID: 21300000, guid: b2f7551d3cd71504dbdc11ecd35e5d0d, type: 3}
+    miniatureSprite: {fileID: 0}
   "\uBC94\uC704":
     "\uCD5C\uC18C\uAC12": 0
     "\uCD5C\uB300\uAC12": 100
-    "\uB79C\uB364\uCD5C\uC18C\uAC12": 0
+    "\uB79C\uB364\uCD5C\uC18C\uAC12": 1
     "\uB79C\uB364\uCD5C\uB300\uAC12": 100
   keepValue: 0
   "\uC2E4\uD589\uD560\uC774\uBCA4\uD2B8":
@@ -4888,30 +4910,52 @@ MonoBehaviour:
   "\uB0B4\uC5ED\uD65C": 5
   "\uD50C\uB808\uC774\uC5B4\uD504\uB7A9\uC2A4\uB370\uC774\uD130": 0
   debugValueChanges: 0
-  UserInterface:
+  "\uC720\uC800\uC778\uD130\uD398\uC774\uC2A4":
     uiScrollbar: {fileID: 0}
-    uiSlider: {fileID: 1801745826}
-    lerpSpeed: 30
+    uiSlider: {fileID: 0}
+    lerpSpeed: 10
     formatter: 0.##
     lerpedValue: 0
     textValue: {fileID: 0}
-    showActualization: 0
+    showActualization: 1
     miniatureSprite: {fileID: 0}
   "\uBC94\uC704":
     "\uCD5C\uC18C\uAC12": 0
     "\uCD5C\uB300\uAC12": 100
-    "\uB79C\uB364\uCD5C\uC18C\uAC12": 0
-    "\uB79C\uB364\uCD5C\uB300\uAC12": 100
+    "\uB79C\uB364\uCD5C\uC18C\uAC12": 80
+    "\uB79C\uB364\uCD5C\uB300\uAC12": 80
   keepValue: 0
   "\uC2E4\uD589\uD560\uC774\uBCA4\uD2B8":
     "\uC99D\uAC00\uD560\uB54C":
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1801745827}
+          m_MethodName: SetTrigger
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: valueUp
+            m_BoolArgument: 0
+          m_CallState: 2
       m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
         Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
     "\uAC10\uC18C\uD560\uB54C":
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1801745827}
+          m_MethodName: SetTrigger
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: valueDown
+            m_BoolArgument: 0
+          m_CallState: 2
       m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
         Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
     "\uCD5C\uB300\uAC12\uC77C\uB54C":
@@ -4967,19 +5011,19 @@ MonoBehaviour:
   "\uB0B4\uC5ED\uD65C": 9
   "\uD50C\uB808\uC774\uC5B4\uD504\uB7A9\uC2A4\uB370\uC774\uD130": 0
   debugValueChanges: 0
-  UserInterface:
+  "\uC720\uC800\uC778\uD130\uD398\uC774\uC2A4":
     uiScrollbar: {fileID: 0}
-    uiSlider: {fileID: 396775296}
-    lerpSpeed: 20
-    formatter: 0
+    uiSlider: {fileID: 0}
+    lerpSpeed: 10
+    formatter: 0.##
     lerpedValue: 0
-    textValue: {fileID: 598637639}
+    textValue: {fileID: 0}
     showActualization: 1
-    miniatureSprite: {fileID: 21300000, guid: 0c9e9fef11716604ca6a13aad8aca253, type: 3}
+    miniatureSprite: {fileID: 0}
   "\uBC94\uC704":
     "\uCD5C\uC18C\uAC12": 0
     "\uCD5C\uB300\uAC12": 100
-    "\uB79C\uB364\uCD5C\uC18C\uAC12": 0
+    "\uB79C\uB364\uCD5C\uC18C\uAC12": 1
     "\uB79C\uB364\uCD5C\uB300\uAC12": 100
   keepValue: 0
   "\uC2E4\uD589\uD560\uC774\uBCA4\uD2B8":
@@ -5898,19 +5942,19 @@ MonoBehaviour:
   "\uB0B4\uC5ED\uD65C": 13
   "\uD50C\uB808\uC774\uC5B4\uD504\uB7A9\uC2A4\uB370\uC774\uD130": 0
   debugValueChanges: 0
-  UserInterface:
+  "\uC720\uC800\uC778\uD130\uD398\uC774\uC2A4":
     uiScrollbar: {fileID: 0}
-    uiSlider: {fileID: 994011256}
-    lerpSpeed: 20
-    formatter: 0
+    uiSlider: {fileID: 0}
+    lerpSpeed: 10
+    formatter: 0.##
     lerpedValue: 0
-    textValue: {fileID: 69490533}
+    textValue: {fileID: 0}
     showActualization: 1
-    miniatureSprite: {fileID: 21300000, guid: d55930b401155244499ff04fa330ac66, type: 3}
+    miniatureSprite: {fileID: 0}
   "\uBC94\uC704":
     "\uCD5C\uC18C\uAC12": 0
     "\uCD5C\uB300\uAC12": 100
-    "\uB79C\uB364\uCD5C\uC18C\uAC12": 0
+    "\uB79C\uB364\uCD5C\uC18C\uAC12": 1
     "\uB79C\uB364\uCD5C\uB300\uAC12": 100
   keepValue: 0
   "\uC2E4\uD589\uD560\uC774\uBCA4\uD2B8":
@@ -6051,14 +6095,14 @@ MonoBehaviour:
   "\uB0B4\uC5ED\uD65C": 1
   "\uD50C\uB808\uC774\uC5B4\uD504\uB7A9\uC2A4\uB370\uC774\uD130": 0
   debugValueChanges: 0
-  UserInterface:
+  "\uC720\uC800\uC778\uD130\uD398\uC774\uC2A4":
     uiScrollbar: {fileID: 0}
     uiSlider: {fileID: 0}
     lerpSpeed: 10
     formatter: 0.##
     lerpedValue: 0
     textValue: {fileID: 0}
-    showActualization: 0
+    showActualization: 1
     miniatureSprite: {fileID: 0}
   "\uBC94\uC704":
     "\uCD5C\uC18C\uAC12": 0
@@ -6370,30 +6414,52 @@ MonoBehaviour:
   "\uB0B4\uC5ED\uD65C": 7
   "\uD50C\uB808\uC774\uC5B4\uD504\uB7A9\uC2A4\uB370\uC774\uD130": 0
   debugValueChanges: 0
-  UserInterface:
+  "\uC720\uC800\uC778\uD130\uD398\uC774\uC2A4":
     uiScrollbar: {fileID: 0}
-    uiSlider: {fileID: 1484496493}
-    lerpSpeed: 30
+    uiSlider: {fileID: 0}
+    lerpSpeed: 10
     formatter: 0.##
     lerpedValue: 0
     textValue: {fileID: 0}
-    showActualization: 0
+    showActualization: 1
     miniatureSprite: {fileID: 0}
   "\uBC94\uC704":
     "\uCD5C\uC18C\uAC12": 0
     "\uCD5C\uB300\uAC12": 100
-    "\uB79C\uB364\uCD5C\uC18C\uAC12": 0
-    "\uB79C\uB364\uCD5C\uB300\uAC12": 100
+    "\uB79C\uB364\uCD5C\uC18C\uAC12": 80
+    "\uB79C\uB364\uCD5C\uB300\uAC12": 80
   keepValue: 0
   "\uC2E4\uD589\uD560\uC774\uBCA4\uD2B8":
     "\uC99D\uAC00\uD560\uB54C":
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1484496494}
+          m_MethodName: SetTrigger
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: valueUp
+            m_BoolArgument: 0
+          m_CallState: 2
       m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
         Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
     "\uAC10\uC18C\uD560\uB54C":
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1484496494}
+          m_MethodName: SetTrigger
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: valueDown
+            m_BoolArgument: 0
+          m_CallState: 2
       m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
         Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
     "\uCD5C\uB300\uAC12\uC77C\uB54C":
@@ -6787,20 +6853,20 @@ MonoBehaviour:
   "\uB0B4\uC5ED\uD65C": 16
   "\uD50C\uB808\uC774\uC5B4\uD504\uB7A9\uC2A4\uB370\uC774\uD130": 0
   debugValueChanges: 0
-  UserInterface:
+  "\uC720\uC800\uC778\uD130\uD398\uC774\uC2A4":
     uiScrollbar: {fileID: 0}
-    uiSlider: {fileID: 624762858}
-    lerpSpeed: 30
-    formatter: 0
+    uiSlider: {fileID: 0}
+    lerpSpeed: 10
+    formatter: 0.##
     lerpedValue: 0
-    textValue: {fileID: 1386090597}
+    textValue: {fileID: 0}
     showActualization: 1
-    miniatureSprite: {fileID: 21300000, guid: 0df08b8552e42f64c874b073500661bb, type: 3}
+    miniatureSprite: {fileID: 0}
   "\uBC94\uC704":
     "\uCD5C\uC18C\uAC12": 0
     "\uCD5C\uB300\uAC12": 100
     "\uB79C\uB364\uCD5C\uC18C\uAC12": 0
-    "\uB79C\uB364\uCD5C\uB300\uAC12": 100
+    "\uB79C\uB364\uCD5C\uB300\uAC12": 0
   keepValue: 0
   "\uC2E4\uD589\uD560\uC774\uBCA4\uD2B8":
     "\uC99D\uAC00\uD560\uB54C":
@@ -7050,30 +7116,52 @@ MonoBehaviour:
   "\uB0B4\uC5ED\uD65C": 8
   "\uD50C\uB808\uC774\uC5B4\uD504\uB7A9\uC2A4\uB370\uC774\uD130": 0
   debugValueChanges: 0
-  UserInterface:
+  "\uC720\uC800\uC778\uD130\uD398\uC774\uC2A4":
     uiScrollbar: {fileID: 0}
-    uiSlider: {fileID: 1178378299}
-    lerpSpeed: 30
+    uiSlider: {fileID: 0}
+    lerpSpeed: 10
     formatter: 0.##
     lerpedValue: 0
     textValue: {fileID: 0}
-    showActualization: 0
+    showActualization: 1
     miniatureSprite: {fileID: 0}
   "\uBC94\uC704":
     "\uCD5C\uC18C\uAC12": 0
     "\uCD5C\uB300\uAC12": 100
-    "\uB79C\uB364\uCD5C\uC18C\uAC12": 0
-    "\uB79C\uB364\uCD5C\uB300\uAC12": 100
+    "\uB79C\uB364\uCD5C\uC18C\uAC12": 80
+    "\uB79C\uB364\uCD5C\uB300\uAC12": 80
   keepValue: 0
   "\uC2E4\uD589\uD560\uC774\uBCA4\uD2B8":
     "\uC99D\uAC00\uD560\uB54C":
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1178378300}
+          m_MethodName: SetTrigger
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: valueUp
+            m_BoolArgument: 0
+          m_CallState: 2
       m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
         Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
     "\uAC10\uC18C\uD560\uB54C":
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1178378300}
+          m_MethodName: SetTrigger
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: valueDown
+            m_BoolArgument: 0
+          m_CallState: 2
       m_TypeName: "ValueScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
         Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
     "\uCD5C\uB300\uAC12\uC77C\uB54C":
@@ -7129,20 +7217,20 @@ MonoBehaviour:
   "\uB0B4\uC5ED\uD65C": 19
   "\uD50C\uB808\uC774\uC5B4\uD504\uB7A9\uC2A4\uB370\uC774\uD130": 0
   debugValueChanges: 0
-  UserInterface:
+  "\uC720\uC800\uC778\uD130\uD398\uC774\uC2A4":
     uiScrollbar: {fileID: 0}
     uiSlider: {fileID: 0}
-    lerpSpeed: 30
-    formatter: 0
+    lerpSpeed: 10
+    formatter: 0.##
     lerpedValue: 0
     textValue: {fileID: 0}
-    showActualization: 0
+    showActualization: 1
     miniatureSprite: {fileID: 0}
   "\uBC94\uC704":
     "\uCD5C\uC18C\uAC12": 0
-    "\uCD5C\uB300\uAC12": 100
+    "\uCD5C\uB300\uAC12": 10000
     "\uB79C\uB364\uCD5C\uC18C\uAC12": 0
-    "\uB79C\uB364\uCD5C\uB300\uAC12": 100
+    "\uB79C\uB364\uCD5C\uB300\uAC12": 0
   keepValue: 1
   "\uC2E4\uD589\uD560\uC774\uBCA4\uD2B8":
     "\uC99D\uAC00\uD560\uB54C":
@@ -7242,19 +7330,19 @@ MonoBehaviour:
   "\uB0B4\uC5ED\uD65C": 11
   "\uD50C\uB808\uC774\uC5B4\uD504\uB7A9\uC2A4\uB370\uC774\uD130": 0
   debugValueChanges: 0
-  UserInterface:
+  "\uC720\uC800\uC778\uD130\uD398\uC774\uC2A4":
     uiScrollbar: {fileID: 0}
-    uiSlider: {fileID: 241410781}
-    lerpSpeed: 20
-    formatter: 0
+    uiSlider: {fileID: 0}
+    lerpSpeed: 10
+    formatter: 0.##
     lerpedValue: 0
-    textValue: {fileID: 1493200771}
+    textValue: {fileID: 0}
     showActualization: 1
-    miniatureSprite: {fileID: 21300000, guid: c00a318cda81c38469b76efd0191cddb, type: 3}
+    miniatureSprite: {fileID: 0}
   "\uBC94\uC704":
     "\uCD5C\uC18C\uAC12": 0
     "\uCD5C\uB300\uAC12": 100
-    "\uB79C\uB364\uCD5C\uC18C\uAC12": 0
+    "\uB79C\uB364\uCD5C\uC18C\uAC12": 1
     "\uB79C\uB364\uCD5C\uB300\uAC12": 100
   keepValue: 0
   "\uC2E4\uD589\uD560\uC774\uBCA4\uD2B8":
@@ -7457,20 +7545,20 @@ MonoBehaviour:
   "\uB0B4\uC5ED\uD65C": 4
   "\uD50C\uB808\uC774\uC5B4\uD504\uB7A9\uC2A4\uB370\uC774\uD130": 0
   debugValueChanges: 0
-  UserInterface:
+  "\uC720\uC800\uC778\uD130\uD398\uC774\uC2A4":
     uiScrollbar: {fileID: 0}
     uiSlider: {fileID: 0}
-    lerpSpeed: 15
-    formatter: 0
+    lerpSpeed: 10
+    formatter: 0.##
     lerpedValue: 0
-    textValue: {fileID: 1773188270}
-    showActualization: 0
+    textValue: {fileID: 0}
+    showActualization: 1
     miniatureSprite: {fileID: 0}
   "\uBC94\uC704":
     "\uCD5C\uC18C\uAC12": 0
-    "\uCD5C\uB300\uAC12": 100
+    "\uCD5C\uB300\uAC12": 200
     "\uB79C\uB364\uCD5C\uC18C\uAC12": 0
-    "\uB79C\uB364\uCD5C\uB300\uAC12": 100
+    "\uB79C\uB364\uCD5C\uB300\uAC12": 0
   keepValue: 0
   "\uC2E4\uD589\uD560\uC774\uBCA4\uD2B8":
     "\uC99D\uAC00\uD560\uB54C":
@@ -8598,20 +8686,20 @@ MonoBehaviour:
   "\uB0B4\uC5ED\uD65C": 3
   "\uD50C\uB808\uC774\uC5B4\uD504\uB7A9\uC2A4\uB370\uC774\uD130": 0
   debugValueChanges: 0
-  UserInterface:
+  "\uC720\uC800\uC778\uD130\uD398\uC774\uC2A4":
     uiScrollbar: {fileID: 0}
     uiSlider: {fileID: 0}
     lerpSpeed: 10
     formatter: 0.##
     lerpedValue: 0
     textValue: {fileID: 0}
-    showActualization: 0
+    showActualization: 1
     miniatureSprite: {fileID: 0}
   "\uBC94\uC704":
     "\uCD5C\uC18C\uAC12": 0
-    "\uCD5C\uB300\uAC12": 100
+    "\uCD5C\uB300\uAC12": 2
     "\uB79C\uB364\uCD5C\uC18C\uAC12": 0
-    "\uB79C\uB364\uCD5C\uB300\uAC12": 100
+    "\uB79C\uB364\uCD5C\uB300\uAC12": 2
   keepValue: 0
   "\uC2E4\uD589\uD560\uC774\uBCA4\uD2B8":
     "\uC99D\uAC00\uD560\uB54C":
@@ -13283,19 +13371,19 @@ MonoBehaviour:
   "\uB0B4\uC5ED\uD65C": 14
   "\uD50C\uB808\uC774\uC5B4\uD504\uB7A9\uC2A4\uB370\uC774\uD130": 0
   debugValueChanges: 0
-  UserInterface:
+  "\uC720\uC800\uC778\uD130\uD398\uC774\uC2A4":
     uiScrollbar: {fileID: 0}
-    uiSlider: {fileID: 1311018308}
-    lerpSpeed: 20
-    formatter: 0
+    uiSlider: {fileID: 0}
+    lerpSpeed: 10
+    formatter: 0.##
     lerpedValue: 0
-    textValue: {fileID: 1693779522}
+    textValue: {fileID: 0}
     showActualization: 1
-    miniatureSprite: {fileID: 21300000, guid: 749b443b6b36d674f97225ad05ace9c0, type: 3}
+    miniatureSprite: {fileID: 0}
   "\uBC94\uC704":
     "\uCD5C\uC18C\uAC12": 0
     "\uCD5C\uB300\uAC12": 100
-    "\uB79C\uB364\uCD5C\uC18C\uAC12": 0
+    "\uB79C\uB364\uCD5C\uC18C\uAC12": 1
     "\uB79C\uB364\uCD5C\uB300\uAC12": 100
   keepValue: 0
   "\uC2E4\uD589\uD560\uC774\uBCA4\uD2B8":
@@ -13600,19 +13688,19 @@ MonoBehaviour:
   "\uB0B4\uC5ED\uD65C": 12
   "\uD50C\uB808\uC774\uC5B4\uD504\uB7A9\uC2A4\uB370\uC774\uD130": 0
   debugValueChanges: 0
-  UserInterface:
+  "\uC720\uC800\uC778\uD130\uD398\uC774\uC2A4":
     uiScrollbar: {fileID: 0}
-    uiSlider: {fileID: 529659675}
-    lerpSpeed: 20
-    formatter: 0
+    uiSlider: {fileID: 0}
+    lerpSpeed: 10
+    formatter: 0.##
     lerpedValue: 0
-    textValue: {fileID: 1579944478}
+    textValue: {fileID: 0}
     showActualization: 1
-    miniatureSprite: {fileID: 21300000, guid: 97c23cc65a2eeed409fb86e17cc78ce3, type: 3}
+    miniatureSprite: {fileID: 0}
   "\uBC94\uC704":
     "\uCD5C\uC18C\uAC12": 0
     "\uCD5C\uB300\uAC12": 100
-    "\uB79C\uB364\uCD5C\uC18C\uAC12": 0
+    "\uB79C\uB364\uCD5C\uC18C\uAC12": 1
     "\uB79C\uB364\uCD5C\uB300\uAC12": 100
   keepValue: 0
   "\uC2E4\uD589\uD560\uC774\uBCA4\uD2B8":
@@ -15356,20 +15444,20 @@ MonoBehaviour:
   "\uB0B4\uC5ED\uD65C": 18
   "\uD50C\uB808\uC774\uC5B4\uD504\uB7A9\uC2A4\uB370\uC774\uD130": 0
   debugValueChanges: 0
-  UserInterface:
+  "\uC720\uC800\uC778\uD130\uD398\uC774\uC2A4":
     uiScrollbar: {fileID: 0}
     uiSlider: {fileID: 0}
-    lerpSpeed: 30
-    formatter: 0
+    lerpSpeed: 10
+    formatter: 0.##
     lerpedValue: 0
     textValue: {fileID: 0}
-    showActualization: 0
+    showActualization: 1
     miniatureSprite: {fileID: 0}
   "\uBC94\uC704":
     "\uCD5C\uC18C\uAC12": 0
-    "\uCD5C\uB300\uAC12": 100
+    "\uCD5C\uB300\uAC12": 1
     "\uB79C\uB364\uCD5C\uC18C\uAC12": 0
-    "\uB79C\uB364\uCD5C\uB300\uAC12": 100
+    "\uB79C\uB364\uCD5C\uB300\uAC12": 0
   keepValue: 0
   "\uC2E4\uD589\uD560\uC774\uBCA4\uD2B8":
     "\uC99D\uAC00\uD560\uB54C":

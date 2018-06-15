@@ -70,50 +70,65 @@ public class ValueScript : MonoBehaviour {
 
 	void Start()
     {
-        /// 나 자신 클래스를 싱글톤 객체의 리스트에 등록
+        /// 나 자신 클래스를 싱글톤 객체의 리스트에 등록.
+        /// 결과적으로 Game씬의 Values오브젝트 밑의 자식 오브젝트들이 모두 리스트에 등록되게 된다.
 		ValueManager.나자신.ValueScript리스트에추가 (this);
-	}
+
+    }
 
 
 
 
 	public void actualizeUI(float uiValue)
     {
-		if (UserInterface.uiScrollbar != null) {
-			UserInterface.uiScrollbar.size = uiValue / 범위.최대값;
+		if (유저인터페이스.uiScrollbar != null)
+        {
+			유저인터페이스.uiScrollbar.size = uiValue / 범위.최대값;
 		}
-		if (UserInterface.textValue != null) {
-			UserInterface.textValue.text = uiValue.ToString(UserInterface.formatter);
+		if (유저인터페이스.textValue != null)
+        {
+			유저인터페이스.textValue.text = uiValue.ToString(유저인터페이스.formatter);
 		}
-		if (UserInterface.uiSlider != null) {
-			UserInterface.uiSlider.value = uiValue / 범위.최대값;
+		if (유저인터페이스.uiSlider != null)
+        {
+			유저인터페이스.uiSlider.value = uiValue / 범위.최대값;
 		}
 	}
 
 
+    /// <summary>
+    /// 게임내의 결과창이나 게임상단의 UI등의 슬라이더등의 수치나 값을 조절하기 위한 클래스.
+    /// </summary>
 	[System.Serializable]
-	public class uiConfig
+	public class UI구성
     {
 		[Tooltip("값을 채우기 막대로 표시하는 경우에는 스크롤 막대 또는 슬라이더를 사용할 수 있습니다. 여기에서 환경 설정을 정의하십시오.")]
 		public Scrollbar uiScrollbar;
-		[Tooltip("값을 채우기 막대로 표시하는 경우에는 스크롤 막대 또는 슬라이더를 사용할 수 있습니다. 여기에서 환경 설정을 정의하십시오.")]
+
+        [Tooltip("값을 채우기 막대로 표시하는 경우에는 스크롤 막대 또는 슬라이더를 사용할 수 있습니다. 여기에서 환경 설정을 정의하십시오.")]
 		public Slider uiSlider;
-		[Tooltip("값이 변경되면 바를 채우는 속도입니다.")]
+
+        [Tooltip("값이 변경되면 바를 채우는 속도입니다.")]
 		[Range(0.1f,100f)]public float lerpSpeed = 10f;
-		[Tooltip("값을 표시하기 위한 형식을 정의하십시오. \n예: 0 또는 # 을 입력하십시오. \n예 : #.00을 입력하면 두자리 숫자가 표시됩니다.")]
+
+        [Tooltip("값을 표시하기 위한 형식을 정의하십시오. \n예: 0 또는 # 을 입력하십시오. \n예 : #.00을 입력하면 두자리 숫자가 표시됩니다.")]
 		public string formatter = "0.##";
-		[Tooltip("실제 lerped/filling 값.")]
+
+        [Tooltip("실제 lerped/filling 값.")]
 		[ReadOnlyInspector]public float lerpedValue = 0f;
-		[Tooltip("값이 텍스트로 표시되면 여기에서 텍스트 필드를 정의하십시오.")]
+
+        [Tooltip("값이 텍스트로 표시되면 여기에서 텍스트 필드를 정의하십시오.")]
 		public Text textValue;
 
 		[Tooltip("값 관리자는 'showActualization'에 따라 값 변경을 사용자에게 표시할 수 있습니다.")]
 		public bool showActualization = true;
-		[Tooltip("값 관리자는 미니터처스프라이트로 값의 변경을 표시할 수 있습니다.")]
+
+        [Tooltip("값 관리자는 미니터처스프라이트로 값의 변경을 표시할 수 있습니다.")]
 		public Sprite miniatureSprite;
 	}
-	[Tooltip("각 값 스크립트에 대해 값을 표시하는 다른 방법이 있을 수 있습니다. 여기에 세부 정보를 정의하십시오.")]
-	public uiConfig UserInterface;
+
+	[Tooltip("각 오브젝트마다 UI의 값의 세팅이 틀리기때문에 인스펙터에서 세부 정보를 세팅하세요.")]
+	public UI구성 유저인터페이스;
 
 
 
@@ -122,9 +137,9 @@ public class ValueScript : MonoBehaviour {
 		
         //UserInterface.lerpedValue = Mathf.Lerp (UserInterface.lerpedValue, value, UserInterface.lerpSpeed * Time.deltaTime);
 
-		UserInterface.lerpedValue = MathExtension.linearInterpolate (UserInterface.lerpedValue, 플레이어프랩스데이터, UserInterface.lerpSpeed * Time.deltaTime);
+		유저인터페이스.lerpedValue = MathExtension.linearInterpolate (유저인터페이스.lerpedValue, 플레이어프랩스데이터, 유저인터페이스.lerpSpeed * Time.deltaTime);
 
-		actualizeUI (UserInterface.lerpedValue);
+		actualizeUI (유저인터페이스.lerpedValue);
 	}
 
 
