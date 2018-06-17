@@ -14,8 +14,7 @@ public class ValueManager : MonoBehaviour {
     /// 싱글톤 사용을 위해 static으로 엑서스 가능한 나 자신의 인스턴스를 만든다.
     /// </summary>
 	public static ValueManager 나자신;
-
-
+    
 	void Awake()
     {
         #region 나자신의 싱글톤 객체를 만들어서 할당한다.
@@ -50,10 +49,6 @@ public class ValueManager : MonoBehaviour {
 		볼륨스크립트리스트.Add (볼륨스크립트);
 	}
 
-	//search for fitting the first fitting value script through the list
-	//ATTENTION: because of the script execution order it's possible this function fails if called from 'Start()' or 'Awake()'
-	//Therefore call it with at least one frame delay.
-
     /// <summary>
     /// 목록을 통해 첫번째 피팅 값 스크립트 피팅 검색
     /// 주의 : 스크립트 실행 순서때문에 'Start()' 또는 'Awake()'에서 호출하면 이 함수가 실패 할 수 있습니다.
@@ -85,12 +80,16 @@ public class ValueManager : MonoBehaviour {
 		}
 	}
 
-	//Test a condition for a card. Example condition: draw this card only, if the age (or any other value) inside the game is between 10-16.
-	//the methode returns true, if the condition is met. False if not.
-	public bool getConditionMet(EventScript.condition cond, bool showDebug = false){
+    /// 카드의 조건을 테스트하십시오. 예제 조건 : 게임 내 연령 (또는 다른 값)이 10-16 사이 인 경우에만이 카드를 뽑습니다.
+    /// methode는 조건이 충족 될 경우 true를 반환합니다.그렇지 않으면 거짓.
+    /// </summary>
+    /// <param name="cond"></param>
+    /// <param name="showDebug"></param>
+    /// <returns></returns>
+    public bool GetConditionMet(EventScript.콘디션 cond, bool showDebug = false){
 		
 		foreach (ValueScript vs in 볼륨스크립트리스트) {
-			if (vs.내역활 == cond.value) {
+			if (vs.내역활 == cond.정의) {
 
 				if ((vs.플레이어프랩스데이터 <= cond.valueMax && vs.플레이어프랩스데이터 >= cond.valueMin)) {
 					if(showDebug==true){
@@ -112,12 +111,12 @@ public class ValueManager : MonoBehaviour {
 	}
 
 	//check for a set of conditions if everything is met
-	public bool AreConditinsForResultMet(EventScript.condition[] cond){
+	public bool AreConditinsForResultMet(EventScript.콘디션[] cond){
 
 		bool conditionOk = true;
 
-		foreach (EventScript.condition c in cond) {
-			if (getConditionMet (c) == true) {
+		foreach (EventScript.콘디션 c in cond) {
+			if (GetConditionMet (c) == true) {
 				//condition is ok.
 			} else {
 				conditionOk = false;
@@ -142,8 +141,8 @@ public class ValueManager : MonoBehaviour {
 				vs.addValue (valueAdd);
 
 				//display the value change to the user
-				if (vs.유저인터페이스.showActualization == true) {
-					InfoDisplay.instance.addDisplay (vs.유저인터페이스.miniatureSprite, valueAdd);
+				if (vs.UI조절.showActualization == true) {
+					InfoDisplay.instance.addDisplay (vs.UI조절.아이콘이미지, valueAdd);
 				}
 			}
 		}
@@ -171,8 +170,8 @@ public class ValueManager : MonoBehaviour {
 				valueDifference = oldValue - vs.플레이어프랩스데이터;
 
 				//display the value change to the user
-				if (vs.유저인터페이스.showActualization == true) {
-					InfoDisplay.instance.addDisplay (vs.유저인터페이스.miniatureSprite, valueDifference);
+				if (vs.UI조절.showActualization == true) {
+					InfoDisplay.instance.addDisplay (vs.UI조절.아이콘이미지, valueDifference);
 				}
 			}
 		}

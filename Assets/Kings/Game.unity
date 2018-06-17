@@ -287,7 +287,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -402,24 +402,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textFields:
-    titleText:
-      textContent: 
-      textField: {fileID: 0}
-    questionText:
-      textContent: swipe to start
-      textField: {fileID: 899493289}
-    answerLeft:
-      textContent: 
-      textField: {fileID: 0}
-    answerRight:
-      textContent: 
-      textField: {fileID: 0}
+    "\uD0C0\uC774\uD2C0\uD14D\uC2A4\uD2B8":
+      "\uD14D\uC2A4\uD2B8\uCEE8\uD14D\uD2B8": 
+      "\uD14D\uC2A4\uD2B8\uD544\uB4DC": {fileID: 0}
+    "\uC9C8\uBB38\uD14D\uC2A4\uD2B8":
+      "\uD14D\uC2A4\uD2B8\uCEE8\uD14D\uD2B8": 
+      "\uD14D\uC2A4\uD2B8\uD544\uB4DC": {fileID: 0}
+    "\uC67C\uCABD\uC120\uD0DD\uD14D\uC2A4\uD2B8":
+      "\uD14D\uC2A4\uD2B8\uCEE8\uD14D\uD2B8": 
+      "\uD14D\uC2A4\uD2B8\uD544\uB4DC": {fileID: 0}
+    "\uC624\uB978\uCABD\uC120\uD0DD\uD14D\uC2A4\uD2B8":
+      "\uD14D\uC2A4\uD2B8\uCEE8\uD14D\uD2B8": 
+      "\uD14D\uC2A4\uD2B8\uD544\uB4DC": {fileID: 0}
   isHighPriorityCard: 0
   isDrawable: 1
   cardPropability: 1
   maxDraws: 100
   conditions:
-  - value: 0
+  - "\uC815\uC758": 0
     valueMin: 0
     valueMax: 0
   Results:
@@ -429,19 +429,19 @@ MonoBehaviour:
         valueChanges: []
         followUpCard: {fileID: 0}
       conditions:
-      - value: 0
+      - "\uC815\uC758": 0
         valueMin: 0
         valueMax: 0
-      - value: 0
+      - "\uC815\uC758": 0
         valueMin: 0
         valueMax: 0
-      - value: 0
+      - "\uC815\uC758": 0
         valueMin: 0
         valueMax: 0
-      - value: 0
+      - "\uC815\uC758": 0
         valueMin: 0
         valueMax: 0
-      - value: 0
+      - "\uC815\uC758": 0
         valueMin: 0
         valueMax: 0
       modifiersTrue:
@@ -468,23 +468,23 @@ MonoBehaviour:
   OnCardSpawn:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: EventScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+    m_TypeName: "EventScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
   OnCardDespawn:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: EventScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+    m_TypeName: "EventScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
   OnSwipeLeft:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: EventScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+    m_TypeName: "EventScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
   OnSwipeRight:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: EventScript+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+    m_TypeName: "EventScript+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
 --- !u!1 &11417855
 GameObject:
   m_ObjectHideFlags: 0
@@ -1628,20 +1628,20 @@ MonoBehaviour:
   "\uB0B4\uC5ED\uD65C": 17
   "\uD50C\uB808\uC774\uC5B4\uD504\uB7A9\uC2A4\uB370\uC774\uD130": 0
   debugValueChanges: 0
-  "\uC720\uC800\uC778\uD130\uD398\uC774\uC2A4":
-    uiScrollbar: {fileID: 0}
-    uiSlider: {fileID: 0}
-    lerpSpeed: 10
-    formatter: 0.##
-    lerpedValue: 0
-    textValue: {fileID: 0}
-    showActualization: 1
-    miniatureSprite: {fileID: 0}
+  "UI\uC870\uC808":
+    "\uC2A4\uD06C\uB864\uBC14": {fileID: 0}
+    "\uC2AC\uB77C\uC774\uB354": {fileID: 0}
+    "\uAC8C\uC774\uC9C0\uC18D\uB3C4": 30
+    "\uD45C\uC2DC\uD3EC\uB9F7": 0
+    "\uD604\uC7AC\uD37C\uC13C\uD2B8": 0
+    "\uC2A4\uD0EF\uC218\uCE58\uD14D\uC2A4\uD2B8": {fileID: 0}
+    showActualization: 0
+    "\uC544\uC774\uCF58\uC774\uBBF8\uC9C0": {fileID: 0}
   "\uBC94\uC704":
     "\uCD5C\uC18C\uAC12": 0
-    "\uCD5C\uB300\uAC12": 100
+    "\uCD5C\uB300\uAC12": 1
     "\uB79C\uB364\uCD5C\uC18C\uAC12": 0
-    "\uB79C\uB364\uCD5C\uB300\uAC12": 100
+    "\uB79C\uB364\uCD5C\uB300\uAC12": 0
   keepValue: 0
   "\uC2E4\uD589\uD560\uC774\uBCA4\uD2B8":
     "\uC99D\uAC00\uD560\uB54C":
@@ -1690,10 +1690,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   conditionsToTest:
-  - value: 17
+  - "\uC815\uC758": 0
     valueMin: 1
     valueMax: 1
-  - value: 15
+  - "\uC815\uC758": 0
     valueMin: 1
     valueMax: 100
   deltaTimeCycle: 4
@@ -2858,15 +2858,16 @@ MonoBehaviour:
   "\uB0B4\uC5ED\uD65C": 15
   "\uD50C\uB808\uC774\uC5B4\uD504\uB7A9\uC2A4\uB370\uC774\uD130": 0
   debugValueChanges: 0
-  "\uC720\uC800\uC778\uD130\uD398\uC774\uC2A4":
-    uiScrollbar: {fileID: 0}
-    uiSlider: {fileID: 0}
-    lerpSpeed: 10
-    formatter: 0.##
-    lerpedValue: 0
-    textValue: {fileID: 0}
+  "UI\uC870\uC808":
+    "\uC2A4\uD06C\uB864\uBC14": {fileID: 0}
+    "\uC2AC\uB77C\uC774\uB354": {fileID: 375208534}
+    "\uAC8C\uC774\uC9C0\uC18D\uB3C4": 30
+    "\uD45C\uC2DC\uD3EC\uB9F7": 0
+    "\uD604\uC7AC\uD37C\uC13C\uD2B8": 0
+    "\uC2A4\uD0EF\uC218\uCE58\uD14D\uC2A4\uD2B8": {fileID: 292464338}
     showActualization: 1
-    miniatureSprite: {fileID: 0}
+    "\uC544\uC774\uCF58\uC774\uBBF8\uC9C0": {fileID: 21300000, guid: dcad90a0c52337e4098095664842dd98,
+      type: 3}
   "\uBC94\uC704":
     "\uCD5C\uC18C\uAC12": 0
     "\uCD5C\uB300\uAC12": 100
@@ -3435,15 +3436,15 @@ MonoBehaviour:
   "\uB0B4\uC5ED\uD65C": 2
   "\uD50C\uB808\uC774\uC5B4\uD504\uB7A9\uC2A4\uB370\uC774\uD130": 0
   debugValueChanges: 0
-  "\uC720\uC800\uC778\uD130\uD398\uC774\uC2A4":
-    uiScrollbar: {fileID: 0}
-    uiSlider: {fileID: 0}
-    lerpSpeed: 10
-    formatter: 0.##
-    lerpedValue: 0
-    textValue: {fileID: 0}
-    showActualization: 1
-    miniatureSprite: {fileID: 0}
+  "UI\uC870\uC808":
+    "\uC2A4\uD06C\uB864\uBC14": {fileID: 0}
+    "\uC2AC\uB77C\uC774\uB354": {fileID: 0}
+    "\uAC8C\uC774\uC9C0\uC18D\uB3C4": 10
+    "\uD45C\uC2DC\uD3EC\uB9F7": 0.##
+    "\uD604\uC7AC\uD37C\uC13C\uD2B8": 0
+    "\uC2A4\uD0EF\uC218\uCE58\uD14D\uC2A4\uD2B8": {fileID: 0}
+    showActualization: 0
+    "\uC544\uC774\uCF58\uC774\uBBF8\uC9C0": {fileID: 0}
   "\uBC94\uC704":
     "\uCD5C\uC18C\uAC12": 0
     "\uCD5C\uB300\uAC12": 1
@@ -3533,15 +3534,15 @@ MonoBehaviour:
   "\uB0B4\uC5ED\uD65C": 0
   "\uD50C\uB808\uC774\uC5B4\uD504\uB7A9\uC2A4\uB370\uC774\uD130": 0
   debugValueChanges: 0
-  "\uC720\uC800\uC778\uD130\uD398\uC774\uC2A4":
-    uiScrollbar: {fileID: 0}
-    uiSlider: {fileID: 0}
-    lerpSpeed: 10
-    formatter: 0.##
-    lerpedValue: 0
-    textValue: {fileID: 0}
-    showActualization: 1
-    miniatureSprite: {fileID: 0}
+  "UI\uC870\uC808":
+    "\uC2A4\uD06C\uB864\uBC14": {fileID: 0}
+    "\uC2AC\uB77C\uC774\uB354": {fileID: 0}
+    "\uAC8C\uC774\uC9C0\uC18D\uB3C4": 10
+    "\uD45C\uC2DC\uD3EC\uB9F7": 0.##
+    "\uD604\uC7AC\uD37C\uC13C\uD2B8": 0
+    "\uC2A4\uD0EF\uC218\uCE58\uD14D\uC2A4\uD2B8": {fileID: 0}
+    showActualization: 0
+    "\uC544\uC774\uCF58\uC774\uBBF8\uC9C0": {fileID: 0}
   "\uBC94\uC704":
     "\uCD5C\uC18C\uAC12": 0
     "\uCD5C\uB300\uAC12": 5
@@ -4315,7 +4316,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -4339,13 +4340,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6e946c3b6d2a234aa26bb5165a15b2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _audioClips:
+  "\uBC30\uACBD\uC74C\uC545":
   - {fileID: 8300000, guid: 0ebb7ac923d1ad84ba8f07cd43c7862c, type: 3}
-  mainAudio: {fileID: 596712651}
-  playRandomAtStart: 1
-  loopSong: 1
-  testNext: 0
-  fadeDuration: 0
+  "\uC624\uB514\uC624\uC18C\uC2A4\uCEE8\uD37C\uB10C\uD2B8": {fileID: 596712651}
+  "\uD50C\uB808\uC774\uB79C\uB364\uC2DC\uC791": 1
+  "\uBC18\uBCF5\uC7AC\uC0DD": 1
+  "\uD14C\uC2A4\uD2B8\uB2E4\uC74C\uC7AC\uC0DD": 0
+  "\uD398\uC774\uB4DC\uB0A8\uC740\uC2DC\uAC04": 0
 --- !u!114 &596712653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4730,15 +4731,15 @@ MonoBehaviour:
   "\uB0B4\uC5ED\uD65C": 6
   "\uD50C\uB808\uC774\uC5B4\uD504\uB7A9\uC2A4\uB370\uC774\uD130": 0
   debugValueChanges: 0
-  "\uC720\uC800\uC778\uD130\uD398\uC774\uC2A4":
-    uiScrollbar: {fileID: 0}
-    uiSlider: {fileID: 0}
-    lerpSpeed: 10
-    formatter: 0.##
-    lerpedValue: 0
-    textValue: {fileID: 0}
-    showActualization: 1
-    miniatureSprite: {fileID: 0}
+  "UI\uC870\uC808":
+    "\uC2A4\uD06C\uB864\uBC14": {fileID: 0}
+    "\uC2AC\uB77C\uC774\uB354": {fileID: 1657626517}
+    "\uAC8C\uC774\uC9C0\uC18D\uB3C4": 30
+    "\uD45C\uC2DC\uD3EC\uB9F7": 0.##
+    "\uD604\uC7AC\uD37C\uC13C\uD2B8": 0
+    "\uC2A4\uD0EF\uC218\uCE58\uD14D\uC2A4\uD2B8": {fileID: 0}
+    showActualization: 0
+    "\uC544\uC774\uCF58\uC774\uBBF8\uC9C0": {fileID: 0}
   "\uBC94\uC704":
     "\uCD5C\uC18C\uAC12": 0
     "\uCD5C\uB300\uAC12": 100
@@ -4831,15 +4832,16 @@ MonoBehaviour:
   "\uB0B4\uC5ED\uD65C": 10
   "\uD50C\uB808\uC774\uC5B4\uD504\uB7A9\uC2A4\uB370\uC774\uD130": 0
   debugValueChanges: 0
-  "\uC720\uC800\uC778\uD130\uD398\uC774\uC2A4":
-    uiScrollbar: {fileID: 0}
-    uiSlider: {fileID: 0}
-    lerpSpeed: 10
-    formatter: 0.##
-    lerpedValue: 0
-    textValue: {fileID: 0}
+  "UI\uC870\uC808":
+    "\uC2A4\uD06C\uB864\uBC14": {fileID: 0}
+    "\uC2AC\uB77C\uC774\uB354": {fileID: 230786808}
+    "\uAC8C\uC774\uC9C0\uC18D\uB3C4": 20
+    "\uD45C\uC2DC\uD3EC\uB9F7": 0
+    "\uD604\uC7AC\uD37C\uC13C\uD2B8": 0
+    "\uC2A4\uD0EF\uC218\uCE58\uD14D\uC2A4\uD2B8": {fileID: 1258367562}
     showActualization: 1
-    miniatureSprite: {fileID: 0}
+    "\uC544\uC774\uCF58\uC774\uBBF8\uC9C0": {fileID: 21300000, guid: b2f7551d3cd71504dbdc11ecd35e5d0d,
+      type: 3}
   "\uBC94\uC704":
     "\uCD5C\uC18C\uAC12": 0
     "\uCD5C\uB300\uAC12": 100
@@ -4910,15 +4912,15 @@ MonoBehaviour:
   "\uB0B4\uC5ED\uD65C": 5
   "\uD50C\uB808\uC774\uC5B4\uD504\uB7A9\uC2A4\uB370\uC774\uD130": 0
   debugValueChanges: 0
-  "\uC720\uC800\uC778\uD130\uD398\uC774\uC2A4":
-    uiScrollbar: {fileID: 0}
-    uiSlider: {fileID: 0}
-    lerpSpeed: 10
-    formatter: 0.##
-    lerpedValue: 0
-    textValue: {fileID: 0}
-    showActualization: 1
-    miniatureSprite: {fileID: 0}
+  "UI\uC870\uC808":
+    "\uC2A4\uD06C\uB864\uBC14": {fileID: 0}
+    "\uC2AC\uB77C\uC774\uB354": {fileID: 1801745826}
+    "\uAC8C\uC774\uC9C0\uC18D\uB3C4": 30
+    "\uD45C\uC2DC\uD3EC\uB9F7": 0.##
+    "\uD604\uC7AC\uD37C\uC13C\uD2B8": 0
+    "\uC2A4\uD0EF\uC218\uCE58\uD14D\uC2A4\uD2B8": {fileID: 0}
+    showActualization: 0
+    "\uC544\uC774\uCF58\uC774\uBBF8\uC9C0": {fileID: 0}
   "\uBC94\uC704":
     "\uCD5C\uC18C\uAC12": 0
     "\uCD5C\uB300\uAC12": 100
@@ -5011,15 +5013,16 @@ MonoBehaviour:
   "\uB0B4\uC5ED\uD65C": 9
   "\uD50C\uB808\uC774\uC5B4\uD504\uB7A9\uC2A4\uB370\uC774\uD130": 0
   debugValueChanges: 0
-  "\uC720\uC800\uC778\uD130\uD398\uC774\uC2A4":
-    uiScrollbar: {fileID: 0}
-    uiSlider: {fileID: 0}
-    lerpSpeed: 10
-    formatter: 0.##
-    lerpedValue: 0
-    textValue: {fileID: 0}
+  "UI\uC870\uC808":
+    "\uC2A4\uD06C\uB864\uBC14": {fileID: 0}
+    "\uC2AC\uB77C\uC774\uB354": {fileID: 396775296}
+    "\uAC8C\uC774\uC9C0\uC18D\uB3C4": 20
+    "\uD45C\uC2DC\uD3EC\uB9F7": 0
+    "\uD604\uC7AC\uD37C\uC13C\uD2B8": 0
+    "\uC2A4\uD0EF\uC218\uCE58\uD14D\uC2A4\uD2B8": {fileID: 598637639}
     showActualization: 1
-    miniatureSprite: {fileID: 0}
+    "\uC544\uC774\uCF58\uC774\uBBF8\uC9C0": {fileID: 21300000, guid: 0c9e9fef11716604ca6a13aad8aca253,
+      type: 3}
   "\uBC94\uC704":
     "\uCD5C\uC18C\uAC12": 0
     "\uCD5C\uB300\uAC12": 100
@@ -5942,15 +5945,16 @@ MonoBehaviour:
   "\uB0B4\uC5ED\uD65C": 13
   "\uD50C\uB808\uC774\uC5B4\uD504\uB7A9\uC2A4\uB370\uC774\uD130": 0
   debugValueChanges: 0
-  "\uC720\uC800\uC778\uD130\uD398\uC774\uC2A4":
-    uiScrollbar: {fileID: 0}
-    uiSlider: {fileID: 0}
-    lerpSpeed: 10
-    formatter: 0.##
-    lerpedValue: 0
-    textValue: {fileID: 0}
+  "UI\uC870\uC808":
+    "\uC2A4\uD06C\uB864\uBC14": {fileID: 0}
+    "\uC2AC\uB77C\uC774\uB354": {fileID: 994011256}
+    "\uAC8C\uC774\uC9C0\uC18D\uB3C4": 20
+    "\uD45C\uC2DC\uD3EC\uB9F7": 0
+    "\uD604\uC7AC\uD37C\uC13C\uD2B8": 0
+    "\uC2A4\uD0EF\uC218\uCE58\uD14D\uC2A4\uD2B8": {fileID: 1693779522}
     showActualization: 1
-    miniatureSprite: {fileID: 0}
+    "\uC544\uC774\uCF58\uC774\uBBF8\uC9C0": {fileID: 21300000, guid: d55930b401155244499ff04fa330ac66,
+      type: 3}
   "\uBC94\uC704":
     "\uCD5C\uC18C\uAC12": 0
     "\uCD5C\uB300\uAC12": 100
@@ -6095,15 +6099,15 @@ MonoBehaviour:
   "\uB0B4\uC5ED\uD65C": 1
   "\uD50C\uB808\uC774\uC5B4\uD504\uB7A9\uC2A4\uB370\uC774\uD130": 0
   debugValueChanges: 0
-  "\uC720\uC800\uC778\uD130\uD398\uC774\uC2A4":
-    uiScrollbar: {fileID: 0}
-    uiSlider: {fileID: 0}
-    lerpSpeed: 10
-    formatter: 0.##
-    lerpedValue: 0
-    textValue: {fileID: 0}
-    showActualization: 1
-    miniatureSprite: {fileID: 0}
+  "UI\uC870\uC808":
+    "\uC2A4\uD06C\uB864\uBC14": {fileID: 0}
+    "\uC2AC\uB77C\uC774\uB354": {fileID: 0}
+    "\uAC8C\uC774\uC9C0\uC18D\uB3C4": 10
+    "\uD45C\uC2DC\uD3EC\uB9F7": 0.##
+    "\uD604\uC7AC\uD37C\uC13C\uD2B8": 0
+    "\uC2A4\uD0EF\uC218\uCE58\uD14D\uC2A4\uD2B8": {fileID: 0}
+    showActualization: 0
+    "\uC544\uC774\uCF58\uC774\uBBF8\uC9C0": {fileID: 0}
   "\uBC94\uC704":
     "\uCD5C\uC18C\uAC12": 0
     "\uCD5C\uB300\uAC12": 5
@@ -6303,42 +6307,42 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   logConditions:
   - condition:
-      value: 6
+      "\uC815\uC758": 0
       valueMin: 50
       valueMax: 100
     logConditionMet: You were loved by the People.
   - condition:
-      value: 6
+      "\uC815\uC758": 0
       valueMin: 0
       valueMax: 49
     logConditionMet: The People hated you.
   - condition:
-      value: 5
+      "\uC815\uC758": 0
       valueMin: 50
       valueMax: 100
     logConditionMet: The Army saw a great Leader in you.
   - condition:
-      value: 5
+      "\uC815\uC758": 0
       valueMin: 0
       valueMax: 49
     logConditionMet: The Army saw an unworthy Leader in you.
   - condition:
-      value: 7
+      "\uC815\uC758": 0
       valueMin: 50
       valueMax: 100
     logConditionMet: You were the Messiah to the Church.
   - condition:
-      value: 7
+      "\uC815\uC758": 0
       valueMin: 0
       valueMax: 49
     logConditionMet: You were the Devil to the Church.
   - condition:
-      value: 8
+      "\uC815\uC758": 0
       valueMin: 50
       valueMax: 100
     logConditionMet: You led your kingdom to great wealth.
   - condition:
-      value: 8
+      "\uC815\uC758": 0
       valueMin: 0
       valueMax: 49
     logConditionMet: You lost all the money of your kingdom.
@@ -6414,15 +6418,15 @@ MonoBehaviour:
   "\uB0B4\uC5ED\uD65C": 7
   "\uD50C\uB808\uC774\uC5B4\uD504\uB7A9\uC2A4\uB370\uC774\uD130": 0
   debugValueChanges: 0
-  "\uC720\uC800\uC778\uD130\uD398\uC774\uC2A4":
-    uiScrollbar: {fileID: 0}
-    uiSlider: {fileID: 0}
-    lerpSpeed: 10
-    formatter: 0.##
-    lerpedValue: 0
-    textValue: {fileID: 0}
-    showActualization: 1
-    miniatureSprite: {fileID: 0}
+  "UI\uC870\uC808":
+    "\uC2A4\uD06C\uB864\uBC14": {fileID: 0}
+    "\uC2AC\uB77C\uC774\uB354": {fileID: 0}
+    "\uAC8C\uC774\uC9C0\uC18D\uB3C4": 30
+    "\uD45C\uC2DC\uD3EC\uB9F7": 0.##
+    "\uD604\uC7AC\uD37C\uC13C\uD2B8": 0
+    "\uC2A4\uD0EF\uC218\uCE58\uD14D\uC2A4\uD2B8": {fileID: 0}
+    showActualization: 0
+    "\uC544\uC774\uCF58\uC774\uBBF8\uC9C0": {fileID: 0}
   "\uBC94\uC704":
     "\uCD5C\uC18C\uAC12": 0
     "\uCD5C\uB300\uAC12": 100
@@ -6853,15 +6857,16 @@ MonoBehaviour:
   "\uB0B4\uC5ED\uD65C": 16
   "\uD50C\uB808\uC774\uC5B4\uD504\uB7A9\uC2A4\uB370\uC774\uD130": 0
   debugValueChanges: 0
-  "\uC720\uC800\uC778\uD130\uD398\uC774\uC2A4":
-    uiScrollbar: {fileID: 0}
-    uiSlider: {fileID: 0}
-    lerpSpeed: 10
-    formatter: 0.##
-    lerpedValue: 0
-    textValue: {fileID: 0}
+  "UI\uC870\uC808":
+    "\uC2A4\uD06C\uB864\uBC14": {fileID: 0}
+    "\uC2AC\uB77C\uC774\uB354": {fileID: 624762858}
+    "\uAC8C\uC774\uC9C0\uC18D\uB3C4": 30
+    "\uD45C\uC2DC\uD3EC\uB9F7": 0
+    "\uD604\uC7AC\uD37C\uC13C\uD2B8": 0
+    "\uC2A4\uD0EF\uC218\uCE58\uD14D\uC2A4\uD2B8": {fileID: 1386090597}
     showActualization: 1
-    miniatureSprite: {fileID: 0}
+    "\uC544\uC774\uCF58\uC774\uBBF8\uC9C0": {fileID: 21300000, guid: 0df08b8552e42f64c874b073500661bb,
+      type: 3}
   "\uBC94\uC704":
     "\uCD5C\uC18C\uAC12": 0
     "\uCD5C\uB300\uAC12": 100
@@ -7116,15 +7121,15 @@ MonoBehaviour:
   "\uB0B4\uC5ED\uD65C": 8
   "\uD50C\uB808\uC774\uC5B4\uD504\uB7A9\uC2A4\uB370\uC774\uD130": 0
   debugValueChanges: 0
-  "\uC720\uC800\uC778\uD130\uD398\uC774\uC2A4":
-    uiScrollbar: {fileID: 0}
-    uiSlider: {fileID: 0}
-    lerpSpeed: 10
-    formatter: 0.##
-    lerpedValue: 0
-    textValue: {fileID: 0}
-    showActualization: 1
-    miniatureSprite: {fileID: 0}
+  "UI\uC870\uC808":
+    "\uC2A4\uD06C\uB864\uBC14": {fileID: 0}
+    "\uC2AC\uB77C\uC774\uB354": {fileID: 1178378299}
+    "\uAC8C\uC774\uC9C0\uC18D\uB3C4": 30
+    "\uD45C\uC2DC\uD3EC\uB9F7": 0.##
+    "\uD604\uC7AC\uD37C\uC13C\uD2B8": 0
+    "\uC2A4\uD0EF\uC218\uCE58\uD14D\uC2A4\uD2B8": {fileID: 0}
+    showActualization: 0
+    "\uC544\uC774\uCF58\uC774\uBBF8\uC9C0": {fileID: 0}
   "\uBC94\uC704":
     "\uCD5C\uC18C\uAC12": 0
     "\uCD5C\uB300\uAC12": 100
@@ -7217,15 +7222,15 @@ MonoBehaviour:
   "\uB0B4\uC5ED\uD65C": 19
   "\uD50C\uB808\uC774\uC5B4\uD504\uB7A9\uC2A4\uB370\uC774\uD130": 0
   debugValueChanges: 0
-  "\uC720\uC800\uC778\uD130\uD398\uC774\uC2A4":
-    uiScrollbar: {fileID: 0}
-    uiSlider: {fileID: 0}
-    lerpSpeed: 10
-    formatter: 0.##
-    lerpedValue: 0
-    textValue: {fileID: 0}
-    showActualization: 1
-    miniatureSprite: {fileID: 0}
+  "UI\uC870\uC808":
+    "\uC2A4\uD06C\uB864\uBC14": {fileID: 0}
+    "\uC2AC\uB77C\uC774\uB354": {fileID: 0}
+    "\uAC8C\uC774\uC9C0\uC18D\uB3C4": 30
+    "\uD45C\uC2DC\uD3EC\uB9F7": 0
+    "\uD604\uC7AC\uD37C\uC13C\uD2B8": 0
+    "\uC2A4\uD0EF\uC218\uCE58\uD14D\uC2A4\uD2B8": {fileID: 0}
+    showActualization: 0
+    "\uC544\uC774\uCF58\uC774\uBBF8\uC9C0": {fileID: 0}
   "\uBC94\uC704":
     "\uCD5C\uC18C\uAC12": 0
     "\uCD5C\uB300\uAC12": 10000
@@ -7330,15 +7335,16 @@ MonoBehaviour:
   "\uB0B4\uC5ED\uD65C": 11
   "\uD50C\uB808\uC774\uC5B4\uD504\uB7A9\uC2A4\uB370\uC774\uD130": 0
   debugValueChanges: 0
-  "\uC720\uC800\uC778\uD130\uD398\uC774\uC2A4":
-    uiScrollbar: {fileID: 0}
-    uiSlider: {fileID: 0}
-    lerpSpeed: 10
-    formatter: 0.##
-    lerpedValue: 0
-    textValue: {fileID: 0}
+  "UI\uC870\uC808":
+    "\uC2A4\uD06C\uB864\uBC14": {fileID: 0}
+    "\uC2AC\uB77C\uC774\uB354": {fileID: 241410781}
+    "\uAC8C\uC774\uC9C0\uC18D\uB3C4": 20
+    "\uD45C\uC2DC\uD3EC\uB9F7": 0
+    "\uD604\uC7AC\uD37C\uC13C\uD2B8": 0
+    "\uC2A4\uD0EF\uC218\uCE58\uD14D\uC2A4\uD2B8": {fileID: 1493200771}
     showActualization: 1
-    miniatureSprite: {fileID: 0}
+    "\uC544\uC774\uCF58\uC774\uBBF8\uC9C0": {fileID: 21300000, guid: c00a318cda81c38469b76efd0191cddb,
+      type: 3}
   "\uBC94\uC704":
     "\uCD5C\uC18C\uAC12": 0
     "\uCD5C\uB300\uAC12": 100
@@ -7545,15 +7551,15 @@ MonoBehaviour:
   "\uB0B4\uC5ED\uD65C": 4
   "\uD50C\uB808\uC774\uC5B4\uD504\uB7A9\uC2A4\uB370\uC774\uD130": 0
   debugValueChanges: 0
-  "\uC720\uC800\uC778\uD130\uD398\uC774\uC2A4":
-    uiScrollbar: {fileID: 0}
-    uiSlider: {fileID: 0}
-    lerpSpeed: 10
-    formatter: 0.##
-    lerpedValue: 0
-    textValue: {fileID: 0}
-    showActualization: 1
-    miniatureSprite: {fileID: 0}
+  "UI\uC870\uC808":
+    "\uC2A4\uD06C\uB864\uBC14": {fileID: 0}
+    "\uC2AC\uB77C\uC774\uB354": {fileID: 0}
+    "\uAC8C\uC774\uC9C0\uC18D\uB3C4": 15
+    "\uD45C\uC2DC\uD3EC\uB9F7": 0
+    "\uD604\uC7AC\uD37C\uC13C\uD2B8": 0
+    "\uC2A4\uD0EF\uC218\uCE58\uD14D\uC2A4\uD2B8": {fileID: 1773188270}
+    showActualization: 0
+    "\uC544\uC774\uCF58\uC774\uBBF8\uC9C0": {fileID: 0}
   "\uBC94\uC704":
     "\uCD5C\uC18C\uAC12": 0
     "\uCD5C\uB300\uAC12": 200
@@ -7782,7 +7788,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-        - m_Target: {fileID: 2026516329}
+        - m_Target: {fileID: 0}
           m_MethodName: calculateScore
           m_Mode: 1
           m_Arguments:
@@ -8492,7 +8498,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Your Stats
+  m_Text: "\uB2F9\uC2E0\uC758 \uC2A4\uD0EF"
 --- !u!222 &1135041572
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8686,15 +8692,15 @@ MonoBehaviour:
   "\uB0B4\uC5ED\uD65C": 3
   "\uD50C\uB808\uC774\uC5B4\uD504\uB7A9\uC2A4\uB370\uC774\uD130": 0
   debugValueChanges: 0
-  "\uC720\uC800\uC778\uD130\uD398\uC774\uC2A4":
-    uiScrollbar: {fileID: 0}
-    uiSlider: {fileID: 0}
-    lerpSpeed: 10
-    formatter: 0.##
-    lerpedValue: 0
-    textValue: {fileID: 0}
-    showActualization: 1
-    miniatureSprite: {fileID: 0}
+  "UI\uC870\uC808":
+    "\uC2A4\uD06C\uB864\uBC14": {fileID: 0}
+    "\uC2AC\uB77C\uC774\uB354": {fileID: 0}
+    "\uAC8C\uC774\uC9C0\uC18D\uB3C4": 10
+    "\uD45C\uC2DC\uD3EC\uB9F7": 0.##
+    "\uD604\uC7AC\uD37C\uC13C\uD2B8": 0
+    "\uC2A4\uD0EF\uC218\uCE58\uD14D\uC2A4\uD2B8": {fileID: 0}
+    showActualization: 0
+    "\uC544\uC774\uCF58\uC774\uBBF8\uC9C0": {fileID: 0}
   "\uBC94\uC704":
     "\uCD5C\uC18C\uAC12": 0
     "\uCD5C\uB300\uAC12": 2
@@ -9263,7 +9269,7 @@ MonoBehaviour:
     - {fileID: 1818390954452748, guid: 884be257724305a44af8fe39aa157861, type: 2}
   - groupName: Marriage
     subStackCondition:
-    - value: 16
+    - "\uC815\uC758": 0
       valueMin: 1
       valueMax: 1
     groupCards:
@@ -9273,7 +9279,7 @@ MonoBehaviour:
     - {fileID: 1818390954452748, guid: 0a936b2ff37a3684d8e0745e7a16f726, type: 2}
   - groupName: Ads
     subStackCondition:
-    - value: 18
+    - "\uC815\uC758": 0
       valueMin: 1
       valueMax: 1
     groupCards:
@@ -11924,7 +11930,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -12869,7 +12875,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -13371,15 +13377,16 @@ MonoBehaviour:
   "\uB0B4\uC5ED\uD65C": 14
   "\uD50C\uB808\uC774\uC5B4\uD504\uB7A9\uC2A4\uB370\uC774\uD130": 0
   debugValueChanges: 0
-  "\uC720\uC800\uC778\uD130\uD398\uC774\uC2A4":
-    uiScrollbar: {fileID: 0}
-    uiSlider: {fileID: 0}
-    lerpSpeed: 10
-    formatter: 0.##
-    lerpedValue: 0
-    textValue: {fileID: 0}
+  "UI\uC870\uC808":
+    "\uC2A4\uD06C\uB864\uBC14": {fileID: 0}
+    "\uC2AC\uB77C\uC774\uB354": {fileID: 1311018308}
+    "\uAC8C\uC774\uC9C0\uC18D\uB3C4": 20
+    "\uD45C\uC2DC\uD3EC\uB9F7": 0
+    "\uD604\uC7AC\uD37C\uC13C\uD2B8": 0
+    "\uC2A4\uD0EF\uC218\uCE58\uD14D\uC2A4\uD2B8": {fileID: 1693779522}
     showActualization: 1
-    miniatureSprite: {fileID: 0}
+    "\uC544\uC774\uCF58\uC774\uBBF8\uC9C0": {fileID: 21300000, guid: 749b443b6b36d674f97225ad05ace9c0,
+      type: 3}
   "\uBC94\uC704":
     "\uCD5C\uC18C\uAC12": 0
     "\uCD5C\uB300\uAC12": 100
@@ -13688,15 +13695,16 @@ MonoBehaviour:
   "\uB0B4\uC5ED\uD65C": 12
   "\uD50C\uB808\uC774\uC5B4\uD504\uB7A9\uC2A4\uB370\uC774\uD130": 0
   debugValueChanges: 0
-  "\uC720\uC800\uC778\uD130\uD398\uC774\uC2A4":
-    uiScrollbar: {fileID: 0}
-    uiSlider: {fileID: 0}
-    lerpSpeed: 10
-    formatter: 0.##
-    lerpedValue: 0
-    textValue: {fileID: 0}
+  "UI\uC870\uC808":
+    "\uC2A4\uD06C\uB864\uBC14": {fileID: 0}
+    "\uC2AC\uB77C\uC774\uB354": {fileID: 529659675}
+    "\uAC8C\uC774\uC9C0\uC18D\uB3C4": 20
+    "\uD45C\uC2DC\uD3EC\uB9F7": 0
+    "\uD604\uC7AC\uD37C\uC13C\uD2B8": 0
+    "\uC2A4\uD0EF\uC218\uCE58\uD14D\uC2A4\uD2B8": {fileID: 1579944478}
     showActualization: 1
-    miniatureSprite: {fileID: 0}
+    "\uC544\uC774\uCF58\uC774\uBBF8\uC9C0": {fileID: 21300000, guid: 97c23cc65a2eeed409fb86e17cc78ce3,
+      type: 3}
   "\uBC94\uC704":
     "\uCD5C\uC18C\uAC12": 0
     "\uCD5C\uB300\uAC12": 100
@@ -15235,19 +15243,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
-  scoreValues:
-  - valueType: 4
-    multiplier: 100
-  - valueType: 5
-    multiplier: 10
-  - valueType: 6
-    multiplier: 10
-  - valueType: 7
-    multiplier: 10
-  - valueType: 8
-    multiplier: 10
-  extraScores:
-  - {fileID: 685241125}
+  scoreValues: []
+  extraScores: []
   highScore: {fileID: 1902408610}
   maxHighScore: {fileID: 1592853866}
 --- !u!114 &2026516330
@@ -15444,15 +15441,15 @@ MonoBehaviour:
   "\uB0B4\uC5ED\uD65C": 18
   "\uD50C\uB808\uC774\uC5B4\uD504\uB7A9\uC2A4\uB370\uC774\uD130": 0
   debugValueChanges: 0
-  "\uC720\uC800\uC778\uD130\uD398\uC774\uC2A4":
-    uiScrollbar: {fileID: 0}
-    uiSlider: {fileID: 0}
-    lerpSpeed: 10
-    formatter: 0.##
-    lerpedValue: 0
-    textValue: {fileID: 0}
-    showActualization: 1
-    miniatureSprite: {fileID: 0}
+  "UI\uC870\uC808":
+    "\uC2A4\uD06C\uB864\uBC14": {fileID: 0}
+    "\uC2AC\uB77C\uC774\uB354": {fileID: 0}
+    "\uAC8C\uC774\uC9C0\uC18D\uB3C4": 30
+    "\uD45C\uC2DC\uD3EC\uB9F7": 0
+    "\uD604\uC7AC\uD37C\uC13C\uD2B8": 0
+    "\uC2A4\uD0EF\uC218\uCE58\uD14D\uC2A4\uD2B8": {fileID: 0}
+    showActualization: 0
+    "\uC544\uC774\uCF58\uC774\uBBF8\uC9C0": {fileID: 0}
   "\uBC94\uC704":
     "\uCD5C\uC18C\uAC12": 0
     "\uCD5C\uB300\uAC12": 1

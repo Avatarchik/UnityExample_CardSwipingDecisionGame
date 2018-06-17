@@ -8,49 +8,60 @@ using UnityEngine.UI;
 using UnityEngine.Events;
 
 
+/// <summary>
+/// ???????????
+/// 
+/// Game -> MainMenuCard
+/// </summary>
 public class EventScript : MonoBehaviour {
-	[System.Serializable] public class mEvent : UnityEvent {}
+
+    /// <summary>
+    /// 인스펙터에서 유니티 이벤트 사용하기 위해 직렬화해준다. 
+    /// </summary>
+    [System.Serializable]
+    public class 유니티이벤트 : UnityEvent {}
 
 	[System.Serializable]
-	public class eventText
+	public class 이벤트텍스트
 	{
-		public string textContent;
-		public Text textField;
+		public string 텍스트컨텍트;
+		public Text 텍스트필드;
 	}
 
     /// <summary>
-    /// 카드에 들어가는 텍스트를 종류를 규정한 클래스.
+    /// 카드에 들어가는 텍스트의 종류를 규정한 클래스.
     /// </summary>
 	[System.Serializable] // 클래스 타입의 변수를 인스펙터에 노출시키기 위한 어트리뷰트
-	public class eventTexts
+	public class 이벤트텍스트모음
     {
         /// <summary>
         /// 카드의 타이틀 텍스트
         /// </summary>
-		public eventText titleText;
+		public 이벤트텍스트 타이틀텍스트;
 
         /// <summary>
         /// 카드 하단의 질문 텍스트.
         /// </summary>
-		public eventText questionText;
+		public 이벤트텍스트 질문텍스트;
 
         /// <summary>
-        /// 카드 왼쪽 모서리 답변 텍스트.
+        /// 플레이어가 선택할 수 있는 2가지 선택지중 카드를 움직일때 왼쪽 모서리의 선택지 텍스트.
         /// </summary>
-		public eventText answerLeft;
+		public 이벤트텍스트 왼쪽선택텍스트;
 
         /// <summary>
-        /// 카드 오른쪽 모서리 답변 텍스트.
+        /// 플레이어가 선택할 수 있는 2가지 선택지중 카드를 움직일때 오른쪽 모서리의 선택지 텍스트.
         /// </summary>
-		public eventText answerRight;
+		public 이벤트텍스트 오른쪽선택텍스트;
 	}
 
 	[Tooltip("카드 텍스트와 텍스트 필드를 여기에 정의하십시오. 문자열은 'TranslationManager'용어 일 수 있습니다.")]
-	public eventTexts textFields;
+	public 이벤트텍스트모음 textFields;
 
 	[Tooltip("카드가 우선 순위가 높으면 다른 모든 일반 카드보다 먼저 나오지만 후속 카드를 사용하면 그려집니다.")]
 	public bool isHighPriorityCard = false;
-	[Tooltip("drawable cards 카드는 그 상태때문에 무작위로 그려질 수 있습닏. Non drawable cards는 이전 카드 또는 게임 오버 통계와 같은 카드에 의해 정의된 후속 카드입니다.")]
+
+    [Tooltip("drawable cards 카드는 그 상태때문에 무작위로 그려질 수 있습닏. Non drawable cards는 이전 카드 또는 게임 오버 통계와 같은 카드에 의해 정의된 후속 카드입니다.")]
 	public bool isDrawable = true;
 
 	[Tooltip("확률은 조건을 충족시킨 모든 카드에 적용됩니다. 높은 확률의 카드가 그려지기 쉽습니다.")]
@@ -59,14 +70,27 @@ public class EventScript : MonoBehaviour {
 	public int maxDraws = 100;
 
 	[System.Serializable]
-	public class condition{
-		public ValueDefinitions.값정의 value;
+	public class 콘디션
+    {
+        /// <summary>
+        /// 게임에서 사용되는 이름, 돈, 카리스마등 모든 정의를 열거한 열거형 변수.
+        /// </summary>
+		public ValueDefinitions.값정의 정의;
+
+        /// <summary>
+        /// ???
+        /// </summary>
 		public float valueMin = 0f;
-		public float valueMax = 100f;
+
+
+        /// <summary>
+        /// ????
+        /// </summary>
+        public float valueMax = 100f;
 	}
 
 	[Tooltip("이 카드가 그려 질 수있는 조건 하에서 정의하십시오. 예 : 결혼 카드는 'age'값 유형이 18에서 100 사이이거나 '결혼'값 유형이 0 (결혼하지 않은 경우) 인 경우에만 가능해야합니다.")]
-	public condition[] conditions;
+	public 콘디션[] conditions;
 
 	[System.Serializable]
 	public class resultModifier
@@ -108,7 +132,7 @@ public class EventScript : MonoBehaviour {
 		public modifierGroup modifiers;
 
         [Tooltip("추가 조건에 따라 결과가 두 가지 결과로 나뉠 수 있습니다. 모든 조건이 참이면 'Modifiers True'가 실행됩니다. 조건 중 하나가 실패하면 'Modifiers False'입니다. 예 : 사용자는 그가 경주를하고 싶다고 선택했지만 그의 민첩성은 낮아 결과는 떨어질 것입니다.")]
-		public condition[] conditions;
+		public 콘디션[] conditions;
 
         [Tooltip("모든 조건이 충족되는 경우 값 그룹이 변경됩니다.")]
 		public modifierGroup	modifiersTrue;
@@ -145,20 +169,22 @@ public class EventScript : MonoBehaviour {
     /// </summary>
 	public resultGroup Results;
 
-    //구성된 텍스트를 텍스트 필드로 번역하고 작성하십시오.
-    void writeTextFields()
+    /// <summary>
+    /// 구성된 텍스트를 텍스트 필드로 번역하고 작성하십시오.
+    /// </summary>
+    void 텍스트필드쓰기()
     {
-		if (textFields.titleText.textField != null) {
-			textFields.titleText.textField.text  =  TranslationManager.translateIfAvail( textFields.titleText.textContent  );
+		if (textFields.타이틀텍스트.텍스트필드 != null) {
+			textFields.타이틀텍스트.텍스트필드.text  =  TranslationManager.translateIfAvail( textFields.타이틀텍스트.텍스트컨텍트  );
 		}
-		if (textFields.questionText.textField != null) {
-			textFields.questionText.textField.text = TranslationManager.translateIfAvail (textFields.questionText.textContent);
+		if (textFields.질문텍스트.텍스트필드 != null) {
+			textFields.질문텍스트.텍스트필드.text = TranslationManager.translateIfAvail (textFields.질문텍스트.텍스트컨텍트);
 		}
-		if (textFields.answerLeft.textField != null) {
-			textFields.answerLeft.textField.text = TranslationManager.translateIfAvail( textFields.answerLeft.textContent);
+		if (textFields.왼쪽선택텍스트.텍스트필드 != null) {
+			textFields.왼쪽선택텍스트.텍스트필드.text = TranslationManager.translateIfAvail( textFields.왼쪽선택텍스트.텍스트컨텍트);
 		}		
-		if (textFields.answerRight.textField != null) {
-			textFields.answerRight.textField.text = TranslationManager.translateIfAvail( textFields.answerRight.textContent);
+		if (textFields.오른쪽선택텍스트.텍스트필드 != null) {
+			textFields.오른쪽선택텍스트.텍스트필드.text = TranslationManager.translateIfAvail( textFields.오른쪽선택텍스트.텍스트컨텍트);
 		}
 	}
 
@@ -261,9 +287,9 @@ public class EventScript : MonoBehaviour {
 
 			float rndResult = 1f;
 			ValueScript v = null;
-			foreach (condition c in res.conditions) {
+			foreach (콘디션 c in res.conditions) {
 				rndResult = Random.Range (0f, 1f);
-				v = ValueManager.나자신.첫번째피팅값가져오기 (c.value);
+				v = ValueManager.나자신.첫번째피팅값가져오기 (c.정의);
 
 				if (v != null) {
 					//set the minimum border for the conditon between min and max, 
@@ -271,7 +297,7 @@ public class EventScript : MonoBehaviour {
 					c.valueMin = v.범위.최소값 + rndResult*(v.범위.최대값 - v.범위.최소값);	
 					c.valueMax = v.범위.최대값;
 				} else {
-					Debug.LogWarning ("Missing value type: " + c.value);
+					Debug.LogWarning ("Missing value type: " + c.정의);
 				}
 
 			}
@@ -323,12 +349,12 @@ public class EventScript : MonoBehaviour {
 	}
 
 	//check for a set of conditions if everything is met
-	bool AreConditinsForResultMet(condition[] cond){
+	bool AreConditinsForResultMet(콘디션[] cond){
 		
 		bool conditionOk = true;
 
-		foreach (EventScript.condition c in cond) {
-			if (ValueManager.나자신.getConditionMet (c) == true) {
+		foreach (EventScript.콘디션 c in cond) {
+			if (ValueManager.나자신.GetConditionMet (c) == true) {
 				//condition is ok.
 			} else {
 				conditionOk = false;
@@ -341,7 +367,7 @@ public class EventScript : MonoBehaviour {
 
 
 	void Awake(){
-		writeTextFields ();
+		텍스트필드쓰기 ();
 	}
 		
 	void Start () {
@@ -351,11 +377,11 @@ public class EventScript : MonoBehaviour {
 	[Tooltip("조건부 결과 계산 후 값 변경. 'Age +1'과 같이 값이 결과와 독립적으로 변경되는 경우 유용합니다.")]
 	public resultModifier[] changeValueOnCardDespawn;
 
-	public mEvent OnCardSpawn;
-	public mEvent OnCardDespawn;
+	public 유니티이벤트 OnCardSpawn;
+	public 유니티이벤트 OnCardDespawn;
 
-	public mEvent OnSwipeLeft;
-	public mEvent OnSwipeRight;
+	public 유니티이벤트 OnSwipeLeft;
+	public 유니티이벤트 OnSwipeRight;
 
 	#if ADDITIONAL_CHOICE_0
 	public mEvent OnAdditionalChoice_0;

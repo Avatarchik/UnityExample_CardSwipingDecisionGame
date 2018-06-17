@@ -21,7 +21,7 @@ public class ValueDependentGameLogs : TranslatableContent {
 	 */
 	public void executeValueLogging(bool lockOutput = false){
 		foreach (valueLog vl in logConditions) {
-			if (ValueManager.나자신.getConditionMet (vl.condition) == true) {
+			if (ValueManager.나자신.GetConditionMet (vl.condition) == true) {
 				GameLogger.instance.addGameLog (vl.logConditionMet);
 			}
 		}
@@ -32,7 +32,7 @@ public class ValueDependentGameLogs : TranslatableContent {
 	[System.Serializable]
 	public class valueLog{
 
-		public EventScript.condition condition;
+		public EventScript.콘디션 condition;
 		public string logConditionMet = "";
 
 	}

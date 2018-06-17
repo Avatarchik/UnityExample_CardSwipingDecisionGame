@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class valueDependentTimer : MonoBehaviour {
 
 
-	public EventScript.condition[] conditionsToTest;
+	public EventScript.콘디션[] conditionsToTest;
 	[System.Serializable] public class mEvent : UnityEvent {}
 
 	[Tooltip("'deltaTimeCycle' defines which timecycle the value is tested and also the events invoked.")]

@@ -70,7 +70,7 @@ public class ValueScript : MonoBehaviour {
 
 	void Start()
     {
-        /// 나 자신 클래스를 싱글톤 객체의 리스트에 등록.
+        /// 나 자신 클래스를 static ValueManager 싱글톤 객체의 리스트에 등록.
         /// 결과적으로 Game씬의 Values오브젝트 밑의 자식 오브젝트들이 모두 리스트에 등록되게 된다.
 		ValueManager.나자신.ValueScript리스트에추가 (this);
 
@@ -79,28 +79,28 @@ public class ValueScript : MonoBehaviour {
     
 
     /// <summary>
-    /// 유니티니의 UGUI에 갑을 넣어주는 메서드.  
+    /// 유니티니의 UGUI에 값을 넣어주는 메서드.  
     /// </summary>
     /// <param name="ui값"></param>
 	public void UI실현(float ui값)
     {
-		if (유저인터페이스.스크롤바 != null)
+		if (UI조절.스크롤바 != null)
         {
-			유저인터페이스.스크롤바.size = ui값 / 범위.최대값;
+			UI조절.스크롤바.size = ui값 / 범위.최대값;
 		}
-		if (유저인터페이스.textValue != null)
+		if (UI조절.스탯수치텍스트 != null)
         {
-			유저인터페이스.textValue.text = ui값.ToString(유저인터페이스.formatter);
+			UI조절.스탯수치텍스트.text = ui값.ToString(UI조절.표시포맷);
 		}
-		if (유저인터페이스.슬라이더 != null)
+		if (UI조절.슬라이더 != null)
         {
-			유저인터페이스.슬라이더.value = ui값 / 범위.최대값;
+			UI조절.슬라이더.value = ui값 / 범위.최대값;
 		}
 	}
 
 
     /// <summary>
-    /// 게임내의 결과창이나 게임상단의 UI등의 슬라이더등의 수치나 값을 조절하기 위한 클래스.
+    /// 게임내의 상단 메뉴나, '당신의스탯' UGUI창의 슬라이더의 수치등을 조절하기 위해 필요한 변수를 정의한 클래스.
     /// </summary>
 	[System.Serializable]
 	public class UI구성
@@ -111,30 +111,53 @@ public class ValueScript : MonoBehaviour {
         [Tooltip("유니티의 UGUI의 슬라이더를 연결하는 변수. 슬라이더바는 정해진 범위상의 숫자값을 통해 막대를 움직일 수 있다.")]
 		public Slider 슬라이더;
 
+        /// <summary>
+        /// 스크롤바 게이지가 변경될때의 속도이다.
+        /// </summary>
         [Tooltip("값이 변경되면 바를 채우는 속도입니다.")]
-		[Range(0.1f,100f)]public float lerpSpeed = 10f;
-
-        [Tooltip("값을 표시하기 위한 형식을 정의하십시오. \n예: 0 또는 # 을 입력하십시오. \n예 : #.00을 입력하면 두자리 숫자가 표시됩니다.")]
-		public string formatter = "0.##";
+		[Range(0.1f,100f)] // 인스펙터에서 슬라이더형태로 조절하기 위한 어트리뷰트.
+        public float 게이지속도 = 10f;
 
         /// <summary>
-        /// 채워지는 값을 말하는 것 같은데???
+        /// UGUI에 숫자를 소수점까지 표시할지, 소수점없이 표시할지등의 포맷을 인스펙터에서 지정하는 변수.
+        /// 예를 들어 통치기간(Years)을 표시할때는 '0'으로 인스펙터에서 표시해야 한다.
+        /// </summary>
+        [Tooltip("값을 표시하기 위한 형식을 정의하십시오. \n예: 0 또는 # 을 입력하십시오. \n예 : #.00을 입력하면 두자리 숫자가 표시됩니다.")]
+		public string 표시포맷 = "0.##";
+
+        /// <summary>
+        /// 100%를 기준으로 현재 보유한 값이 몇퍼센트인지 인스펙터에서 읽기전용으로 보여주는 변수.
         /// </summary>
         [Tooltip("실제 lerped/filling 값.")]
-		[ReadOnlyInspector]public float lerpedValue = 0f;
+		[ReadOnlyInspector] // 실수로 수정하면 안되니깐 읽기전용 어트리뷰트 사용
+        public float 현재퍼센트 = 0f;
 
-        [Tooltip("값이 텍스트로 표시되면 여기에서 텍스트 필드를 정의하십시오.")]
-		public Text textValue;
+        /// <summary>
+        /// '당신의스탯'에 있는 권위, 지성, 카리스마, 행운등의 수치를 UGUI에서 보여주기 위한 Text타입 변수
+        /// </summary>
+        [Tooltip("당신의 스탯에서 텍스트로 표시되는 스탯부분의 텍스트UGUI를 연결하세요.")]
+		public Text 스탯수치텍스트;
 
+        /// <summary>
+        /// ???? 이용자게게 값변경을 보여질때 방식을 정할때 사용하는 옵션인것 같은데 잘 모르겠다.
+        /// </summary>
 		[Tooltip("값 관리자는 'showActualization'에 따라 값 변경을 사용자에게 표시할 수 있습니다.")]
 		public bool showActualization = true;
 
-        [Tooltip("값 관리자는 미니터처스프라이트로 값의 변경을 표시할 수 있습니다.")]
-		public Sprite miniatureSprite;
+        /// <summary>
+        /// '당신의 스탯' UGUI창에서 아이콘으로 사용할 스프라이트 이미지를 연결하기 위한 변수.
+        /// 권위, 지성...등등의 각 스탯에 맞게 제작된 아이콘 이미지를 연결한다.
+        /// </summary>
+        [Tooltip("'당신의 스탯'에서 표시할 아이콘을 연결하세요.")]
+		public Sprite 아이콘이미지;
 	}
 
-	[Tooltip("각 오브젝트마다 UI의 값의 세팅이 틀리기때문에 인스펙터에서 세부 정보를 세팅하세요.")]
-	public UI구성 유저인터페이스;
+    /// <summary>
+    /// 게임창의 군대 수치나 통치기간등과 '당신의 스탯'에 들어 있는 권위, 지성, 카리스마 같은 스크롤바 UGUI를 인스펙터에서 연결하기 위한 변수.
+    /// 내가 붙어 있는 객체의 종류가 권위, 지성, 카리스마, 행운, 창의력, Look, 건강, 결혼 일경우 인스펙터에서 게임신의 '당신의 스탯' UGUI에 만들어놓은 각각의 슬라이더를 여기에 연결한다.
+    /// </summary>
+	[Tooltip("게임에서 사용할 UI의 포맷은 각 오브젝트마다 UI의 값의 세팅이 틀리기때문에 인스펙터에서 세부 정보를 세팅하세요.")]
+	public UI구성 UI조절;
 
 
 
@@ -143,9 +166,10 @@ public class ValueScript : MonoBehaviour {
 		
         //UserInterface.lerpedValue = Mathf.Lerp (UserInterface.lerpedValue, value, UserInterface.lerpSpeed * Time.deltaTime);
 
-		유저인터페이스.lerpedValue = MathExtension.늘어나는것보간하기 (유저인터페이스.lerpedValue, 플레이어프랩스데이터, 유저인터페이스.lerpSpeed * Time.deltaTime);
+        // todo. 작업중
+		UI조절.현재퍼센트 = MathExtension.늘어나는것보간하기 (UI조절.현재퍼센트, 플레이어프랩스데이터, UI조절.게이지속도 * Time.deltaTime);
 
-		UI실현 (유저인터페이스.lerpedValue);
+		UI실현 (UI조절.현재퍼센트);
 	}
 
 

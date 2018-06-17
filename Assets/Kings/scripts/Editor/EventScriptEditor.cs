@@ -68,7 +68,7 @@ public class EventScriptEditor : Editor {
 }
 
 // TextFieldDrawer
-[CustomPropertyDrawer(typeof(EventScript.eventText))]
+[CustomPropertyDrawer(typeof(EventScript.이벤트텍스트))]
 public class TextFieldDrawer : PropertyDrawer
 {
 	// Draw the property inside the given rect
@@ -137,7 +137,7 @@ public class ModifierDrawer : PropertyDrawer
 
 
 // ConditionDrawer
-[CustomPropertyDrawer(typeof(EventScript.condition))]
+[CustomPropertyDrawer(typeof(EventScript.콘디션))]
 public class ConditionDrawer : PropertyDrawer
 {
 	// Draw the property inside the given rect

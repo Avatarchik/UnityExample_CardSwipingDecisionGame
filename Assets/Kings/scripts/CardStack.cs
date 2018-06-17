@@ -18,7 +18,7 @@ public class CardStack :  TranslatableContent {
 		public string groupName;
 
 		[Tooltip("이 그룹의 사전 조건. 카드 자체의 조건은 낮은 우선 순위로 계산됩니다.")]
-		public EventScript.condition[] subStackCondition;
+		public EventScript.콘디션[] subStackCondition;
 
         /// <summary>
         /// 미리 만들어둔 카드를 등록하는 배열 변수.
@@ -544,8 +544,8 @@ public class CardStack :  TranslatableContent {
 						conditionOk = false;
 					}
 
-					foreach (EventScript.condition c in es.conditions) {
-						if (ValueManager.나자신.getConditionMet (c) == true) {
+					foreach (EventScript.콘디션 c in es.conditions) {
+						if (ValueManager.나자신.GetConditionMet (c) == true) {
 							//condition is ok.
 						} else {
 							conditionOk = false;
@@ -684,10 +684,10 @@ public class CardStack :  TranslatableContent {
 				es = allCards [i].groupCards [j].GetComponent<EventScript> ();
 
 				if (es != null) {
-					terms.Add (es.textFields.titleText.textContent);
-					terms.Add (es.textFields.questionText.textContent);
-					terms.Add (es.textFields.answerLeft.textContent);
-					terms.Add (es.textFields.answerRight.textContent);
+					terms.Add (es.textFields.타이틀텍스트.텍스트컨텍트);
+					terms.Add (es.textFields.질문텍스트.텍스트컨텍트);
+					terms.Add (es.textFields.왼쪽선택텍스트.텍스트컨텍트);
+					terms.Add (es.textFields.오른쪽선택텍스트.텍스트컨텍트);
 				}
 			}
 		}
@@ -696,10 +696,10 @@ public class CardStack :  TranslatableContent {
 			es = fallBackCard.GetComponent<EventScript> ();
 
 			if (es != null) {
-				terms.Add (es.textFields.titleText.textContent);
-				terms.Add (es.textFields.questionText.textContent);
-				terms.Add (es.textFields.answerLeft.textContent);
-				terms.Add (es.textFields.answerRight.textContent);
+				terms.Add (es.textFields.타이틀텍스트.텍스트컨텍트);
+				terms.Add (es.textFields.질문텍스트.텍스트컨텍트);
+				terms.Add (es.textFields.왼쪽선택텍스트.텍스트컨텍트);
+				terms.Add (es.textFields.오른쪽선택텍스트.텍스트컨텍트);
 			}
 		}
 
@@ -707,10 +707,10 @@ public class CardStack :  TranslatableContent {
 			es = fallBackCard.GetComponent<EventScript> ();
 
 			if (es != null) {
-				terms.Add (es.textFields.titleText.textContent);
-				terms.Add (es.textFields.questionText.textContent);
-				terms.Add (es.textFields.answerLeft.textContent);
-				terms.Add (es.textFields.answerRight.textContent);
+				terms.Add (es.textFields.타이틀텍스트.텍스트컨텍트);
+				terms.Add (es.textFields.질문텍스트.텍스트컨텍트);
+				terms.Add (es.textFields.왼쪽선택텍스트.텍스트컨텍트);
+				terms.Add (es.textFields.오른쪽선택텍스트.텍스트컨텍트);
 			}
 		}
 
