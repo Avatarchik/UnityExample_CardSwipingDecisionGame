@@ -76,7 +76,7 @@ public class ValueManager : MonoBehaviour {
     {
 		foreach (ValueScript 게임에서 in 볼륨스크립트리스트)
         {
-			게임에서.SaveMinMax ();
+			게임에서.최소최대값저장 ();
 		}
 	}
 
@@ -166,7 +166,7 @@ public class ValueManager : MonoBehaviour {
 
 				found = true;
 				oldValue = vs.플레이어프랩스데이터;
-				vs.setValue (valueToSet);
+				vs.새로운값저장 (valueToSet);
 				valueDifference = oldValue - vs.플레이어프랩스데이터;
 
 				//display the value change to the user
@@ -189,7 +189,7 @@ public class ValueManager : MonoBehaviour {
     {
 		foreach (ValueScript vs in 볼륨스크립트리스트)
         {
-			vs.newGameStart ();
+			vs.새로운게임실행 ();
 		}
 	}
     

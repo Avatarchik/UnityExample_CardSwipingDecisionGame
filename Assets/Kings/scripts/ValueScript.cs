@@ -166,9 +166,10 @@ public class ValueScript : MonoBehaviour {
 		
         //UserInterface.lerpedValue = Mathf.Lerp (UserInterface.lerpedValue, value, UserInterface.lerpSpeed * Time.deltaTime);
 
-        // todo. 작업중
+        /// UGUI의 슬라이더방의 게이지의 현재 퍼센트를 보정해서 매프레임 값을 넣어주고.
 		UI조절.현재퍼센트 = MathExtension.늘어나는것보간하기 (UI조절.현재퍼센트, 플레이어프랩스데이터, UI조절.게이지속도 * Time.deltaTime);
 
+        /// 보정된 현재퍼센트를 UGUI의 슬라이더 게이지에 반영한다.
 		UI실현 (UI조절.현재퍼센트);
 	}
 
@@ -212,9 +213,9 @@ public class ValueScript : MonoBehaviour {
 	public 값범위 범위;
 
     /// <summary>
-    /// 내 정체 밸류값이 내가 설정한 범위를 넘지 못하도록 하고, 설정한 범위를 넘을 경우 최소값 또는 최대값을 할당한다. 그리고 최소값 & 최대값일때 실행할 유니티이벤트를 실행한다.
+    /// 내 정체 밸류값이 내가 설정한 범위를 넘지 못하도록 하고, 설정한 범위를 넘을 경우 최소값 또는 최대값을 할당한다. 그리고 최소값 그리고 최대값일때 실행할 유니티이벤트를 실행한다.
     /// </summary>
-	public void 설정값으로실행()
+    public void 설정값으로실행()
     {
         /// 밸류값이 내가 설정한 범위보다 작은 경우
 		if (플레이어프랩스데이터 < 범위.최소값)
@@ -223,7 +224,7 @@ public class ValueScript : MonoBehaviour {
 			플레이어프랩스데이터 = 범위.최소값;
             /// 최소값일때 작동할 유니티이벤트를 실행한다.
 			실행할이벤트.최소값일때.Invoke();
-		}
+        }
         /// 만약 밸류값이 내가 설정한 범위보다 큰 경우
 		if (플레이어프랩스데이터 > 범위.최대값)
         {
@@ -231,23 +232,27 @@ public class ValueScript : MonoBehaviour {
 			플레이어프랩스데이터 = 범위.최대값;
             /// 최대값일때 작동할 유니티이벤트를 실행한다.
 			실행할이벤트.최대값일때.Invoke();
-		}
-	}
+        }
+    }
 
 	/// <summary>
     /// 값을 늘리거나 줄인다.
     /// </summary>
     /// <param name="increment"></param>
     /// <returns></returns>
-	public float addValue (float increment){
+	public float addValue (float increment)
+    {
 
-		if (debugValueChanges == true) {
+		if (debugValueChanges == true)
+        {
 			Debug.Log ("Value '" + 내역활.ToString () + "': " + 플레이어프랩스데이터.ToString () + " increment by " + increment.ToString ());
 		}
 
 		플레이어프랩스데이터 += increment;
+
 		설정값으로실행 ();
-		if (increment >= 0f) {
+
+        if (increment >= 0f) {
 			실행할이벤트.증가할때.Invoke ();
 		} else {
 			실행할이벤트.감소할때.Invoke ();
@@ -261,24 +266,34 @@ public class ValueScript : MonoBehaviour {
 		return 플레이어프랩스데이터;
 	}
 
-	/*
-	 * Set a value to an defined value.
-	 */
-	public float setValue(float newValue){
-		플레이어프랩스데이터 = newValue;
-		설정값으로실행 ();
-		값저장 ();
-		return 플레이어프랩스데이터;
-	}
+    /// <summary>
+    /// 플레이어프랩스데이터에서 가져온 데이터에 파라미터로 입력한 값을 넣는다. (단 설정값을 넘지않게 해서 값을 저장한다.)
+    /// </summary>
+    /// <param name="새로운값">플레이어프랩스 데이터에 저장할 새로운 값</param>
+    /// <returns></returns>
+    public float 새로운값저장(float 새로운값)
+    {
+        플레이어프랩스데이터 = 새로운값;
 
-	[Tooltip("'keepValue' blocks the randomization of the value on a new game start. On the first startup of the game, the value is randomized between 'Limits.RandomMin' and 'Limits.RandomMax' (Accessable from Inspector).")]
-	public bool keepValue = false;
+        설정값으로실행();
+
+        값저장();
+
+        return 플레이어프랩스데이터;
+    }
 
 
     /// <summary>
-    /// 내 정체를 랜덤으로 값을 지정하는 메서드. 값을 지정할때 최소&최대값을 넘지 못하도록 하고 있으며, 최소&최대값일때 실행할 유니티이벤트를 실행한다. 그리고 플레이어프랩스에 데이터를 저장한다.
+    /// 새로운 게임 시작시 랜덤으로 값을 지정하기 위한 옵션. false이면 랜덤으로 값을 세팅한다. 
     /// </summary>
-    /// <returns></returns>
+	[Tooltip("'keepValue'는 새로운 게임 시작시 값의 임의화를 차단합니다. 게임을 처음 시작할때 값은 'Limits.RandomMin' 와 'Limits.RandomMax' (인스펙터에서 액세스 가능) 사이에서 무작위로 지정됩니다..")]
+	public bool 값옵션 = false;
+
+
+    /// <summary>
+    /// 내 정체를 랜덤으로 값을 지정하는 메서드. 값을 지정할때 최소과 최대값을 넘지 못하도록 하고 있으며, 최소과 최대값일때 실행할 유니티이벤트를 실행한다. 그리고 플레이어프랩스에 데이터를 저장한다.
+    /// </summary>
+    /// <returns>랜덤으로 지정한 값을 반환</returns>
     public float 랜덤값세팅()
     {
         /// 랜덤으로 지정한 값을 배정하고
@@ -295,25 +310,39 @@ public class ValueScript : MonoBehaviour {
         return 플레이어프랩스데이터;
 	}
 
-	public void newGameStart()
+
+    /// <summary>
+    /// 새로운게임실행시 나한테 부여되는 값을 랜덤으로 부여하는 메서드.
+    /// </summary>
+	public void 새로운게임실행()
     {
-		if (keepValue == false) {
-			랜덤값세팅 ();
-		}
+        if (값옵션 == false)
+        {
+            랜덤값세팅();
+        }
 	}
 
+    /// <summary>
+    /// 멀티플레이일때 나한테 부여되는 값을 저장하는 것과 관련된 메서드인것 같은데, 해당 코드가 사용되는 곳이 없음.
+    /// </summary>
+    /// <param name="multiplier"></param>
+    /// <returns></returns>
+    public float multiplyValue(float multiplier)
+    {
+        플레이어프랩스데이터 *= multiplier;
 
-	public float multiplyValue (float multiplier){
-		플레이어프랩스데이터 *= multiplier;
-		설정값으로실행 ();
-		if (multiplier >= 1f) {
-			실행할이벤트.증가할때.Invoke();
-		}else {
-			실행할이벤트.감소할때.Invoke ();
-		}
-		값저장 ();
-		return 플레이어프랩스데이터;
-	}
+        설정값으로실행();
+        if (multiplier >= 1f)
+        {
+            실행할이벤트.증가할때.Invoke();
+        }
+        else
+        {
+            실행할이벤트.감소할때.Invoke();
+        }
+        값저장();
+        return 플레이어프랩스데이터;
+    }
 
     /// <summary>
     /// 현재 내가 붙어 있는 오브젝트 성격을 지정한 값이 기존 플레이어프랩스에 저장되어 있는 값인지 검사해서, 없으면 저장하고 있으면 불러온다.
@@ -345,30 +374,32 @@ public class ValueScript : MonoBehaviour {
     /// <summary>
     /// 최대값과 최소값 저장하기.
     /// </summary>
-	public void SaveMinMax()
+	public void 최소최대값저장()
     {
         /// 플레이어프랩스에 저장된 최소값과 최대값을 가져와서 할당한다.
-		float 플레이어프랩스키값최소 = SecurePlayerPrefs.얻기float (플레이어프랩스키값+"_최소");
-		float 플레이어프랩스키값최대 = SecurePlayerPrefs.얻기float (플레이어프랩스키값+"_최대");
+		float 플레이어프랩스최소값 = SecurePlayerPrefs.얻기float (플레이어프랩스키값+"_최소");
+		float 플레이어프랩스최대값 = SecurePlayerPrefs.얻기float (플레이어프랩스키값+"_최대");
 
-
+        /// 만약 플레이어프랩스키값중 "뭐뭐뭐_최소"라고 저장된 키값이 존재하면
         if (SecurePlayerPrefs.키값존재여부(플레이어프랩스키값 + "_최소"))
         {
-            if (플레이어프랩스데이터 < 플레이어프랩스키값최소)
+            /// 만약 플레이어프랩스데이터값이 플레이어프랩스최소값보다 작을 경우
+            if (플레이어프랩스데이터 < 플레이어프랩스최소값)
             {
+                /// 해당 플레이어프랩스데이터를 "뭐뭐뭐_최대"라는 키값으로 플레이어프랩스에 저장한다.
                 SecurePlayerPrefs.저장float(플레이어프랩스키값 + "_최대", 플레이어프랩스데이터);
             }
         }
-        else
+        else /// 만약 플레이어프랩스키값중 "뭐뭐뭐_최소"라고 저장된 키값이 존재하지 않으면
         {
+            // todo. 작업중.
             SecurePlayerPrefs.저장float(플레이어프랩스키값 + "_최소", 플레이어프랩스데이터);
         }
 
-        if (플레이어프랩스데이터 > 플레이어프랩스키값최대)
+        if (플레이어프랩스데이터 > 플레이어프랩스최대값)
         {
             SecurePlayerPrefs.저장float(플레이어프랩스키값 + "_최대", 플레이어프랩스데이터);
         }
-
 	}
 
 	public float getMaxValue(){

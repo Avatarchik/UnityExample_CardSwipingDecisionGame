@@ -164,11 +164,11 @@ public class CountryNameGenerator : TranslatableContent {
             {
                 if (성구분 == 성별.남성)
                 {
-                    vs_gender.setValue(0f);
+                    vs_gender.새로운값저장(0f);
                 }
                 else if (성구분 == 성별.여성)
                 {
-                    vs_gender.setValue(1f);
+                    vs_gender.새로운값저장(1f);
                 }
             }
         }
