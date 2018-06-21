@@ -323,7 +323,7 @@ public class ValueScript : MonoBehaviour {
 	}
 
     /// <summary>
-    /// 멀티플레이일때 나한테 부여되는 값을 저장하는 것과 관련된 메서드인것 같은데, 해당 코드가 사용되는 곳이 없음.
+    /// ??? 멀티플레이일때 나한테 부여되는 값을 저장하는 것과 관련된 메서드인것 같은데, 해당 코드가 사용되는 곳이 없음.
     /// </summary>
     /// <param name="multiplier"></param>
     /// <returns></returns>
@@ -392,27 +392,39 @@ public class ValueScript : MonoBehaviour {
         }
         else /// 만약 플레이어프랩스키값중 "뭐뭐뭐_최소"라고 저장된 키값이 존재하지 않으면
         {
-            // todo. 작업중.
+            /// 플레이어프랩스에 ‘뭐뭐뭐_최소’라는 키값으로 데이터를 float 데이터를 저장한다.
             SecurePlayerPrefs.저장float(플레이어프랩스키값 + "_최소", 플레이어프랩스데이터);
         }
-
+        /// 만약 플레이어프랩스데이터가 플레이어프랩스최대값에 크면
         if (플레이어프랩스데이터 > 플레이어프랩스최대값)
         {
+            /// 플레이어프랩스에 ‘뭐뭐뭐_최대’라는 키값으로 데이터를 float 데이터를 저장한다.
             SecurePlayerPrefs.저장float(플레이어프랩스키값 + "_최대", 플레이어프랩스데이터);
         }
 	}
 
-	public float getMaxValue(){
-		return SecurePlayerPrefs.얻기float (플레이어프랩스키값+"_max");
-	}
+    /// <summary>
+    /// 플레이어프랩스에 ‘뭐뭐뭐_최대’키값으로 저장된 값을 가져오는 메서드.
+    /// </summary>
+    /// <returns>플레이어프랩스에 ‘뭐뭐뭐_최대’로 키값으로 저장된 값을 반환</returns>
+    public float 최대값얻기()
+    {
+        return SecurePlayerPrefs.얻기float(플레이어프랩스키값 + "_최대");
+    }
 
-	public float getMinValue(){
-		return SecurePlayerPrefs.얻기float (플레이어프랩스키값+"_min");
-	}
+    /// <summary>
+    /// 플레이어프랩스에 ‘뭐뭐뭐_최소’ 키값으로 저장된 값을 가져오는 메서드.
+    /// </summary>
+    /// <returns>플레이어프랩스에 ‘뭐뭐뭐_최소’키값으로 저장된 값 반환</returns>
+    public float 최소값얻기()
+    {
+        return SecurePlayerPrefs.얻기float(플레이어프랩스키값 + "_최소");
+    }
 
-	void OnDestroy(){
-		값저장 ();
-	}
+    void OnDestroy()
+    {
+        값저장();
+    }
 
     /// <summary>
     /// 유니티 이벤트를 상속받은 클래스.

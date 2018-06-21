@@ -7,7 +7,7 @@ using UnityEngine;
  * Helper script: modify values by an event.
  */
 
-public class addValue : MonoBehaviour {
+public class AddValue : MonoBehaviour {
 
 
 	[Tooltip("Define the value changes when calling 'addValues()'")]

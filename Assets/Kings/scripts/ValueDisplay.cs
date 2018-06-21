@@ -32,10 +32,10 @@ public class ValueDisplay : MonoBehaviour {
 
 		if (vs != null) {
 			if (maxValueText != null) {
-				maxValueText.text = (vs.getMaxValue ()*displayMultiplier).ToString (formatter);
+				maxValueText.text = (vs.최대값얻기 ()*displayMultiplier).ToString (formatter);
 			}
 			if (minValueText != null) {
-				minValueText.text = (vs.getMinValue ()*displayMultiplier).ToString (formatter);
+				minValueText.text = (vs.최소값얻기 ()*displayMultiplier).ToString (formatter);
 			}
 			if (currentValueText != null) {
 				currentValueText.text = (vs.플레이어프랩스데이터*displayMultiplier).ToString (formatter);

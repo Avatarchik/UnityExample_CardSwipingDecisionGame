@@ -147,5 +147,5 @@ public class GameStateManager : MonoBehaviour {
 		saveGameState ();
 	}
 
-	public scoreCounter gamesPlayedCounter;
+	public ScoreCounter gamesPlayedCounter;
 }

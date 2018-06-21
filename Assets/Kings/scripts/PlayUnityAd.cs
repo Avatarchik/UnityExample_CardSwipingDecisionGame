@@ -25,8 +25,8 @@ public class PlayUnityAd : MonoBehaviour {
 	public mEvent onAdFail;
 
 	#if KINGS_GAME_ASSET_ADS
-	public setValue valueIfAvailable;
-	public setValue valueIfNotAvailable;
+	public SetValue valueIfAvailable;
+	public SetValue valueIfNotAvailable;
 	#endif
 
 	[Tooltip("'watchAdButton' is optional. If an advertisement is available, the button will be set to interactable. To show ad with button, call 'showRewardedAd()'.")]

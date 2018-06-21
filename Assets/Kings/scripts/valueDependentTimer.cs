@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class valueDependentTimer : MonoBehaviour {
+public class ValueDependentTimer : MonoBehaviour {
 
 
 	public EventScript.콘디션[] conditionsToTest;

@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class sliderToVolume : MonoBehaviour {
+public class SliderToVolume : MonoBehaviour {
 
 	public Slider volumeSlider;
 

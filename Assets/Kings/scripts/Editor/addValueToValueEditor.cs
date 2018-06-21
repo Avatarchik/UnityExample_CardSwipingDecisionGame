@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[CustomEditor(typeof(addValueToValue))]
-public class addValueToValueEditor : Editor {
+[CustomEditor(typeof(AddValueToValue))]
+public class AddValueToValueEditor : Editor {
 	public override void OnInspectorGUI ()
 	{
 		base.OnInspectorGUI ();
@@ -12,7 +12,7 @@ public class addValueToValueEditor : Editor {
 }
 
 // Modifier Drawer
-[CustomPropertyDrawer(typeof(addValueToValue.resultModifierForAddingValueToValue))]
+[CustomPropertyDrawer(typeof(AddValueToValue.resultModifierForAddingValueToValue))]
 public class ModifierValueToValueDrawer : PropertyDrawer
 {
 	// Draw the property inside the given rect

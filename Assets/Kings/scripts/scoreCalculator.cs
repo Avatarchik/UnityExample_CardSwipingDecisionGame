@@ -45,11 +45,11 @@ public class ScoreCalculator : MonoBehaviour {
 
 
 
-    public scoreCounter[] extraScores;
+    public ScoreCounter[] extraScores;
 
-	public scoreCounter highScore;
+	public ScoreCounter highScore;
 
-	public scoreCounter maxHighScore;
+	public ScoreCounter maxHighScore;
 
     /// <summary>
     /// 점수 계산하는 메서드
@@ -66,7 +66,7 @@ public class ScoreCalculator : MonoBehaviour {
 			score += vs.플레이어프랩스데이터 * srp.multiplier;
 		}
 
-		foreach (scoreCounter sc in extraScores) {
+		foreach (ScoreCounter sc in extraScores) {
 			score += sc.getScore ();
 		}
 

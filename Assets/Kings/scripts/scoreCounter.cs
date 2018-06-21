@@ -4,7 +4,7 @@ using UnityEngine;
 
 using UnityEngine.UI;
 
-public class scoreCounter : MonoBehaviour {
+public class ScoreCounter : MonoBehaviour {
 
 	[ReadOnlyInspector] public int score;
 

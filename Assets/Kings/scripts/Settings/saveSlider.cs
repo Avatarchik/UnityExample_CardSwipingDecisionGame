@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class saveSlider : MonoBehaviour {
+public class SaveSlider : MonoBehaviour {
 
 
 	public float valueOnFirstStartup = 1.0f;	//Designer input: On first start-up, what is the Slider value

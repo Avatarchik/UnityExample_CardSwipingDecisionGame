@@ -11,7 +11,7 @@ using UnityEngine;
  * achievement type.
  */
 
-public class addAchievement : MonoBehaviour {
+public class AddAchievement : MonoBehaviour {
 
 	public AchievementsScript.achievementTyp achievement;
 

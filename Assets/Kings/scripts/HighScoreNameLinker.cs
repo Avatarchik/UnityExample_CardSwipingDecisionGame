@@ -34,7 +34,7 @@ public class HighScoreNameLinker : MonoBehaviour {
 	public hsnSelection highScoreSource;
 	[Tooltip("Save key is auto generated from the linked scripts.")]
 	[HideInInspector]public string key = "saveKey";
-	public scoreCounter sc;
+	public ScoreCounter sc;
 	ValueScript vs;
 	public ValueDefinitions.값정의 valueType;
 	[Tooltip("Select text field to show the player identity with the score.")]
@@ -141,9 +141,9 @@ public class HighScoreNameLinker : MonoBehaviour {
 		if (highScoreSource == hsnSelection.valueScriptActual) {
 			score = Mathf.RoundToInt (vs.플레이어프랩스데이터);
 		} else if (highScoreSource == hsnSelection.valueScriptMaximal) {
-			score = Mathf.RoundToInt (vs.getMaxValue ());
+			score = Mathf.RoundToInt (vs.최대값얻기 ());
 		} else if (highScoreSource == hsnSelection.valueScriptMinimal) {
-			score = Mathf.RoundToInt (vs.getMinValue ());
+			score = Mathf.RoundToInt (vs.최소값얻기 ());
 		} else if (highScoreSource == hsnSelection.scoreCounter) {
 			score = sc.getScore();
 		}

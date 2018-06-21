@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class valueDependentEnable : MonoBehaviour {
+public class ValueDependentEnable : MonoBehaviour {
 
 	[Tooltip("Reference to an value script, which contains the compare information for enabling/disabling the gameobject.")]
 	public ValueScript value;
