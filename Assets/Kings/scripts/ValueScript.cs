@@ -327,7 +327,7 @@ public class ValueScript : MonoBehaviour {
     /// </summary>
     /// <param name="multiplier"></param>
     /// <returns></returns>
-    public float multiplyValue(float multiplier)
+    public float MultiplyValue(float multiplier)
     {
         플레이어프랩스데이터 *= multiplier;
 

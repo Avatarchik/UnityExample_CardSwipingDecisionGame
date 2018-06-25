@@ -12,11 +12,12 @@ public class CardStack :  TranslatableContent {
     /// 카드를 인스펙터에서 등록하기 위한 변수들을 모아놓은 클래스. 
     /// </summary>
 	[System.Serializable]
-	public class cardCategory
+	public class CardCategory
 	{
 		[Tooltip("구분하기 쉽게 배열그룹(요소)이름을 넣어주세요.")]
 		public string groupName;
 
+        //todo. 작업중.
 		[Tooltip("이 그룹의 사전 조건. 카드 자체의 조건은 낮은 우선 순위로 계산됩니다.")]
 		public EventScript.콘디션[] subStackCondition;
 
@@ -30,10 +31,10 @@ public class CardStack :  TranslatableContent {
     /// 게임에서 사용할 (미리 만들어둔) 카드를 등록하기 위한 배열. 
     /// </summary>
     [Tooltip("여기에 모든 카드를 삽입하십시오. 이 카드에 대한 참조는 카드를 로드 / 저장하고 다음에 그릴 수있는 것을 결정할 때 필요합니다.")]
-    public cardCategory[] allCards;
+    public CardCategory[] allCards;
 
     [System.Serializable]
-	public class cardIndex
+	public class CardIndex
 	{
 		public int groupIndex;
 		public int cardSubIndex;
@@ -41,20 +42,20 @@ public class CardStack :  TranslatableContent {
 	}
 
 	[System.Serializable]
-	public class cardCount
+	public class CardCount
 	{
 		public int[] drawCnt;
 	}
 
 	[Tooltip("이 게임에 대한 각 카드의 추첨 갯수를 추적합니다. 'allCards'그룹과 같이 분류됩니다.")]
 	[ReadOnlyInspector] // 사용자가 만든 어트리뷰트
-    public drawCnts cardDrawCount;
+    public DrawCnts cardDrawCount;
 
 	//fixing the array-serialization bug with empty arrays for jsonUtility by including it to a serializable class
 	[System.Serializable]
-	public class drawCnts
+	public class DrawCnts
 	{
-		public  cardCount[] cnt;
+		public  CardCount[] cnt;
 	}
 
 	[Tooltip("요구 사항을 충족시키는 모든 카드.")]
@@ -93,11 +94,11 @@ public class CardStack :  TranslatableContent {
 	private RandomElementWithPropability rndCard;
 
 	//internal: index of the actual (last drawn) card
-	cardIndex lastCardIndex;
+	CardIndex lastCardIndex;
 
 	void Awake(){
-		lastCardIndex = new cardIndex ();
-		getCardIndex_result = new cardIndex ();
+		lastCardIndex = new CardIndex ();
+		getCardIndex_result = new CardIndex ();
 
 		lastCardIndex.groupIndex = 0;
 		lastCardIndex.cardSubIndex = 0;
@@ -131,15 +132,15 @@ public class CardStack :  TranslatableContent {
 	}
 
 
-	void createAllCardDrawCntList(ref cardCount[] newList){
-		newList = new cardCount[allCards.Length];
+	void createAllCardDrawCntList(ref CardCount[] newList){
+		newList = new CardCount[allCards.Length];
 
 		for (int i = 0; i < allCards.Length; i++) {
-			newList [i] = new cardCount ();
+			newList [i] = new CardCount ();
 			newList[i].drawCnt = new int[ allCards[i].groupCards.Length ];
 		}
 	}
-	void copyAllCardDrawCntlist(cardCount[] source, ref cardCount[] target){
+	void copyAllCardDrawCntlist(CardCount[] source, ref CardCount[] target){
 		int indexMain= 0;
 		//take the shorter index for copy
 		if (source.Length > target.Length) {
@@ -183,7 +184,7 @@ public class CardStack :  TranslatableContent {
 		//if a change was detected
 		if (listSizeChanged == true) {
 			//create a new list (temporary)
-			cardCount[] tmpList = new cardCount[0];
+			CardCount[] tmpList = new CardCount[0];
 			createAllCardDrawCntList (ref tmpList);
 			//copy actual list to temporary list
 			copyAllCardDrawCntlist(cardDrawCount.cnt, ref tmpList);
@@ -224,8 +225,8 @@ public class CardStack :  TranslatableContent {
 	}
 
 	//Get the index of an card - gameobject. Returns the group and the sub-index within the group.
-	cardIndex getCardIndex_result;
-	cardIndex getCardIndex(GameObject go){
+	CardIndex getCardIndex_result;
+	CardIndex getCardIndex(GameObject go){
 		for (int i = 0; i < allCards.Length; i++) {
 			for (int j = 0; j < allCards[i].groupCards.Length; j++) {
 				if (allCards [i].groupCards[j] == go) {
@@ -261,7 +262,7 @@ public class CardStack :  TranslatableContent {
 	void saveCardIndex(){
 		PlayerPrefs.SetString ("Cind", JsonUtility.ToJson( lastCardIndex ));
 	}
-	cardIndex getCardIndex(){
+	CardIndex getCardIndex(){
 		JsonUtility.FromJsonOverwrite( PlayerPrefs.GetString ("Cind"), lastCardIndex );
 
 		return lastCardIndex;
@@ -292,7 +293,7 @@ public class CardStack :  TranslatableContent {
 			actMoveDistance = 0f;
 		}
 	}
-	bool cardIndexValid(cardIndex ci){
+	bool cardIndexValid(CardIndex ci){
 		//test, if index is within allowed range of upper group
 		if (ci.groupIndex >= allCards.Length) {
 			return false;
@@ -633,7 +634,7 @@ public class CardStack :  TranslatableContent {
 		GameObject testGameObject;
 		int allDuplicatesCounter = 0;
 
-		cardIndex index;
+		CardIndex index;
 
 		//go through all cards in 'allCards'
 		for (int i = 0; i<allCards.Length; i++) {

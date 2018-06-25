@@ -154,8 +154,7 @@ public class ConditionDrawer : PropertyDrawer
 		var valminRect = new Rect(position.x + position.width * 0.59f  , position.y, position.width * 0.20f , position.height);
 		var valmaxRect = new Rect(position.x + position.width * 0.8f  , position.y, position.width * 0.20f , position.height);
 
-
-		// Draw fields - passs GUIContent.none to each so they are drawn without labels
+		// 그리기필드 - GUIContent.none을 각각 전달하여 레이블 없이 그립니다.
 		EditorGUI.PropertyField(modRect, property.FindPropertyRelative("value"), GUIContent.none);
 		EditorGUI.PropertyField(valminRect, property.FindPropertyRelative("valueMin"), GUIContent.none);
 		EditorGUI.PropertyField(valmaxRect, property.FindPropertyRelative("valueMax"), GUIContent.none);
