@@ -13582,72 +13582,72 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   "\uC131\uAD6C\uBD84": 0
-  Countries:
-  - listEntry: "\uC601\uAD6D"
-    nameComb:
-    - name: "George(\uC870\uC9C0)"
+  "\uAD6D\uAC00\uB4E4":
+  - "\uAD6D\uAC00\uBA85": "\uC601\uAD6D"
+    "\uAD6D\uC655\uC774\uB984\uACFC\uC131\uBCC4":
+    - name: "\uC870\uC9C0"
       gender: 0
-    - name: "Harry(\uD574\uB9AC)"
+    - name: "\uD574\uB9AC"
       gender: 0
-    - name: "Charles(\uCE74\uB97C\uB85C\uC2A4)"
+    - name: "\uCC30\uC2A4"
       gender: 0
-    - name: "Elizabeth(\uC568\uB9AC\uC790\uBCA0\uC2A4)"
+    - name: "\uC5D8\uB9AC\uC790\uBCA0\uC2A4"
       gender: 1
-    - name: "Kate(\uCF00\uC774\uD2B8)"
+    - name: "\uCE90\uC11C\uB9B0"
       gender: 1
-    - name: "Diana(\uB2E4\uC774\uC544\uB098)"
+    - name: "\uB2E4\uC774\uC544\uB098"
       gender: 1
-    "\uC131\uC528":
+    "\uCE6D\uD638":
     - "\uD1B5\uCE58\uC790"
     - "\uD669\uC81C"
     - "\uC804\uC9C0\uC804\uB2A5\uD55C"
-    - "\uAC15\uB825\uD55C"
-    - "1\uC138"
-    - "4\uC138"
-  - listEntry: "\uD504\uB791\uC2A4"
-    nameComb:
-    - name: "Louis(\uB8E8\uC774)"
+    - "\uAC15\uC778\uD55C"
+    - I
+    - IV
+  - "\uAD6D\uAC00\uBA85": "\uD504\uB791\uC2A4"
+    "\uAD6D\uC655\uC774\uB984\uACFC\uC131\uBCC4":
+    - name: "\uB8E8\uC774"
       gender: 0
-    - name: "Napoleon(\uB098\uD3F4\uB808\uC639)"
+    - name: "\uB098\uD3F4\uB808\uC639"
       gender: 0
-    - name: "Jacques(\uC790\uD06C)"
+    - name: "\uC790\uD06C"
       gender: 0
-    - name: "Catherine(\uCE90\uC11C\uB9B0)"
+    - name: "\uCE90\uC11C\uB9B0"
       gender: 1
-    - name: "Eleanor(\uC5D8\uB808\uB178\uC5B4)"
+    - name: "\uC5D8\uB808\uC624\uB178\uB974"
       gender: 1
-    - name: "Maria(\uB9C8\uB9AC\uC544)"
+    - name: "\uB9C8\uB9AC\uC544"
       gender: 1
-    "\uC131\uC528":
+    "\uCE6D\uD638":
     - "\uC704\uB300\uD55C"
-    - "\uAC00\uC7A5 \uC704\uB300\uD55C"
+    - "\uC5C4\uCCAD\uB09C"
     - "\uB6B1\uB6B1\uD55C"
     - "\uAE61\uB9C8\uB978"
-    - "2\uC138"
-    - "6\uC138"
-  - listEntry: "\uAC00\uC0C1\uB098\uB77C"
-    nameComb:
-    - name: "Jimmy(\uC9C0\uBBF8)"
+    - II
+    - VI
+  - "\uAD6D\uAC00\uBA85": "\uAC00\uC0C1\uAD6D\uAC00"
+    "\uAD6D\uC655\uC774\uB984\uACFC\uC131\uBCC4":
+    - name: "\uC9C0\uBBF8"
       gender: 0
-    - name: "Micky(\uBBF8\uD0A4)"
+    - name: "\uBBF8\uD0A4"
       gender: 0
-    - name: "Timmy(\uD2F0\uBBF8)"
+    - name: "\uD2F0\uBBF8"
       gender: 0
-    - name: "Nicky(\uB2C9\uD0A4)"
+    - name: "\uB2C8\uD0A4"
       gender: 1
-    - name: "Pinky(\uD551\uD0A4)"
+    - name: "\uD551\uD0A4"
       gender: 1
-    - name: "Kitty(\uD0A4\uD53C)"
+    - name: "\uD0A4\uD2F0"
       gender: 1
-    "\uC131\uC528":
+    "\uCE6D\uD638":
     - "\uC7AC\uBBF8\uC788\uB294"
     - "\uBB34\uC2DC\uBB34\uC2DC\uD55C"
     - "\uC720\uC77C\uD55C"
-    - "\uAD50\uD65C\uD55C"
-    - "3\uC138"
-    - "7\uC138"
-  countryText: {fileID: 1450843499}
-  nameText: {fileID: 1132481323}
+    - "\uAC04\uC0AC\uD55C"
+    - III
+    - VII
+  "\uAD6D\uAC00\uBA85\uD45C\uC2DC\uD14D\uC2A4\uD2B8": {fileID: 1450843499}
+  "\uAD6D\uC655\uC774\uB984\uBCC4\uCE6D\uD45C\uC2DC\uD14D\uC2A4\uD2B8": {fileID: 1132481323}
   vs_type_country: 3
   vs_type_givenName: 0
   vs_type_surname: 1

@@ -32,53 +32,54 @@ public class CountryNameGenerator : TranslatableContent {
     public 성별 성구분;
 
     /// <summary>
-    /// 게임에 사용할 국가 숫자와 왕의 이름,성별 그리고 별칭에 대한 정보를 담을 변수를 정의한 클래스. 
+    /// 게임이 시작되면 플레이어에게 랜덤으로 주어지는 국가와 왕의 이름, 칭호,성별을 인스펙터에서 미리 등록할수 있는 변수들을 규정한 클래스. 
     /// </summary>
     [System.Serializable] /// 인스펙터에 노출하기 위한 직렬화 애트리뷰트
-    public class subStringList
+    public class SubStringList
     {
         /// <summary>
-        /// 게임이 시작하면 랜덤으로 정해지는 국가명.
+        /// 게임이 시작하면 플레이어에게 랜덤으로 정해지는 국가명.
         /// 인스펙터에서 미리 국가 이름을 넣어둔다.
         /// </summary>
         [Tooltip("게임시작시 랜덤으로 정해지는 국가명을 미리 등록합니다.")]
-        public string listEntry;
+        public string 국가명;
 
         /// <summary>
-        /// 게임이 시작하면 랜덤으로 정해지는 왕의 이름과 성별.
+        /// 게임이 시작하면 플레이어에게 랜덤으로 정해지는 왕의 이름과 성별.
         /// 인스펙터에서 미리 해당국가에 맞는 왕의 이름과 성별을 넣어둔다.
         /// </summary>
         [Tooltip("게임시작시 랜덤으로 정해지는 이름과 성별의 가능한 조합 목록을 미리 등록합니다.")]
-        public nameGenderLink[] nameComb;
+        public nameGenderLink[] 국왕이름과성별;
 
         /// <summary>
-        /// 게임이 시작하면 랜덤으로 정해지는 왕의 별칭(수식어).
-        /// 인스펙터에서 미리 해당국가에 맞는 왕의 성씨를 넣어둔다.
+        /// 게임이 시작하면 플레이어에게 랜덤으로 정해지는 왕의 칭호(위대한 무슨무슨 왕 이런식으로).
+        /// 인스펙터에서 미리 해당국가에 맞는 왕의 칭호를 넣어둔다.
         /// </summary>
-        [Tooltip("게임시작시 랜덤으로 정해지는 왕의 별칭의 가능한 조합 목록을 미리 등록합니다.")]
-        public string[] 성씨;
+        [Tooltip("게임시작시 랜덤으로 정해지는 왕의 칭호의 가능한 조합 목록을 미리 등록합니다.")]
+        public string[] 칭호;
     }
 
     /// <summary>
-    /// 게임에서 사용할 국가와 해당 국가에 맞는 왕의 이름, 성별 그리고 성씨를 인스펙터에서 입력하기 위한 변수.
-    /// 본 게임에서는 인스펙터에서 게임시작시 랜덤으로 배정되는 3개 국가를 만들고, 왕의 이름과 성별, 그리고 별칭 미리 텍스트로 프로그래머가 입력해놓는다.
+    /// 게임이 시작되면 플레이어에게 랜덤으로 주어지는 국가를 인스펙터에서 세팅하기 위한 변수.
+    /// 인스펙터에서 이 변수를 통해 4가지 정보를 등록할 수 있다. 국가명칭, 왕의 이름, 칭호, 성별.
+    /// 일단 3개 국가정도만 세팅하자.
     /// </summary>
-    [Tooltip("가능한 국가 및 국가별 왕의 이름과 성별 목록")]
-    public subStringList[] Countries;
+    [Tooltip("플레이어에게 랜덤으로 주어지는 국가 및 국가별 왕의 이름과칭호, 성별을 작성하세요.")]
+    public SubStringList[] 국가들;
 
     /// <summary>
     /// 게임 상단에 국가를 표시하는 UGUI 텍스트 영역.
     /// Game -> StatsCanvas -> PlayerPanel -> CountryText
     /// </summary>
 	[Tooltip("게임씬의 UGUI에서 국가를 표시하는 텍스트 필드할당하세요.")]
-    public Text countryText;
+    public Text 국가명표시텍스트;
 
     /// <summary>
     /// 게임 상단에 왕의 이름과 별칭을 표시하는 UGUI 텍스트 영역.
     /// Game -> StatsCanvas -> PlayerPanel -> PlayerNameText
     /// </summary>
 	[Tooltip("게임씬의 UGUI에서 왕의 이름과 별칭을 표시하는 텍스트 필드를 할당하세요.")]
-    public Text nameText;
+    public Text 국왕이름별칭표시텍스트;
 
     /// <summary>
     /// 인스펙터에서 드롭다운 목록에서 열거형으로 정의한 목록 중 Country를 선택.
@@ -141,20 +142,20 @@ public class CountryNameGenerator : TranslatableContent {
 
         if (GameStateManager.instance.gamestate == GameStateManager.Gamestate.gameActive || force == true)
         {
-            if (countryText != null)
+            if (국가명표시텍스트 != null)
             {
-                countryText.text = GetCountryTranslatedStringFromValue();
+                국가명표시텍스트.text = GetCountryTranslatedStringFromValue();
             }
-            if (nameText != null)
+            if (국왕이름별칭표시텍스트 != null)
             {
                 nameGenderLink ngl = getNameAndGenderFromValue();
                 if (ngl != null)
                 {
-                    nameText.text = ngl.name + " " + getSurnameFromValue();
+                    국왕이름별칭표시텍스트.text = ngl.name + " " + getSurnameFromValue();
                 }
                 else
                 {
-                    nameText.text = "";
+                    국왕이름별칭표시텍스트.text = "";
                 }
             }
 
@@ -183,11 +184,11 @@ public class CountryNameGenerator : TranslatableContent {
         if (vs_name != null)
         {
             int index = Mathf.RoundToInt(vs_name.플레이어프랩스데이터);
-            if (index >= Countries[getCountryIndexFromValue()].nameComb.Length)
+            if (index >= 국가들[getCountryIndexFromValue()].국왕이름과성별.Length)
             {
-                index = Countries[getCountryIndexFromValue()].nameComb.Length - 1;
+                index = 국가들[getCountryIndexFromValue()].국왕이름과성별.Length - 1;
             }
-            nameGenderLink nameGender = Countries[getCountryIndexFromValue()].nameComb[index];
+            nameGenderLink nameGender = 국가들[getCountryIndexFromValue()].국왕이름과성별[index];
 
             return nameGender;
         }
@@ -201,11 +202,11 @@ public class CountryNameGenerator : TranslatableContent {
         if (vs_surname != null)
         {
             int index = Mathf.RoundToInt(vs_surname.플레이어프랩스데이터);
-            if (index >= Countries[getCountryIndexFromValue()].성씨.Length)
+            if (index >= 국가들[getCountryIndexFromValue()].칭호.Length)
             {
-                index = Countries[getCountryIndexFromValue()].성씨.Length - 1;
+                index = 국가들[getCountryIndexFromValue()].칭호.Length - 1;
             }
-            return Countries[getCountryIndexFromValue()].성씨[index];
+            return 국가들[getCountryIndexFromValue()].칭호[index];
         }
         return "";
     }
@@ -217,9 +218,9 @@ public class CountryNameGenerator : TranslatableContent {
         if (vs_country != null)
         {
             int index = Mathf.RoundToInt(vs_country.플레이어프랩스데이터);
-            if (index >= Countries.Length)
+            if (index >= 국가들.Length)
             {
-                index = Countries.Length - 1;
+                index = 국가들.Length - 1;
             }
             return index;
         }
@@ -250,7 +251,7 @@ public class CountryNameGenerator : TranslatableContent {
     /// <returns></returns>
     public string GetCountryTranslatedStringFromValue()
     {
-        return TranslationManager.translateIfAvail(Countries[getCountryIndexFromValue()].listEntry);
+        return TranslationManager.translateIfAvail(국가들[getCountryIndexFromValue()].국가명);
     }
 
     /*
@@ -262,9 +263,9 @@ public class CountryNameGenerator : TranslatableContent {
         terms.Clear();
         EventScript es;
 
-        foreach (subStringList ssl in Countries)
+        foreach (SubStringList ssl in 국가들)
         {
-            terms.Add(ssl.listEntry);
+            terms.Add(ssl.국가명);
             //don't translate given name and surname?
         }
 
@@ -284,11 +285,11 @@ public class CountryNameGenerator : TranslatableContent {
 	}
 
 	void clearUI(){
-		if (countryText != null) {
-			countryText.text = "";
+		if (국가명표시텍스트 != null) {
+			국가명표시텍스트.text = "";
 		}
-		if (nameText != null) {
-			nameText.text = "";
+		if (국왕이름별칭표시텍스트 != null) {
+			국왕이름별칭표시텍스트.text = "";
 		}
 	}
 
