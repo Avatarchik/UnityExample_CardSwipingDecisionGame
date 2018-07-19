@@ -1869,7 +1869,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4aa6901ed0932e4d9b7b6feefd066f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randomEvents:
+  "\uD6A8\uACFC\uC74C\uBC1C\uC0DD\uC774\uBCA4\uD2B8":
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1577720311}
@@ -1883,8 +1883,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: RandomEvents+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+    m_TypeName: "RandomEvents+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3875916}
@@ -1898,8 +1898,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: RandomEvents+mEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+    m_TypeName: "RandomEvents+\uC720\uB2C8\uD2F0\uC774\uBCA4\uD2B8, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
 --- !u!1 &254838519
 GameObject:
   m_ObjectHideFlags: 0
@@ -4358,13 +4358,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 597a8f987988f784583cb7f6c0b60e8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScript: {fileID: 596712652}
-  enabledOnFirstStartup: 1
-  prefsKey: onButtonScript
-  optToggleShowState: {fileID: 389160408}
-  optTextForState: {fileID: 254838521}
-  onText: ON
-  offText: OFF
+  "\uD0C0\uAC9F\uC2A4\uD06C\uB9BD\uD2B8": {fileID: 596712652}
+  "\uCD5C\uCD08\uC2DC\uC791\uC2DC\uD65C\uC131\uD654\uC5EC\uBD80": 1
+  "\uD0A4\uAC12": "\uC628\uBC84\uD2BC\uC2A4\uD06C\uB9BD\uD2B8"
+  "\uD1A0\uAE00\uC635\uC158": {fileID: 389160408}
+  "\uD1A0\uAE00\uCC3D\uD45C\uC2DC\uD14D\uC2A4\uD2B8": {fileID: 254838521}
+  "\uCF1C\uC84C\uC744\uB54C\uD14D\uC2A4\uD2B8": "\uCF1C\uC9D0"
+  "\uAEBC\uC84C\uC744\uB54C\uD14D\uC2A4\uD2B8": "\uAEBC\uC9D0"
 --- !u!1 &598637637
 GameObject:
   m_ObjectHideFlags: 0

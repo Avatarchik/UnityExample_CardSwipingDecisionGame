@@ -14,7 +14,7 @@ public class ValueDefinitions : MonoBehaviour {
     public enum 값정의
     {
         이름, // 이름
-        서브네임, // 성
+        칭호, // 국왕의 칭호. 가령 '위대한 달봉이' 이런식의 칭호.
         성별, // 성별
         국가, // 나라
         통치기간, // 통치기간

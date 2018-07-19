@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[CustomEditor(typeof(EventScript))]
+[CustomEditor(typeof(EventScript))] // 'EventScript'스크립트를 에디팅하는 애튜리뷰터
 public class EventScriptEditor : Editor {
-	public override void OnInspectorGUI ()
+
+    // todo. 일단 직렬화에 대해 공부해야 함.
+    public override void OnInspectorGUI ()
 	{
 		showScriptField ();
 

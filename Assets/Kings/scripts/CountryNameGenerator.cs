@@ -82,7 +82,7 @@ public class CountryNameGenerator : TranslatableContent {
     public Text 국왕이름별칭표시텍스트;
 
     /// <summary>
-    /// 인스펙터에서 드롭다운 목록에서 열거형으로 정의한 목록 중 Country를 선택.
+    /// 인스펙터에서 드롭다운 목록에서 열거형으로 정의한 목록 중 '국가'를 선택.
     /// </summary>
 	[Tooltip("국가를 정의하는 값 유형입니다.")]
     public ValueDefinitions.값정의 vs_type_country;
@@ -90,7 +90,7 @@ public class CountryNameGenerator : TranslatableContent {
     ValueScript vs_country;
 
     /// <summary>
-    /// 인스펙터에서 드롭다운 목록에서 열거형으로 정의한 목록 중 Name를 선택.
+    /// 인스펙터에서 드롭다운 목록에서 열거형으로 정의한 목록 중 '이름'을 선택.
     /// </summary>
 	[Tooltip("지정된 이름을 정의하는 값 유형입니다.")]
     public ValueDefinitions.값정의 vs_type_givenName;
@@ -101,7 +101,7 @@ public class CountryNameGenerator : TranslatableContent {
     ValueScript vs_name;
 
     /// <summary>
-    /// 인스펙터에서 드롭다운 목록에서 열거형으로 정의한 목록 중 Surname를 선택.
+    /// 인스펙터에서 드롭다운 목록에서 열거형으로 정의한 목록 중 '칭호'를 선택.
     /// </summary>
     [Tooltip("성씨를 정의하는 값 유형입니다.")]
     public ValueDefinitions.값정의 vs_type_surname;

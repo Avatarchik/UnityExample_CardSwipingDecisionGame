@@ -10,7 +10,7 @@ using UnityEngine.Events;
 
 /// <summary>
 /// ???????????
-/// 
+/// 본 클래스는 'EventScriptEditor'스크립트에서 에디팅되서 인스펙터에서 보여진다.
 /// Game -> MainMenuCard
 /// </summary>
 public class EventScript : MonoBehaviour {
@@ -25,7 +25,8 @@ public class EventScript : MonoBehaviour {
 	public class 이벤트텍스트
 	{
 		public string 텍스트컨텍트;
-		public Text 텍스트필드;
+
+        public Text 텍스트필드;
 	}
 
     /// <summary>
