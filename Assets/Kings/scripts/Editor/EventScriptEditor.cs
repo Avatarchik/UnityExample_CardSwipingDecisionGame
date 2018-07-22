@@ -11,29 +11,29 @@ public class EventScriptEditor : Editor {
 	{
 		showScriptField ();
 
-		showSerializedElement ("textFields");
-		showSerializedElement ("isDrawable");
+		직렬화된요소표시 ("textFields");
+        직렬화된요소표시 ("isDrawable");
 
 		EventScript es = (EventScript)serializedObject.targetObject;
 
 		if (es.isDrawable == true) {
-			showSerializedElement ("isHighPriorityCard");
+			직렬화된요소표시 ("isHighPriorityCard");
 
 			if (es.isHighPriorityCard == false) {
-				showSerializedElement ("cardPropability");
+				직렬화된요소표시 ("cardPropability");
 			}
-				showSerializedElement ("maxDraws");
+				직렬화된요소표시 ("maxDraws");
 
 		}
 
-		showSerializedElement ("conditions");
-		showSerializedElement ("Results");
-		showSerializedElement ("changeValueOnCardDespawn");
-		showSerializedElement ("OnCardSpawn");
-		showSerializedElement ("OnCardDespawn");
+		직렬화된요소표시 ("conditions");
+		직렬화된요소표시 ("Results");
+		직렬화된요소표시 ("changeValueOnCardDespawn");
+		직렬화된요소표시 ("OnCardSpawn");
+		직렬화된요소표시 ("OnCardDespawn");
 
-		showSerializedElement ("OnSwipeLeft");
-		showSerializedElement ("OnSwipeRight");
+		직렬화된요소표시 ("OnSwipeLeft");
+		직렬화된요소표시 ("OnSwipeRight");
 
 		GUILayout.Space (15);
 
@@ -49,13 +49,25 @@ public class EventScriptEditor : Editor {
 			serializedObject.ApplyModifiedProperties();
 	}
 
-	void showSerializedElement(string class1){
-		SerializedProperty c1 = serializedObject.FindProperty (class1);
-		EditorGUI.BeginChangeCheck();
-		EditorGUILayout.PropertyField(c1, true);
-		if(EditorGUI.EndChangeCheck())
-			serializedObject.ApplyModifiedProperties();
-	}
+    /// <summary>
+    ///  todo. 3번째
+    /// </summary>
+    /// <param name="class1"></param>
+    void 직렬화된요소표시(string class1)
+    {
+        SerializedProperty 인스펙터에노출하고자하는변수 = serializedObject.FindProperty(class1); /// 스크립트로는 접근할 수 없는 속성인데 인스펙터 창엔 표시되는 것이 있습니다. 그런 속성은 FindProperty를 이용해서 접근하면 된다. 
+
+        EditorGUI.BeginChangeCheck(); /// 편집창에 변화가 있는지 확인 시작
+
+        /// 기존 유니티 클래스들을 상속받는 새로운 클래스를 만들 경우, 그 안의 변수들은 에디터 상에 표시되지 않는다. 
+        /// 이를 표시해 주기 에디팅 기능을 만드는데, 
+        /// 먼저 위 FindProperty()에서 인스펙터에 노출하고자 하는 변수를 찾아서
+        /// PropertyField()을 이용해서 노출한다.
+        EditorGUILayout.PropertyField(인스펙터에노출하고자하는변수, true); 
+
+        if (EditorGUI.EndChangeCheck()) /// 편집창에 변화가 있다면
+            serializedObject.ApplyModifiedProperties();
+    }
 
 	void showScriptField(){
 		//show the script field
