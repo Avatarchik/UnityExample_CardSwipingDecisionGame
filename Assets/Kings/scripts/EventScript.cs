@@ -57,7 +57,7 @@ public class EventScript : MonoBehaviour {
 	}
 
 	[Tooltip("카드 텍스트와 텍스트 필드를 여기에 정의하십시오. 문자열은 'TranslationManager'용어 일 수 있습니다.")]
-	public 이벤트텍스트모음 textFields;
+	public 이벤트텍스트모음 텍스트필드;
 
 	[Tooltip("카드가 우선 순위가 높으면 다른 모든 일반 카드보다 먼저 나오지만 후속 카드를 사용하면 그려집니다.")]
 	public bool isHighPriorityCard = false;
@@ -175,17 +175,17 @@ public class EventScript : MonoBehaviour {
     /// </summary>
     void 텍스트필드쓰기()
     {
-		if (textFields.타이틀텍스트.텍스트필드 != null) {
-			textFields.타이틀텍스트.텍스트필드.text  =  TranslationManager.translateIfAvail( textFields.타이틀텍스트.텍스트컨텍트  );
+		if (텍스트필드.타이틀텍스트.텍스트필드 != null) {
+			텍스트필드.타이틀텍스트.텍스트필드.text  =  TranslationManager.translateIfAvail( 텍스트필드.타이틀텍스트.텍스트컨텍트  );
 		}
-		if (textFields.질문텍스트.텍스트필드 != null) {
-			textFields.질문텍스트.텍스트필드.text = TranslationManager.translateIfAvail (textFields.질문텍스트.텍스트컨텍트);
+		if (텍스트필드.질문텍스트.텍스트필드 != null) {
+			텍스트필드.질문텍스트.텍스트필드.text = TranslationManager.translateIfAvail (텍스트필드.질문텍스트.텍스트컨텍트);
 		}
-		if (textFields.왼쪽선택텍스트.텍스트필드 != null) {
-			textFields.왼쪽선택텍스트.텍스트필드.text = TranslationManager.translateIfAvail( textFields.왼쪽선택텍스트.텍스트컨텍트);
+		if (텍스트필드.왼쪽선택텍스트.텍스트필드 != null) {
+			텍스트필드.왼쪽선택텍스트.텍스트필드.text = TranslationManager.translateIfAvail( 텍스트필드.왼쪽선택텍스트.텍스트컨텍트);
 		}		
-		if (textFields.오른쪽선택텍스트.텍스트필드 != null) {
-			textFields.오른쪽선택텍스트.텍스트필드.text = TranslationManager.translateIfAvail( textFields.오른쪽선택텍스트.텍스트컨텍트);
+		if (텍스트필드.오른쪽선택텍스트.텍스트필드 != null) {
+			텍스트필드.오른쪽선택텍스트.텍스트필드.text = TranslationManager.translateIfAvail( 텍스트필드.오른쪽선택텍스트.텍스트컨텍트);
 		}
 	}
 

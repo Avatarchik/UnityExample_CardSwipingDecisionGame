@@ -11,7 +11,7 @@ public class EventScriptEditor : Editor {
 	{
 		showScriptField ();
 
-		직렬화된요소표시 ("textFields");
+		직렬화된요소표시 ("텍스트필드"); /// EventScript클래스의 변수 '텍스트필드'를 표시
         직렬화된요소표시 ("isDrawable");
 
 		EventScript es = (EventScript)serializedObject.targetObject;

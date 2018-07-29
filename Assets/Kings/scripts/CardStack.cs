@@ -685,10 +685,10 @@ public class CardStack :  TranslatableContent {
 				es = allCards [i].groupCards [j].GetComponent<EventScript> ();
 
 				if (es != null) {
-					terms.Add (es.textFields.타이틀텍스트.텍스트컨텍트);
-					terms.Add (es.textFields.질문텍스트.텍스트컨텍트);
-					terms.Add (es.textFields.왼쪽선택텍스트.텍스트컨텍트);
-					terms.Add (es.textFields.오른쪽선택텍스트.텍스트컨텍트);
+					terms.Add (es.텍스트필드.타이틀텍스트.텍스트컨텍트);
+					terms.Add (es.텍스트필드.질문텍스트.텍스트컨텍트);
+					terms.Add (es.텍스트필드.왼쪽선택텍스트.텍스트컨텍트);
+					terms.Add (es.텍스트필드.오른쪽선택텍스트.텍스트컨텍트);
 				}
 			}
 		}
@@ -697,10 +697,10 @@ public class CardStack :  TranslatableContent {
 			es = fallBackCard.GetComponent<EventScript> ();
 
 			if (es != null) {
-				terms.Add (es.textFields.타이틀텍스트.텍스트컨텍트);
-				terms.Add (es.textFields.질문텍스트.텍스트컨텍트);
-				terms.Add (es.textFields.왼쪽선택텍스트.텍스트컨텍트);
-				terms.Add (es.textFields.오른쪽선택텍스트.텍스트컨텍트);
+				terms.Add (es.텍스트필드.타이틀텍스트.텍스트컨텍트);
+				terms.Add (es.텍스트필드.질문텍스트.텍스트컨텍트);
+				terms.Add (es.텍스트필드.왼쪽선택텍스트.텍스트컨텍트);
+				terms.Add (es.텍스트필드.오른쪽선택텍스트.텍스트컨텍트);
 			}
 		}
 
@@ -708,10 +708,10 @@ public class CardStack :  TranslatableContent {
 			es = fallBackCard.GetComponent<EventScript> ();
 
 			if (es != null) {
-				terms.Add (es.textFields.타이틀텍스트.텍스트컨텍트);
-				terms.Add (es.textFields.질문텍스트.텍스트컨텍트);
-				terms.Add (es.textFields.왼쪽선택텍스트.텍스트컨텍트);
-				terms.Add (es.textFields.오른쪽선택텍스트.텍스트컨텍트);
+				terms.Add (es.텍스트필드.타이틀텍스트.텍스트컨텍트);
+				terms.Add (es.텍스트필드.질문텍스트.텍스트컨텍트);
+				terms.Add (es.텍스트필드.왼쪽선택텍스트.텍스트컨텍트);
+				terms.Add (es.텍스트필드.오른쪽선택텍스트.텍스트컨텍트);
 			}
 		}
 
